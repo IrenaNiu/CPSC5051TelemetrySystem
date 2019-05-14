@@ -17,11 +17,13 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto nav-link">
-                    <li>@Html.ActionLink("Home", "Index", "Home",null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", null,new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Report", "Index", "Report", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Report: App Usage", "Index", "Report", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Report: Accuracy", "Index", "Report", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Photo Library", "Index", "Report", null, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
                 </ul>
             </div>
         </nav>
