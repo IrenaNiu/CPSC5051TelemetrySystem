@@ -4,18 +4,44 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Report</h2>
+<div class="container-fluid">
+    <br />
+    <h2 class="text-primary">App Usage Report</h2>
+    <br />
+</div>
 
 <div class="container">
     <div class="row">
-        <div class="col-3">
-            <h2>Number of users</h2>
-            <h2>@Model.NumberOfUsers</h2>
+        <div class="col-2">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-app-tab" data-toggle="pill" href="#v-pills-app" role="tab" aria-controls="v-pills-app" aria-selected="true">App Usage</a>
+                <a class="nav-link" id="v-pills-test-tab" data-toggle="pill" href="#v-pills-test" role="tab" aria-controls="v-pills-test" aria-selected="false">Test Accuracy</a>
+                <a class="nav-link" id="v-pills-detail-tab" data-toggle="pill" href="#v-pills-detail" role="tab" aria-controls="v-pills-detail" aria-selected="false">More Detail</a>
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-app" role="tabpanel" aria-labelledby="v-pills-app-tab">...</div>
+                <div class="tab-pane fade" id="v-pills-test" role="tabpanel" aria-labelledby="v-pills-test-tab">...</div>
+                <div class="tab-pane fade" id="v-pills-detail" role="tabpanel" aria-labelledby="v-pills-detail-tab">...</div>
+            </div>
         </div>
-        <div class="col">
-            <div>
-                <table class="table table-striped">
+        <div class="col text-center">
+            <div class="jumbotron">
+                <h1 class="display-4">Current user#: @Model.NumberOfUsers</h1>
+                <p class="lead">Below line chart shows the increase in mobile app user# over time.</p>
+            </div>
+
+            <div class="row text-center">
+                <img src="~/Content/Img/LineChart.PNG" height="400" class="ChartBox" />
+            </div>
+
+            <div class="jumbotron">
+                <h1 class="display-4">User information</h1>
+                <p class="lead">Below table lists detailed mobile app related user information.</p>
+            </div>
+
+            <div class="row text-center">
+                <br />
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th scope="col">Date</th>
@@ -34,16 +60,10 @@
                                 </tr>
                             }
                         }
-
                     </tbody>
                 </table>
+                <img src="~/Content/Img/PieChart1.PNG" height="300" class="ChartBox" />
             </div>
-
-        </div>
-    </div>
-    <div class="row text-center">
-        <div class="col">
-            <img src="~/Content/Img/PieChart1.png" class="PieChartBox"/>
         </div>
     </div>
 </div>

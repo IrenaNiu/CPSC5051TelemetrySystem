@@ -132,6 +132,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Img\LineChart.PNG" />
     <Content Include="Content\Img\Logo.png" />
     <Content Include="Content\Img\PieChart1.PNG" />
     <Content Include="Content\Img\Shedding.jpg" />
@@ -209,6 +210,9 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Report\Accuracy.cshtml" />
+    <Content Include="Views\Home\Library.cshtml" />
+    <Content Include="Views\Report\MoreDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
