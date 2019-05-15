@@ -23,6 +23,9 @@ namespace HW1c.Models
         // App Version string
         public string AppVersion { get; set; }
 
+        // Location
+        public string Location { get; set; }
+
         /// <summary>
         /// Constructor for Log Model
         /// Calls to Initialize to set initial settings
