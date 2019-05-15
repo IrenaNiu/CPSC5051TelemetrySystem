@@ -24,50 +24,41 @@
                 <div class="tab-pane fade" id="v-pills-detail" role="tabpanel" aria-labelledby="v-pills-detail-tab">...</div>
             </div>
         </div>
-        <div class="col">
-            <div class="row">
-                <div class="col-4 border">
-                    <br />
-                    <h2 class="text-center">Current users</h2>
-                    <br />
-                    <br />
-                    <h1 class="text-center text-success">@Model.NumberOfUsers</h1>
-                </div>
-                <div class="col text-center">
-                    <img src="~/Content/Img/LineChart.PNG" height="300" class="ChartBox" />
-                </div>
-            </div>
-            <br />
-            <br />
+        <div class="col text-center">
             <div class="row text-center">
-                <div class="col">
-                    <div class="col">
-                        <div>
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">App Version</th>
-                                        <th scope="col">Phone ID</th>
-                                        <th scope="col">Location</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @{
-                                        foreach (var item in Model.LogViewModel.LogList)
-                                        {
-                                            <tr>
-                                                <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                                <td>@item.AppVersion</td>
-                                                <td>@item.PhoneID</td>
-                                            </tr>
-                                        }
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                <br />
+                <h2 class="text-center">Current users  @Model.NumberOfUsers </h2>
+                <br />
+            </div>
+            <div class="row text-center">
+                <img src="~/Content/Img/LineChart.PNG" height="300" class="ChartBox" />
+                <br />
+            </div>
+            <div class="row text-center">
+                <br />
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">App Version</th>
+                            <th scope="col">Phone ID</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var item in Model.LogViewModel.LogList)
+                            {
+                                <tr>
+                                    <td>@item.RecordedDateTime.ToShortDateString()</td>
+                                    <td>@item.AppVersion</td>
+                                    <td>@item.PhoneID</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
