@@ -212,6 +212,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Report\Accuracy.cshtml" />
     <Content Include="Views\Home\Library.cshtml" />
+    <Content Include="Views\Report\MoreDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
