@@ -27,7 +27,8 @@ namespace HW1c.Controllers
             var myViewModel = new ReportViewModel();
 
             myViewModel.LogViewModel = new LogBackend().Index();
-            myViewModel.NumberOfUsers = 3;
+            myViewModel.NumberOfTests = 30;
+            myViewModel.Accuracy = 0.85;
 
             return View(myViewModel);
         }
