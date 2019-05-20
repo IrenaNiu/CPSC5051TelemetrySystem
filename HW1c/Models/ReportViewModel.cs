@@ -12,5 +12,11 @@ namespace HW1c.Models
 
         // The Number of Users
         public int NumberOfUsers { get; set; }
+
+        // The Number of Compared Tests
+        public int NumberOfTests { get; set; }
+
+        // The Accuracy
+        public double Accuracy { get; set; }
     }
 }
