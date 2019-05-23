@@ -5,6 +5,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -83,21 +84,19 @@
 </head>
 <body>
 
-    <h1>Image Magnifier Glass</h1>
+    <h1>Photo library</h1>
 
-    <p>Mouse over the image:</p>
+    <p>Browse the list to choose a photo to view</p>
 
     <div class="img-magnifier-container">
         <img id="myimage" src="~/Content/Img/testPhotoGood.png" width="350" height="400">
     </div>
+    <br />
+    <br />
+    <p>Click the button to use the magnifying glass.</p>
+    <button class="btn btn-floating btn-primary btn-lg" onclick='magnify("myimage", 3)'><i class="fa fa-search"></i></button>
 
-    <p>Feel free to change the strength of the magnifier glass when initiating the magnify function.</p>
 
-    <script>
-        /* Initiate Magnify Function
-        with the id of the image, and the strength of the magnifier glass:*/
-        magnify("myimage", 3);
-    </script>
 
 </body>
 
