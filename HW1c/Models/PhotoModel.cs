@@ -5,8 +5,8 @@ using System.Web;
 
 namespace HW1c.Models
 {
-    public class PhotoViewModel
+    public class PhotoModel
     {
-        public List<PhotoModel> PhotoList { get; set; } = new List<PhotoModel>();
+        
     }
 }
