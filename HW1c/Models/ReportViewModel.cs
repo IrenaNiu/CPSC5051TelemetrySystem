@@ -10,6 +10,7 @@ namespace HW1c.Models
         // The List of Logs
         public LogViewModel LogViewModel { get; set; }
 
+        
         // The Number of Users
         public int NumberOfUsers { get; set; }
 
@@ -18,5 +19,6 @@ namespace HW1c.Models
 
         // The Accuracy
         public double Accuracy { get; set; }
+
     }
 }
