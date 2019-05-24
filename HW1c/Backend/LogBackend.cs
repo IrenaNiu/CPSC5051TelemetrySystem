@@ -21,6 +21,11 @@ namespace HW1c.Backend
             myData.LogList.Add(new LogModel { AppVersion = "2", PhoneID = "MNO", RecordedDateTime = DateTime.Parse("01/23/2019"),Location = "Ken" });
             myData.LogList.Add(new LogModel { AppVersion = "3", PhoneID = "ZYX", RecordedDateTime = DateTime.Now.AddDays(-2), Location = "Cana" });
             myData.LogList.Add(new LogModel { AppVersion = "3.3", PhoneID = "ZYXa", RecordedDateTime = DateTime.Now.AddYears(-1), Location = "Jonw" });
+            myData.LogList.Add(new LogModel { AppVersion = "2", PhoneID = "EEE", RecordedDateTime = DateTime.Now, Location = "AA" });
+            myData.LogList.Add(new LogModel { AppVersion = "2.3", PhoneID = "MQD", RecordedDateTime = DateTime.Parse("01/29/2019"), Location = "Ben" });
+            myData.LogList.Add(new LogModel { AppVersion = "3", PhoneID = "ZX", RecordedDateTime = DateTime.Now.AddDays(-3), Location = "Dana" });
+            myData.LogList.Add(new LogModel { AppVersion = "3.3", PhoneID = "Ya", RecordedDateTime = DateTime.Now.AddYears(-2), Location = "Onw" });
+
             return myData;
         }
 
