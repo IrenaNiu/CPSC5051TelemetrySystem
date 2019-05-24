@@ -6,52 +6,66 @@
 }
 <div class="container-fluid">
     <br />
-    <h2 class="text-primary">Report B</h2>
+    <h2 class="text-primary">Test Accuracy Report</h2>
     <br />
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col-4 border">
-            <br />
-            <h2 class="text-center">Current users</h2>
-            <br />
-            <br />
-            <h1 class="text-center text-success">@Model.NumberOfUsers</h1>
+        <div class="col-2">
+            <div class="nav flex-column">
+                <button type="button" class="btn btn-outline-light btn-lg active" aria-pressed="true">@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</button>
+                <br />
+                <button type="button" class="btn btn-outline-secondary btn-lg disabled" aria-disabled="true">@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</button>
+                <br />
+                <button type="button" class="btn btn-outline-dark btn-lg active" aria-pressed="true">@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</button>
+            </div>
         </div>
         <div class="col text-center">
-            <img src="~/Content/Img/LineChart.PNG" height="300" class="ChartBox" />
-        </div>
-    </div>
-    <br />
-    <br />
-    <div class="row text-center">
-        <div class="col">
-            <div class="col">
-                <div>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Date</th>
-                                <th scope="col">App Version</th>
-                                <th scope="col">Phone ID</th>
-                                <th scope="col">Location</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @{
-                                foreach (var item in Model.LogViewModel.LogList)
-                                {
-                                    <tr>
-                                        <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                        <td>@item.AppVersion</td>
-                                        <td>@item.PhoneID</td>
-                                    </tr>
-                                }
+            <div class="jumbotron">
+                <h1 class="display-4">Test Accuracy</h1>
+                <h1 class="display-4">@Model.Accuracy</h1>
+                <br />
+                <h4 class="display-5">Number of Tests Compared: @Model.NumberOfTests</h4>
+                <p class="lead">Below line chart shows the change in accuracy over time.</p>
+            </div>
+
+            <div class="row text-center">
+                <img src="~/Content/Img/LineChartAccuracy.PNG" height="400" class="ChartBox mx-auto" />
+            </div>
+
+            <div class="jumbotron">
+                <h1 class="display-4">User information</h1>
+                <p class="lead">Below table lists detailed mobile app related user information.</p>
+            </div>
+
+            <div class="row text-center">
+                <br />
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">App Version</th>
+                            <th scope="col">Phone ID</th>
+                            <th scope="col">Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var item in Model.LogViewModel.LogList)
+                            {
+                                <tr>
+                                    <td>@item.RecordedDateTime.ToShortDateString()</td>
+                                    <td>@item.AppVersion</td>
+                                    <td>@item.PhoneID</td>
+                                    <td>@item.Location</td>
+
+                                </tr>
                             }
-                        </tbody>
-                    </table>
-                </div>
+                        }
+                    </tbody>
+                </table>
+                <img src="~/Content/Img/PieChart1.PNG" height="300" class="ChartBox mx-auto" />
             </div>
         </div>
     </div>

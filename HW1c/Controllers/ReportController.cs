@@ -20,5 +20,28 @@ namespace HW1c.Controllers
 
             return View(myViewModel);
         }
+
+        // GET: Test Accuracy Report
+        public ActionResult Accuracy()
+        {
+            var myViewModel = new ReportViewModel();
+
+            myViewModel.LogViewModel = new LogBackend().Index();
+            myViewModel.NumberOfTests = 30;
+            myViewModel.Accuracy = 0.85;
+
+            return View(myViewModel);
+        }
+
+        // GET: More Detail Report
+        public ActionResult MoreDetail()
+        {
+            var myViewModel = new ReportViewModel();
+
+            myViewModel.LogViewModel = new LogBackend().Index();
+            myViewModel.NumberOfUsers = 3;
+
+            return View(myViewModel);
+        }
     }
 }
