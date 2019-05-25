@@ -1,7 +1,59 @@
 ﻿
+@model HW1c.Models.PhotoModel
 @{
     ViewBag.Title = "Read";
 }
 
 <h2>Read</h2>
+
+<div class="row">
+    <img id="myimage" src="~/Content/Img/testPhotoGood.png" width="350" height="400">
+</div>
+
+<div class="row">
+    <div class="col-3 text-right">
+        @Html.DisplayNameFor(m => m.Value)
+    </div>
+    <div class="col">
+        @Html.DisplayFor(m => m.Value)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3 text-right">
+        @Html.DisplayNameFor(m => m.Location)
+    </div>
+    <div class="col">
+        @Html.DisplayFor(m => m.Location)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3 text-right">
+        @Html.DisplayNameFor(m => m.RecordedDateTime)
+    </div>
+    <div class="col">
+        @Html.DisplayFor(m => m.RecordedDateTime)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3 text-right">
+        @Html.DisplayNameFor(m => m.PhoneID)
+    </div>
+    <div class="col">
+        @Html.DisplayFor(m => m.PhoneID)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3 text-right">
+        @Html.DisplayNameFor(m => m.AppVersion)
+    </div>
+    <div class="col">
+        @Html.DisplayFor(m => m.AppVersion)
+    </div>
+</div>
+
+
 
