@@ -5,40 +5,35 @@
     ViewBag.Title = "Library";
 }
 
+<h1>Photo library</h1>
+<p> Table below lists photo info recorded by mobile app. Select a photo ID to view details.</p>
 
-    <h1>Photo library</h1>
-    <p>Browse the list to choose a photo to view</p>
-
-    <div class="jumbotron">
-        <h1 class="display-4">Photo information</h1>
-        <p class="lead">Below table lists detailed mobile app related photo information.</p>
-    </div>
-    <div class="row text-center">
-        <br />
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">PhotoID</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Phone ID</th>
-                    <th scope="col">AppVersion</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{
-                    foreach (var item in Model.PhotoViewModel.PhotoList)
-                    {
-                        <tr>
-                            <td>@Html.ActionLink(item.PhotoID, "Read", new { id = item.PhotoID }, new { @class = "small" })</td>
-                            <td>@item.Location</td>
-                            <td>@item.RecordedDateTime.ToShortDateString()</td>
-                            <td>@item.PhoneID</td>
-                            <td>@item.AppVersion</td>
-                        </tr>
-                    }
+<div class="row text-center">
+    <br />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">PhotoID</th>
+                <th scope="col">Location</th>
+                <th scope="col">Date</th>
+                <th scope="col">Phone ID</th>
+                <th scope="col">AppVersion</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model.PhotoViewModel.PhotoList)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(item.PhotoID, "Read", new { id = item.PhotoID }, new { @class = "small" })</td>
+                        <td>@item.Location</td>
+                        <td>@item.RecordedDateTime.ToShortDateString()</td>
+                        <td>@item.PhoneID</td>
+                        <td>@item.AppVersion</td>
+                    </tr>
                 }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
+</div>
 
