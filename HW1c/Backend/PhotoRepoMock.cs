@@ -49,8 +49,8 @@ namespace HW1c.Backend
         /// </summary>
         public void Initialize()
         {
-            dataset.Add(new PhotoModel { Value = "13", Location = "A", AppVersion = "1", PhoneID = "ABC", RecordedDateTime = DateTime.Now });
-            dataset.Add(new PhotoModel { Value = "25", Location = "A", AppVersion = "2", PhoneID = "MNO", RecordedDateTime = DateTime.Parse("01/23/2019") });
+            dataset.Add(new PhotoModel { Value = "13", Location = "A", RecordedDateTime = DateTime.Parse("04/23/2019"), PhoneID = "ABC", AppVersion = "1"});
+            dataset.Add(new PhotoModel { Value = "25", Location = "A", RecordedDateTime = DateTime.Parse("04/23/2019"), PhoneID = "MNO", AppVersion = "2"});
        
         }
     }

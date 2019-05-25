@@ -1,5 +1,5 @@
 ﻿@using HW1c.Models;
-@model ReportViewModel
+@model LibViewModel
 
 @{
     ViewBag.Title = "Library";
@@ -108,21 +108,25 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Date</th>
-                    <th scope="col">Photo ID</th>
-                    <th scope="col">Phone ID</th>
+                    <th scope="col">PhotoID</th>
                     <th scope="col">Location</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Phone ID</th>
+                    <th scope="col">AppVersion</th>
                 </tr>
             </thead>
             <tbody>
                 @{
-                    foreach (var item in Model.LogViewModel.LogList)
+                    foreach (var item in Model.PhotoViewModel.PhotoList)
                     {
                         <tr>
-                            <td>@item.RecordedDateTime.ToShortDateString()</td>
-                            <td>@item.AppVersion</td>
-                            <td>@item.PhoneID</td>
+                            <td>@Html.ActionLink(item.PhotoID, "Read", new { id = item.PhotoID }, new { @class = "small" })</td>
                             <td>@item.Location</td>
+                            <td>@item.RecordedDateTime.ToShortDateString()</td>
+                            <td>@item.PhoneID</td>
+                            <td>@item.AppVersion</td>
+
+
 
                         </tr>
                     }

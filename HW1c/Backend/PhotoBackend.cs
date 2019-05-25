@@ -7,56 +7,55 @@ namespace HW1c.Backend
 {
     public class PhotoBackend
     {
-        public class LogBackend
+        #region SingletonPattern
+        private static volatile PhotoBackend instance;
+        private static object syncRoot = new object();
+
+        private PhotoBackend() { }
+
+        public static PhotoBackend Instance
         {
-            #region SingletonPattern
-            private static volatile LogBackend instance;
-            private static object syncRoot = new object();
-
-            private LogBackend() { }
-
-            public static LogBackend Instance
+            get
             {
-                get
+                if (instance == null)
                 {
-                    if (instance == null)
+                    lock (syncRoot)
                     {
-                        lock (syncRoot)
-                        {
-                            if (instance == null)
-                                instance = new LogBackend();
-                        }
+                        if (instance == null)
+                            instance = new PhotoBackend();
                     }
-
-                    return instance;
                 }
-            }
-            #endregion SingletonPattern
 
-            // Hook up the Repositry
-            private ILogRepository repository = new LogRepositoryMock();
-
-            /// <summary>
-            /// Read
-            /// </summary>
-            /// <param name="id"></param>
-            /// <returns></returns>
-            public LogModel Read(string id)
-            {
-                var myData = repository.Read(id);
-                return myData;
-            }
-
-            /// <summary>
-            ///  Returns the List of Logs
-            /// </summary>
-            /// <returns></returns>
-            public PhotoViewModel Index()
-            {
-                var myData = new PhotoViewModel();
-                myData.PhotoList = repository.Index();
-
-                return myData;
+                return instance;
             }
         }
+        #endregion SingletonPattern
+
+        // Hook up the Repositry
+        private IPhotoRepo repository = new PhotoRepoMock();
+
+        /// <summary>
+        /// Read
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public PhotoModel Read(string id)
+        {
+            var myData = repository.Read(id);
+            return myData;
+        }
+
+        /// <summary>
+        ///  Returns the List of Logs
+        /// </summary>
+        /// <returns></returns>
+        public PhotoViewModel Index()
+        {
+            var myData = new PhotoViewModel();
+            myData.PhotoList = repository.Index();
+
+            return myData;
+        }
+
     }
+}

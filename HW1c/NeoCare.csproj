@@ -123,6 +123,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LibViewModel.cs" />
     <Compile Include="Models\LogModel.cs" />
     <Compile Include="Models\LogViewModel.cs" />
     <Compile Include="Models\PhotoModel.cs" />
@@ -233,6 +234,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\IPhotoRepo\" />
+    <Folder Include="Views\LibViewModel\" />
     <Folder Include="Views\PhotoRepoMock\" />
   </ItemGroup>
   <ItemGroup>

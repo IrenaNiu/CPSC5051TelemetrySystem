@@ -17,12 +17,28 @@ namespace HW1c.Controllers
         
         public ActionResult Library()
         {
-            var myViewModel = new ReportViewModel();
+            var myViewModel = new LibViewModel();
 
-            myViewModel.LogViewModel = new LogBackend().Index();
-            myViewModel.NumberOfUsers = 3;
+            myViewModel.PhotoViewModel = PhotoBackend.Instance.Index();
 
             return View(myViewModel);
+        }
+
+        /// <summary>
+        /// Look up the record passed in
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Read(string id = null)
+        {
+            // If no ID passed in, jump to the Index page
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var myData = PhotoBackend.Instance.Read(id);
+            return View(myData);
         }
     }
 }
