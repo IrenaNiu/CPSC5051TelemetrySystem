@@ -49,9 +49,13 @@ namespace HW1c.Backend
         /// </summary>
         public void Initialize()
         {
-            dataset.Add(new PhotoModel { Value = "13", Location = "A", RecordedDateTime = DateTime.Parse("04/23/2019"), PhoneID = "ABC", AppVersion = "1"});
-            dataset.Add(new PhotoModel { Value = "25", Location = "A", RecordedDateTime = DateTime.Parse("04/23/2019"), PhoneID = "MNO", AppVersion = "2"});
-       
+            dataset.Add(new PhotoModel { Value = "13", Location = "A", RecordedDateTime = DateTime.Parse("04/23/2019"), PhoneID = "ABC", AppVersion = "1.0"});
+            dataset.Add(new PhotoModel { Value = "25", Location = "A", RecordedDateTime = DateTime.Parse("04/23/2019"), PhoneID = "MNO", AppVersion = "2.0"});
+            dataset.Add(new PhotoModel { Value = "11", Location = "B", RecordedDateTime = DateTime.Parse("04/25/2019"), PhoneID = "XYZ", AppVersion = "1.0" });
+            dataset.Add(new PhotoModel { Value = "28", Location = "B", RecordedDateTime = DateTime.Parse("04/25/2019"), PhoneID = "CDV", AppVersion = "2.0" });
+            dataset.Add(new PhotoModel { Value = "15", Location = "C", RecordedDateTime = DateTime.Parse("04/26/2019"), PhoneID = "BMF", AppVersion = "2.0" });
+            dataset.Add(new PhotoModel { Value = "27", Location = "C", RecordedDateTime = DateTime.Parse("04/26/2019"), PhoneID = "JJW", AppVersion = "2.0" });
+
         }
     }
 }

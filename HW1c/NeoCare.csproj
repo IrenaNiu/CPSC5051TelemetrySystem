@@ -233,9 +233,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\IPhotoRepo\" />
-    <Folder Include="Views\LibViewModel\" />
-    <Folder Include="Views\PhotoRepoMock\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
