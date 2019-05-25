@@ -21,49 +21,12 @@
                 <button type="button" class="btn btn-outline-dark btn-lg disabled" aria-disabled="true">@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</button>
             </div>
         </div>
-        <div class="col text-center">
-            <div class="jumbotron">
-                <h1 class="display-4">Current user#: @Model.NumberOfUsers</h1>
-                <p class="lead">Below line chart shows the increase in mobile app user# over time.</p>
+        <div class="col-5">
+
+            <div class="row">
+                <img src="~/Content/Img/LineChart.PNG" height="300" class="ChartBox mx-auto" />
             </div>
 
-            <div class="row text-center">
-                <img src="~/Content/Img/LineChart.PNG" height="400" class="ChartBox mx-auto" />
-            </div>
-
-            <div class="jumbotron">
-                <h1 class="display-4">User information</h1>
-                <p class="lead">Below table lists detailed mobile app related user information.</p>
-            </div>
-
-            <div class="row text-center">
-                <br />
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">App Version</th>
-                            <th scope="col">Phone ID</th>
-                            <th scope="col">Location</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            foreach (var item in Model.LogViewModel.LogList)
-                            {
-                                <tr>
-                                    <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                    <td>@item.AppVersion</td>
-                                    <td>@item.PhoneID</td>
-                                    <td>@item.Location</td>
-
-                                </tr>
-                            }
-                        }
-                    </tbody>
-                </table>
-                <img src="~/Content/Img/PieChart1.PNG" height="300" class="ChartBox mx-auto" />
-            </div>
         </div>
     </div>
 </div>
