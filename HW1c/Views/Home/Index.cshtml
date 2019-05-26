@@ -13,9 +13,20 @@
     <h5>BABY'S BRIGHTER FUTURE STARTS HERE!</h5>
     <br />
 
+    @{
+        var txt = "";
+        var hour = DateTime.Now.Hour;
+        if ( hour < 12) {
+            txt = "Good Morning";
+        } else if (hour < 18) {
+            txt = "Good Afternoon";
+        } else {
+            txt = "Good Evening";
+        }
+    }
     <script>
         function login() {
-            document.getElementById('rep').innerHTML = "Welcome, Doctor!";
+            document.getElementById('rep').innerHTML = "<h2>@txt, Doctor!</h2>";
         }
     </script>
 
