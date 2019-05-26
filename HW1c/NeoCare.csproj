@@ -152,7 +152,12 @@
     <Content Include="Content\Img\nigerian-baby.jpg" />
     <Content Include="Content\Img\NigerianBaby2.jpg" />
     <Content Include="Content\Img\PieChart1.PNG" />
-    <Content Include="Content\Img\testPhotoGood.PNG" />
+    <Content Include="Content\Img\testBad1.PNG" />
+    <Content Include="Content\Img\testBad2.PNG" />
+    <Content Include="Content\Img\testBad3.PNG" />
+    <Content Include="Content\Img\testGood1.PNG" />
+    <Content Include="Content\Img\testGood2.PNG" />
+    <Content Include="Content\Img\testGood3.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
