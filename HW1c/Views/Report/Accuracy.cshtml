@@ -22,6 +22,11 @@
             </div>
         </div>
         <div class="col text-center">
+
+
+
+
+
             <div class="jumbotron">
                 <h1 class="display-4">Test Accuracy</h1>
                 <h1 class="display-4">@Model.Accuracy</h1>
@@ -65,7 +70,7 @@
                         }
                     </tbody>
                 </table>
-                <img src="~/Content/Img/PieChart1.PNG" height="300" class="ChartBox mx-auto" />
+                
             </div>
 
             <head>
@@ -92,7 +97,7 @@
                     var Stat = G2.Stat;
                     var Frame = G2.Frame;
                     var frame = new Frame(data);
-                    frame = Frame.sort(frame, 'population'); // 将数据按照population 进行排序，由大到小
+                    frame = Frame.sort(frame, 'population'); 
                     var chart = new G2.Chart({
                         id: 'c1',
                         forceFit: true,
@@ -110,6 +115,8 @@
                     chart.render();
                 </script>
             </body>
+
+
         </div>
 </div>
 
