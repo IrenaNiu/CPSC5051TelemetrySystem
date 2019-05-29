@@ -19,6 +19,14 @@ namespace HW1c.Controllers
             myViewModel.LogViewModel = new LogBackend().Index();
             myViewModel.NumberOfUsers = 3;
 
+
+            myViewModel.UserCategoryList = new List<UserCategoryCountModel>();
+            myViewModel.UserCategoryList.Add(new UserCategoryCountModel { Clinic = "Clinic A", UserNumber = 113 });
+            myViewModel.UserCategoryList.Add(new UserCategoryCountModel { Clinic = "Clinic B", UserNumber = 81 });
+            myViewModel.UserCategoryList.Add(new UserCategoryCountModel { Clinic = "Clinic C", UserNumber = 46 });
+            myViewModel.UserCategoryList.Add(new UserCategoryCountModel { Clinic = "Clinic D", UserNumber = 150 });
+
+
             return View(myViewModel);
         }
 
