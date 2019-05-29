@@ -161,7 +161,54 @@
                         });
                     </script>
                 </div>
-                
+
+
+                <div class="col-4">
+                    <p class="text-center">Monthly Accuracy Rate </p>
+                    <!--Doughnut Chart-->
+                    <div>
+                        <canvas id="mybarChart"></canvas>
+                    </div>
+                    <script>
+                        var ctx = document.getElementById("mybarChart").getContext('2d');
+                        
+                        var data = [0.78, 0.90, 0.80, 0.95];
+                        var labels = ["Clinic A", "Clinic B", "Clinic C", "Clinic D"];
+                        ctx.canvas.width = 400;
+                        ctx.canvas.height = 350;
+                        var myBarChart = new Chart(ctx, {
+                            type: 'horizontalBar',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: "Accuracy Rate",
+                                    data: data,
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255,99,132,1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)'
+                                    ],
+                                    borderWidth: 2
+                                }]
+                            },
+                            options: {
+                                responsive: false, // Instruct chart js to respond nicely.
+                                maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+                            }
+                        });
+                    </script>
+                </div>
+
+
             </div>
             <br />
 
