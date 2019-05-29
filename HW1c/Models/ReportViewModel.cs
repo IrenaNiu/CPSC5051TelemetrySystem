@@ -10,6 +10,7 @@ namespace HW1c.Models
         // The List of Logs
         public LogViewModel LogViewModel { get; set; }
 
+        public List<UserCategoryCountModel> UserCategoryList { get; set; }
         
         // The Number of Users
         public int NumberOfUsers { get; set; }

@@ -19,7 +19,8 @@
                 <th scope="col">Location</th>
                 <th scope="col">Date</th>
                 <th scope="col">Phone ID</th>
-                <th scope="col">AppVersion</th>
+                <th scope="col">App Version</th>
+                <th scope="col">Photo</th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +33,8 @@
                         <td>@item.RecordedDateTime.ToShortDateString()</td>
                         <td>@item.PhoneID</td>
                         <td>@item.AppVersion</td>
+                        <td><img src="~/Content/Img/@item.PhotoFile" width="20" height="20"></img></td>
+
                     </tr>
                 }
             }

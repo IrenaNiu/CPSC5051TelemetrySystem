@@ -4,220 +4,182 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <br />
 <br />
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-    <style>
-        body {
-            font-family: "Lato", sans-serif;
-        }
+<div class="row">
 
-        .sidenav {
-            height: 100%;
-            width: 160px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            padding-top: 70px;
-        }
-
-            .sidenav a {
-                padding: 6px 8px 6px 16px;
-                text-decoration: none;
-                font-size: 30px;
-                color: #818181;
-                display: block;
-            }
-
-                .sidenav a:hover {
-                    color: #7386D5;
-                    background: #f1f1f1;
-                }
-
-        .main {
-            margin-left: 180px; /* Same as the width of the sidenav */
-            width: 80%;
-            font-size: 28px; /* Increased text to enable scrolling */
-            padding: 0px 10px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="row">
-        <!--Left Side Bar-->
-        <div class="sidenav">
-            <a>@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</a>
-            <a>@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</a>
-            <a>@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</a>
-        </div>
-        <!--Left Side Bar-->
-        <div class="sidenav">
-            <a>@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</a>
-            <a>@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</a>
-            <a>@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</a>
-        </div>
-
-        <!--Main Content Area-->
-        <div class="main">
-            <h2>App Usage Report</h2>
-            <br />
-            <!--Row 1-->
-            <div class="row">
-                <!-- Users# card -->
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3">
-                    <div class="card card-block">
-                        <div class="clearfix">
-                            <i class="fa fa-user-o float-right icon-grey-big"></i>
-                        </div>
-                        <p class="card-text text-center text-warning">Users</p>
-                        <p class="card-title font-weight-normal text-warning text-center">736</p>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                75%
-                            </div>
-                        </div>
+    <!--Main Content Area-->
+    <div class="main">
+        <h2>App Usage Report</h2>
+        <br />
+        <!--Row 1-->
+        <div class="row">
+            <!-- Users# card -->
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3">
+                <div class="card card-block">
+                    <div class="clearfix">
+                        <i class="fa fa-user-o float-right icon-grey-big"></i>
                     </div>
-                </div>
-                <!-- Photos# card -->
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3 ">
-                    <div class="card card-block">
-                        <div class="clearfix">
-                            <i class="fa fa-user-o float-right icon-grey-big"></i>
-                        </div>
-                        <p class="card-text text-center text-success">Photos</p>
-                        <p class="card-title font-weight-normal text-success text-center">1874</p>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                75%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Clinic# card -->
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3">
-                    <div class="card card-block">
-                        <div class="clearfix">
-                            <i class="fa fa-shopping-cart float-right icon-grey-big"></i>
-                        </div>
-                        <p class="card-text text-center text-info">Clinics</p>
-                        <p class="card-title font-weight-normal text-info text-center">4</p>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Install# card -->
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3">
-                    <div class="card card-block">
-                        <div class="clearfix">
-                            <i class="fa fa-bar-chart float-right icon-grey-big"></i>
-                        </div>
-                        <p class="card-text text-center text-danger">Installations</p>
-                        <p class="card-title font-weight-normal text-danger text-center">382</p>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+                    <p class="card-text text-center text-warning">Users</p>
+                    <p class="card-title font-weight-normal text-warning text-center">736</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            75%
                         </div>
                     </div>
                 </div>
             </div>
-            <br />
-
-            <!--Row 2-->
-            <div class="row">
-                <div class="col-8">
-                    <p class="text-center">Numbers over time</p>
-                    <!-- Line Chart-->
-                    <canvas id="usageLineChart" width="400" height="200"></canvas>
-                    <script>
-                        var ctx = document.getElementById('usageLineChart');
-                        var myLineChart = new Chart(ctx, {
-                            type: 'line',
-                            data: {
-                                labels: ["June 1", "June 2", "June 3", "June 4", "June 5", "June 6", "June 7"],
-                                datasets: [{
-                                    label: "TOTAL",
-                                    data: [6, 17, 30, 53, 75, 93, 116],
-                                    backgroundColor: [
-                                        'rgba(51, 153, 255, 0.2)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(0, 10, 130, .7)',
-                                    ],
-                                    borderWidth: 2
-                                },
-                                {
-                                    label: "Clinic A",
-                                    data: [2, 4, 8, 15, 23, 27, 34],
-                                    backgroundColor: [
-                                        'rgba(0, 0, 0, 0)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(200, 99, 132, .7)',
-                                    ],
-                                    borderWidth: 2
-                                },
-                                {
-                                    label: "Clinic B",
-                                    data: [1, 3, 5, 10, 14, 22, 26],
-                                    backgroundColor: [
-                                        'rgba(0, 0, 0, 0)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(86, 0, 198, 0.6)',
-                                    ],
-                                    borderWidth: 2
-                                },
-                                {
-                                    label: "Clinic C",
-                                    data: [0, 2, 3, 5, 9, 12, 15],
-                                    backgroundColor: [
-                                        'rgba(0, 0, 0, 0)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(255, 216, 41, .7)',
-                                    ],
-                                    borderWidth: 2
-                                },
-                                {
-                                    label: "Clinic D",
-                                    data: [3, 8, 14, 23, 29, 32, 41],
-                                    backgroundColor: [
-                                        'rgba(0, 0, 0, 0)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(99, 216, 41, .7)',
-                                    ],
-                                    borderWidth: 2
-                                }
-                                ]
-                            },
-
-                        });
-                    </script>
-                </div>
-                <div class="col-4">
-                    <p class="text-center">Clinic comparison</p>
-                    <!--Doughnut Chart-->
-                    <div>
-                        <canvas id="myChart"></canvas>
+            <!-- Photos# card -->
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3 ">
+                <div class="card card-block">
+                    <div class="clearfix">
+                        <i class="fa fa-user-o float-right icon-grey-big"></i>
                     </div>
-                    <script>
+                    <p class="card-text text-center text-success">Photos</p>
+                    <p class="card-title font-weight-normal text-success text-center">1874</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            75%
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Clinic# card -->
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3">
+                <div class="card card-block">
+                    <div class="clearfix">
+                        <i class="fa fa-shopping-cart float-right icon-grey-big"></i>
+                    </div>
+                    <p class="card-text text-center text-info">Clinics</p>
+                    <p class="card-title font-weight-normal text-info text-center">4</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Install# card -->
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3">
+                <div class="card card-block">
+                    <div class="clearfix">
+                        <i class="fa fa-bar-chart float-right icon-grey-big"></i>
+                    </div>
+                    <p class="card-text text-center text-danger">Installations</p>
+                    <p class="card-title font-weight-normal text-danger text-center">382</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <!--Row 2-->
+        <div class="row">
+            <div class="col-8">
+                <p class="text-center">Numbers over time</p>
+                <!-- Line Chart-->
+                <canvas id="usageLineChart" width="400" height="200"></canvas>
+                <script>
+                    var ctx = document.getElementById('usageLineChart');
+                    var myLineChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ["June 1", "June 2", "June 3", "June 4", "June 5", "June 6", "June 7"],
+                            datasets: [{
+                                label: "TOTAL",
+                                data: [6, 17, 30, 53, 75, 93, 116],
+                                backgroundColor: [
+                                    'rgba(51, 153, 255, 0.2)',
+                                ],
+                                borderColor: [
+                                    'rgba(0, 10, 130, .7)',
+                                ],
+                                borderWidth: 2
+                            },
+                            {
+                                label: "Clinic A",
+                                data: [2, 4, 8, 15, 23, 27, 34],
+                                backgroundColor: [
+                                    'rgba(0, 0, 0, 0)',
+                                ],
+                                borderColor: [
+                                    'rgba(200, 99, 132, .7)',
+                                ],
+                                borderWidth: 2
+                            },
+                            {
+                                label: "Clinic B",
+                                data: [1, 3, 5, 10, 14, 22, 26],
+                                backgroundColor: [
+                                    'rgba(0, 0, 0, 0)',
+                                ],
+                                borderColor: [
+                                    'rgba(86, 0, 198, 0.6)',
+                                ],
+                                borderWidth: 2
+                            },
+                            {
+                                label: "Clinic C",
+                                data: [0, 2, 3, 5, 9, 12, 15],
+                                backgroundColor: [
+                                    'rgba(0, 0, 0, 0)',
+                                ],
+                                borderColor: [
+                                    'rgba(255, 216, 41, .7)',
+                                ],
+                                borderWidth: 2
+                            },
+                            {
+                                label: "Clinic D",
+                                data: [3, 8, 14, 23, 29, 32, 41],
+                                backgroundColor: [
+                                    'rgba(0, 0, 0, 0)',
+                                ],
+                                borderColor: [
+                                    'rgba(99, 216, 41, .7)',
+                                ],
+                                borderWidth: 2
+                            }
+                            ]
+                        },
+
+                    });
+                </script>
+            </div>
+            <div class="col-4">
+                <p class="text-center">Clinic comparison</p>
+                <!--Doughnut Chart-->
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <script>
                         var ctx = document.getElementById("myChart").getContext('2d');
                         ctx.canvas.width = 310;
                         ctx.canvas.height = 310;
                         var myChart = new Chart(ctx, {
                             type: 'doughnut',
                             data: {
-                                labels: ["Clinic A", "Clinic B", "Clinic C", "Clinic D"],
+                                labels: [
+                                    @{
+                                        var ClinicString = "";
+                                        foreach (var clinic in Model.UserCategoryList)
+                                        {
+                                            ClinicString = ClinicString + "'"+clinic.Clinic +"'"+ ",";
+                                        }
+                                        @Html.Raw(ClinicString)
+                                    }
+                                ],
                                 datasets: [{
-                                    data: [113, 81, 46, 150],
+                                    data: [
+                                    @{
+                                        var ClinicNumber = "";
+                                        foreach (var clinicNumber in Model.UserCategoryList)
+                                        {
+                                            ClinicNumber = ClinicNumber + clinicNumber.UserNumber + ",";
+                                        }
+                                        @ClinicNumber
+                                    }
+                                    ],
                                     backgroundColor: ['rgba(255,99,132,.7)', 'rgba(54, 162, 235, .7)', 'rgba(255, 206, 86, .7)', 'rgba(75, 192, 192, .7)'],
                                 }]
                             },
@@ -226,90 +188,89 @@
                                 maintainAspectRatio: false
                             }
                         });
-                    </script>
-                </div>
-            </div>
-            <br />
-
-            <!--Row 3-->
-            <div class="row">
-                <div class="col-8">
-                    <p class="text-center">Table of details</p>
-                    <font size="3">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Phone ID</th>
-                                    <th scope="col">App Version</th>
-                                    <th scope="col">Location</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @{
-                                    foreach (var item in Model.LogViewModel.LogList)
-                                    {
-                                        <tr>
-                                            <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                            <td>@item.PhoneID</td>
-                                            <td>@item.AppVersion</td>
-                                            <td>@item.Location</td>
-
-                                        </tr>
-                                    }
-                                }
-                            </tbody>
-                        </table>
-                    </font>
-                </div>
-                <div class="col-4">
-                    <br />
-                    <canvas id="myBarChart"></canvas>
-                </div>
-                <script>
-                    var ctx = document.getElementById("myBarChart").getContext('2d');
-                    var data = [67, 23, 10, 15, 8];
-                    var labels = ["3.3", "3.0", "2.3", "2.0", "1.0"];
-                    ctx.canvas.width = 400;
-                    ctx.canvas.height = 450;
-                    var myBarChart = new Chart(ctx, {
-                        type: 'horizontalBar',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: "App version",
-                                data: data,
-                                backgroundColor: [
-                                    'rgba(255, 99, 132, 0.2)',
-                                    'rgba(54, 162, 235, 0.2)',
-                                    'rgba(255, 206, 86, 0.2)',
-                                    'rgba(75, 192, 192, 0.2)',
-                                    'rgba(153, 102, 255, 0.2)'
-                                ],
-                                borderColor: [
-                                    'rgba(255,99,132,1)',
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(75, 192, 192, 1)',
-                                    'rgba(153, 102, 255, 1)'
-                                ],
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            responsive: false, // Instruct chart js to respond nicely.
-                            maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
-                        }
-                    });
                 </script>
             </div>
+        </div>
+        <br />
 
-            <!--Row 4-->
-            <div class="row">
+        <!--Row 3-->
+        <div class="row">
+            <div class="col-8">
+                <p class="text-center">Table of details</p>
+                <font size="3">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Phone ID</th>
+                                <th scope="col">App Version</th>
+                                <th scope="col">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in Model.LogViewModel.LogList)
+                                {
+                                    <tr>
+                                        <td>@item.RecordedDateTime.ToShortDateString()</td>
+                                        <td>@item.PhoneID</td>
+                                        <td>@item.AppVersion</td>
+                                        <td>@item.Location</td>
 
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </font>
             </div>
+            <div class="col-4">
+                <br />
+                <canvas id="myBarChart"></canvas>
+            </div>
+            <script>
+                var ctx = document.getElementById("myBarChart").getContext('2d');
+                var data = [67, 23, 10, 15, 8];
+                var labels = ["3.3", "3.0", "2.3", "2.0", "1.0"];
+                ctx.canvas.width = 400;
+                ctx.canvas.height = 450;
+                var myBarChart = new Chart(ctx, {
+                    type: 'horizontalBar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: "App version",
+                            data: data,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: false, // Instruct chart js to respond nicely.
+                        maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+                    }
+                });
+            </script>
+        </div>
 
+        <!--Row 4-->
+        <div class="row">
 
         </div>
+
+
     </div>
-</body>
+</div>

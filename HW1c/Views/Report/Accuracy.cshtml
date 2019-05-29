@@ -6,89 +6,21 @@
 }
 <br />
 <br />
-<head>
-    <script src="https://a.alipayobjects.com/jquery/jquery/1.11.1/jquery.js"></script>
-    <script src="https://gw.alipayobjects.com/as/g/datavis/g2/2.3.13/index.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-    <style>
-        body {
-            font-family: "Lato", sans-serif;
-        }
 
-        .sidenav {
-            height: 100%;
-            width: 160px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            padding-top: 70px;
-        }
-
-            .sidenav a {
-                padding: 6px 8px 6px 16px;
-                text-decoration: none;
-                font-size: 30px;
-                color: #818181;
-                display: block;
-            }
-
-                .sidenav a:hover {
-                    color: #7386D5;
-                    background: #f1f1f1;
-                }
-
-        .main {
-            margin-left: 180px; /* Same as the width of the sidenav */
-            width: 80%;
-            font-size: 28px; /* Increased text to enable scrolling */
-            padding: 0px 10px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="row">
-        <!--Left Side Bar-->
-        <div class="sidenav">
-            <a>@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</a>
-            <a>@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</a>
-            <a>@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</a>
-        </div>
-        <!--Left Side Bar-->
-        <div class="sidenav">
-            <a>@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</a>
-            <a>@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</a>
-            <a>@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</a>
-        </div>
-
-        <!--Main Content Area-->
-        <div class="main text-center">
-
-            <h2>Test Accuracy Report</h2>
-
-            <br />
+<!--Main Content Area-->
+<div class="text-center">
+    <h2>Test Accuracy Report</h2>
+    <br />
+    <div class="jumbotron">
+        <h1 class="display-4">Test Accuracy</h1>
+        <h1 class="display-4">@Model.Accuracy</h1>
+        <br />
+        <h4 class="display-5">Number of Tests Compared: @Model.NumberOfTests</h4>
+        <p class="lead">Below line chart shows the change in accuracy over time.</p>
+    </div>
 
 
-
-
-            <div class="jumbotron">
-                <h1 class="display-4">Test Accuracy</h1>
-                <h1 class="display-4">@Model.Accuracy</h1>
-                <br />
-                <h4 class="display-5">Number of Tests Compared: @Model.NumberOfTests</h4>
-                <p class="lead">Below line chart shows the change in accuracy over time.</p>
-            </div>
-
-            
-
-
-
-            <!--Row 2-->
+<!--Row 2-->
             <div class="row">
                 <div class="col-8">
                     <p class="text-center">Accuracy over time</p>
@@ -163,7 +95,13 @@
                 </div>
 
 
-                <div class="col-4">
+
+    <div class="row text-center">
+        <img src="~/Content/Img/LineChartAccuracy.PNG" height="400" class="ChartBox mx-auto" />
+    </div>
+
+
+<div class="col-4">
                     <p class="text-center">Monthly Accuracy Rate </p>
                     <!--Doughnut Chart-->
                     <div>
@@ -208,46 +146,76 @@
                     </script>
                 </div>
 
+    <div class="jumbotron">
+        <h1 class="display-4">User information</h1>
+        <p class="lead">Below table lists detailed mobile app related user information.</p>
+    </div>
 
-            </div>
-            <br />
+    <div class="row text-center">
+        <br />
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">TestValue</th>
+                    <th scope="col">LabValue</th>
+                    <th scope="col">Accuracy</th>
+                    <th scope="col">DeviationRate</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var item in Model.LogViewModel.LogList)
+                    {
+                        <tr>
+                            <td>@item.RecordedDateTime.ToShortDateString()</td>
+                            <td>@item.TestValue</td>
+                            <td>@item.LabValue</td>
+                            <td>@item.Accuracy</td>
+                            <td>@item.DeviationRate</td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="jumbotron">
+        <h1 class="display-4">Clinic accuracy information</h1>
+        <p class="lead">Below chart lists detailed clinic accuracy information.</p>
+    </div>
+
+    <div id="c1"></div>
+    <script>
+        var data = [
+            { "province": "Clinic A", "population": 0.91 },
+            { "province": "Clinic B", "population": 0.96 },
+            { "province": "Clinic C", "population": 0.78 },
+            { "province": "Clinic D", "population": 0.85 },
 
 
+        ];
+        var Stat = G2.Stat;
+        var Frame = G2.Frame;
+        var frame = new Frame(data);
+        frame = Frame.sort(frame, 'population');
+        var chart = new G2.Chart({
+            id: 'c1',
+            forceFit: true,
+            height: 450,
+            plotCfg: {
+                margin: [20, 60, 20, 120]
+            }
+        });
+        chart.source(frame);
+        chart.axis('province', {
+            title: null
+        });
+        chart.coord('rect').transpose();
+        chart.interval().position('province*population');
+        chart.render();
+    </script>
 
-            <div class="row">
-                <div class="col-8">
-                    <p class="text-center">Table of details</p>
-                    <font size="3">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">TestValue</th>
-                                    <th scope="col">LabValue</th>
-                                    <th scope="col">Accuracy</th>
-                                    <th scope="col">DeviationRate</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @{
-                                    foreach (var item in Model.LogViewModel.LogList)
-                                    {
-                                        <tr>
-                                            <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                            <td>@item.TestValue</td>
-                                            <td>@item.LabValue</td>
-                                            <td>@item.Accuracy</td>
-                                            <td>@item.DeviationRate</td>
-
-                                        </tr>
-                                    }
-                                }
-                            </tbody>
-                        </table>
-                    </font>
-                </div>
-
-
-
-            </div>
-</body>
+</div>
