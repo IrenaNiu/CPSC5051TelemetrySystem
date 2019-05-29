@@ -262,7 +262,46 @@
                         </table>
                     </font>
                 </div>
-                
+                <div class="col-4">
+                    <br />
+                    <canvas id="myBarChart"></canvas>
+                </div>
+                <script>
+                    var ctx = document.getElementById("myBarChart").getContext('2d');
+                    var data = [67, 23, 10, 15, 8];
+                    var labels = ["3.3", "3.0", "2.3", "2.0", "1.0"];
+                    ctx.canvas.width = 400;
+                    ctx.canvas.height = 450;
+                    var myBarChart = new Chart(ctx, {
+                        type: 'horizontalBar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: "App version",
+                                data: data,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: false, // Instruct chart js to respond nicely.
+                            maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+                        }
+                    });
+                </script>
             </div>
 
             <!--Row 4-->
