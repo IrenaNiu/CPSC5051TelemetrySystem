@@ -34,16 +34,27 @@
         <div class="row">
 
             @{
-                if (ViewBag.ShowLeftNav != false)
+                switch (ViewBag.LeftNavType)
                 {
-                    <div class="col-1">
-                        <!--Left Side Bar-->
-                        <div class="sidenav2">
-                            <a>@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "btn btn-link" })</a>
-                            <a>@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "btn btn-link" })</a>
-                            <a>@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "btn btn-link" })</a>
-                        </div>
-                    </div>
+                    case null:
+                        {
+                            <div></div>
+                        }
+                        break;
+
+                    case "Report":
+                        {
+                            <div class="col-1">
+                                <!--Left Side Bar-->
+                                <div class="sidenav2">
+                                    <a>@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "btn btn-link" })</a>
+                                    <a>@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "btn btn-link" })</a>
+                                    <a>@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "btn btn-link" })</a>
+                                </div>
+                            </div>
+                            break;
+
+                        }
                 }
             }
 
