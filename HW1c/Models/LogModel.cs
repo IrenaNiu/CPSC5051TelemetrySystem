@@ -26,6 +26,11 @@ namespace HW1c.Models
         // Location
         public string Location { get; set; }
 
+        public string TestValue { get; set; }
+        public string LabValue { get; set; }
+        public string Accuracy { get; set; }
+        public string DeviationRate { get; set; }
+
         /// <summary>
         /// Constructor for Log Model
         /// Calls to Initialize to set initial settings
