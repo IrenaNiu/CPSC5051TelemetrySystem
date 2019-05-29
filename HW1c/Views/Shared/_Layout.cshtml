@@ -32,14 +32,20 @@
 
     <div class="body-content">
         <div class="row">
-            <div class="col-1">
-                <!--Left Side Bar-->
-                <div class="sidenav2">
-                    <a>@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "btn btn-link" })</a>
-                    <a>@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "btn btn-link" })</a>
-                    <a>@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "btn btn-link" })</a>
-                </div>
-            </div>
+
+            @{
+                if (ViewBag.ShowLeftNav != false)
+                {
+                    <div class="col-1">
+                        <!--Left Side Bar-->
+                        <div class="sidenav2">
+                            <a>@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "btn btn-link" })</a>
+                            <a>@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "btn btn-link" })</a>
+                            <a>@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "btn btn-link" })</a>
+                        </div>
+                    </div>
+                }
+            }
 
             <div class="col">
                 @RenderBody()
