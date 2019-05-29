@@ -3,28 +3,6 @@
 @{
     ViewBag.Title = "Read";
 }
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .img-magnifier-container {
-            position: relative;
-        }
-
-        .img-magnifier-glass {
-            position: absolute;
-            border: 3px solid #000;
-            border-radius: 50%;
-            cursor: none;
-            /*Set the size of the magnifier glass:*/
-            width: 120px;
-            height: 120px;
-        }
-    </style>
     <script>
         function magnify(imgID, zoom) {
             var img, glass, w, h, bw;
@@ -81,7 +59,6 @@
             }
         }
     </script>
-</head>
 
 <div class="img-magnifier-container">
     <img id="myimage" src="~/Content/Img/testPhotoGood.png" width="350" height="400">
