@@ -12,6 +12,7 @@ namespace HW1c.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.LeftNavType = "Home";
             return View();
         }
         
