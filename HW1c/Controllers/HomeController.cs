@@ -18,6 +18,7 @@ namespace HW1c.Controllers
         
         public ActionResult Library()
         {
+            ViewBag.LeftNavType = "Home";
             var myViewModel = new LibViewModel();
 
             myViewModel.PhotoViewModel = PhotoBackend.Instance.Index();
@@ -32,6 +33,7 @@ namespace HW1c.Controllers
         /// <returns></returns>
         public ActionResult Read(string id = null)
         {
+            ViewBag.LeftNavType = "Home";
             // If no ID passed in, jump to the Index page
             if (id == null)
             {
