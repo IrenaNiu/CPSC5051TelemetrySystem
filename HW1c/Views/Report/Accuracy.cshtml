@@ -214,43 +214,40 @@
 
 
 
-            <div class="jumbotron">
-                <h1 class="display-4">User information</h1>
-                <p class="lead">Below table lists detailed mobile app related user information.</p>
-            </div>
-
-            <div class="row text-center">
-                <br />
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">TestValue</th>
-                            <th scope="col">LabValue</th>
-                            <th scope="col">Accuracy</th>
-                            <th scope="col">DeviationRate</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            foreach (var item in Model.LogViewModel.LogList)
-                            {
+            <div class="row">
+                <div class="col-8">
+                    <p class="text-center">Table of details</p>
+                    <font size="3">
+                        <table class="table table-hover">
+                            <thead>
                                 <tr>
-                                    <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                    <td>@item.TestValue</td>
-                                    <td>@item.LabValue</td>
-                                    <td>@item.Accuracy</td>
-                                    <td>@item.DeviationRate</td>
-
+                                    <th scope="col">Date</th>
+                                    <th scope="col">TestValue</th>
+                                    <th scope="col">LabValue</th>
+                                    <th scope="col">Accuracy</th>
+                                    <th scope="col">DeviationRate</th>
                                 </tr>
-                            }
-                        }
-                    </tbody>
-                </table>
+                            </thead>
+                            <tbody>
+                                @{
+                                    foreach (var item in Model.LogViewModel.LogList)
+                                    {
+                                        <tr>
+                                            <td>@item.RecordedDateTime.ToShortDateString()</td>
+                                            <td>@item.TestValue</td>
+                                            <td>@item.LabValue</td>
+                                            <td>@item.Accuracy</td>
+                                            <td>@item.DeviationRate</td>
+
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </font>
+                </div>
+
+
 
             </div>
-
-            
-
-        </div>
 </body>
