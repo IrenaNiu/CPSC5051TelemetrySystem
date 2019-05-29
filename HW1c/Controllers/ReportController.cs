@@ -43,5 +43,10 @@ namespace HW1c.Controllers
 
             return View(myViewModel);
         }
+
+        public ActionResult ViewTry()
+        {
+            return View();
+        }
     }
 }
