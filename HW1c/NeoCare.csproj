@@ -124,6 +124,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LibViewModel.cs" />
+    <Compile Include="Models\UserCategoryCountModel.cs" />
     <Compile Include="Models\LogModel.cs" />
     <Compile Include="Models\LogViewModel.cs" />
     <Compile Include="Models\PhotoModel.cs" />
