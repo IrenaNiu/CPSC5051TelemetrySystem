@@ -4,6 +4,11 @@
 @{
     ViewBag.Title = "Index";
 }
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+</head>
+
 <div class="container-fluid">
     <br />
     <h2 class="text-primary">App Usage Report</h2>
@@ -13,7 +18,7 @@
 <div class="container">
     <div class="row">
         <div class="col-2">
-            <div class="nav flex-column" >
+            <div class="nav flex-column">
                 <button type="button" class="btn btn-outline-light btn-lg disabled" aria-disabled="true">@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</button>
                 <br />
                 <button type="button" class="btn btn-outline-secondary btn-lg active" aria-pressed="true">@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</button>
@@ -28,10 +33,9 @@
                 <br />
                 <p class="lead">Below line chart shows the increase in mobile app users over time.</p>
             </div>
+            
 
-            <div class="row text-center">
-                <img src="~/Content/Img/LineChart.PNG" height="400" class="ChartBox mx-auto" />
-            </div>
+
 
             <div class="jumbotron">
                 <h1 class="display-4">User information</h1>
@@ -58,7 +62,7 @@
                                     <td>@item.AppVersion</td>
                                     <td>@item.PhoneID</td>
                                     <td>@item.Location</td>
-                                    
+
                                 </tr>
                             }
                         }
@@ -69,4 +73,3 @@
         </div>
     </div>
 </div>
-
