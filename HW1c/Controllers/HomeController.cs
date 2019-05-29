@@ -15,10 +15,17 @@ namespace HW1c.Controllers
             ViewBag.LeftNavType = "Home";
             return View();
         }
-        
+
+        [HttpPost]
+        public ActionResult Index(string id)
+        {
+            ViewBag.LeftNavType = "Doctor";
+            return View();
+        }
+
         public ActionResult Library()
         {
-            ViewBag.LeftNavType = "Home";
+            ViewBag.LeftNavType = "Photo";
             var myViewModel = new LibViewModel();
 
             myViewModel.PhotoViewModel = PhotoBackend.Instance.Index();
