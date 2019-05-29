@@ -68,8 +68,14 @@
 
         <!--Main Content Area-->
         <div class="main text-center">
+
             <h2>Test Accuracy Report</h2>
+
             <br />
+
+
+
+
             <div class="jumbotron">
                 <h1 class="display-4">Test Accuracy</h1>
                 <h1 class="display-4">@Model.Accuracy</h1>
@@ -81,6 +87,87 @@
             <div class="row text-center">
                 <img src="~/Content/Img/LineChartAccuracy.PNG" height="400" class="ChartBox mx-auto" />
             </div>
+
+
+
+            <!--Row 2-->
+            <div class="row">
+                <div class="col-8">
+                    <p class="text-center">Accuracy over time</p>
+                    <!-- Line Chart-->
+                    <canvas id="AccuracyLineChart" width="400" height="200"></canvas>
+                    <script>
+                        var ctx = document.getElementById('AccuracyLineChart');
+                        var myLineChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: ["June 1", "June 2", "June 3", "June 4", "June 5", "June 6", "June 7"],
+                                datasets: [{
+                                    label: "TOTAL",
+                                    data: [0.8, 0.76, 0.83, 0.89, 0.84, 0.93, 0.96],
+                                    backgroundColor: [
+                                        'rgba(51, 153, 255, 0.2)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(0, 10, 130, .7)',
+                                    ],
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: "Clinic A",
+                                    data: [0.7, 0.74, 0.72, 0.71, 0.77, 0.78, 0.81],
+                                    backgroundColor: [
+                                        'rgba(0, 0, 0, 0)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(200, 99, 132, .7)',
+                                    ],
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: "Clinic B",
+                                    data: [0.87, 0.84, 0.86, 0.91, 0.87, 0.95, 0.98],
+                                    backgroundColor: [
+                                        'rgba(0, 0, 0, 0)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(86, 0, 198, 0.6)',
+                                    ],
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: "Clinic C",
+                                    data: [0.76, 0.74, 0.71, 0.78, 0.80, 0.89, 0.91],
+                                    backgroundColor: [
+                                        'rgba(0, 0, 0, 0)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 216, 41, .7)',
+                                    ],
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: "Clinic D",
+                                    data: [0.86, 0.9, 0.92, 0.97, 0.92, 0.98, 0.99],
+                                    backgroundColor: [
+                                        'rgba(0, 0, 0, 0)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(99, 216, 41, .7)',
+                                    ],
+                                    borderWidth: 2
+                                }
+                                ]
+                            },
+
+                        });
+                    </script>
+                </div>
+                
+            </div>
+            <br />
+
+
 
             <div class="jumbotron">
                 <h1 class="display-4">User information</h1>
@@ -122,7 +209,7 @@
                 <h1 class="display-4">Clinic accuracy information</h1>
                 <p class="lead">Below chart lists detailed clinic accuracy information.</p>
             </div>
-            
+
             <div id="c1"></div>
             <script>
                 var data = [
@@ -153,6 +240,6 @@
                 chart.interval().position('province*population');
                 chart.render();
             </script>
-            
-    </div>
+
+        </div>
 </body>
