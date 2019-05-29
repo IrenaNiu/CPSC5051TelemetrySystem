@@ -13,6 +13,7 @@ namespace HW1c.Controllers
         // GET: Index
         public ActionResult Index()
         {
+            ViewBag.LeftNavType = "Report";
             var myViewModel = new ReportViewModel();
 
             myViewModel.LogViewModel = new LogBackend().Index();
