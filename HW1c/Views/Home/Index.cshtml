@@ -15,12 +15,17 @@
 
     @{
         var txt = "";
-        var hour = DateTime.Now.Hour;
-        if ( hour < 12) {
+        var hour = DateTime.Now.ToLocalTime().Hour;
+        if (hour < 12)
+        {
             txt = "Good Morning";
-        } else if (hour < 18) {
+        }
+        else if (hour < 18)
+        {
             txt = "Good Afternoon";
-        } else {
+        }
+        else
+        {
             txt = "Good Evening";
         }
     }
