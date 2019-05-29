@@ -131,135 +131,116 @@
 
             <!--Row 2-->
             <div class="row">
+                <div class="col-8">
+                    <p class="text-center">Numbers over time</p>
+                    <!-- Line Chart-->
+                    <canvas id="usageLineChart" width="400" height="200"></canvas>
+                    <script>
+                        var ctx = document.getElementById('usageLineChart');
+                        var myLineChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: ["June 1", "June 2", "June 3", "June 4", "June 5", "June 6", "June 7"],
+                                datasets: [{
+                                    label: "TOTAL",
+                                    data: [6, 17, 30, 53, 75, 93, 116],
+                                    backgroundColor: [
+                                        'rgba(51, 153, 255, 0.2)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(0, 10, 130, .7)',
+                                    ],
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: "Clinic A",
+                                    data: [2, 4, 8, 15, 23, 27, 34],
+                                    backgroundColor: [
+                                        'rgba(0, 0, 0, 0)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(200, 99, 132, .7)',
+                                    ],
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: "Clinic B",
+                                    data: [1, 3, 5, 10, 14, 22, 26],
+                                    backgroundColor: [
+                                        'rgba(0, 0, 0, 0)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(86, 0, 198, 0.6)',
+                                    ],
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: "Clinic C",
+                                    data: [0, 2, 3, 5, 9, 12, 15],
+                                    backgroundColor: [
+                                        'rgba(0, 0, 0, 0)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 216, 41, .7)',
+                                    ],
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: "Clinic D",
+                                    data: [3, 8, 14, 23, 29, 32, 41],
+                                    backgroundColor: [
+                                        'rgba(0, 0, 0, 0)',
+                                    ],
+                                    borderColor: [
+                                        'rgba(99, 216, 41, .7)',
+                                    ],
+                                    borderWidth: 2
+                                }
+                                ]
+                            },
+
+                        });
+                    </script>
+                </div>
+                <div class="col-4">
+                    <p>Pie chart</p>
+                    <img src="~/Content/Img/PieChart1.PNG" height="300" class="ChartBox mx-auto" />
+                </div>
+            </div>
+
+            <!--Row 3-->
+            <div class="row">
                 <div class="col">
                     <p>This is a table</p>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">App Version</th>
+                                <th scope="col">Phone ID</th>
+                                <th scope="col">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in Model.LogViewModel.LogList)
+                                {
+                                    <tr>
+                                        <td>@item.RecordedDateTime.ToShortDateString()</td>
+                                        <td>@item.AppVersion</td>
+                                        <td>@item.PhoneID</td>
+                                        <td>@item.Location</td>
+
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
                 </div>
                 <div class="col">
-                    <p>This is a table</p>
+                    <img src="~/Content/Img/PieChart1.PNG" height="300" class="ChartBox mx-auto" />
                 </div>
             </div>
         </div>
     </div>
 </body>
-
-<div class="container-fluid">
-    <br />
-    <h2 class="text-primary">App Usage Report</h2>
-    <br />
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col text-center">
-            <div class="jumbotron">
-                <h1 class="display-4">Active Users</h1>
-                <h1 class="display-4">@Model.NumberOfUsers</h1>
-                <br />
-                <p class="lead">Below line chart shows the increase in mobile app users over time.</p>
-            </div>
-
-            <!-- Line Chart-->
-            <canvas id="usageLineChart" width="400" height="200"></canvas>
-            <script>
-                var ctx = document.getElementById('usageLineChart');
-                var myLineChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ["June 1", "June 2", "June 3", "June 4", "June 5", "June 6", "June 7"],
-                        datasets: [{
-                            label: "TOTAL",
-                            data: [6, 17, 30, 53, 75, 93, 116],
-                            backgroundColor: [
-                                'rgba(51, 153, 255, 0.2)',
-                            ],
-                            borderColor: [
-                                'rgba(0, 10, 130, .7)',
-                            ],
-                            borderWidth: 2
-                        },
-                        {
-                            label: "Clinic A",
-                            data: [2, 4, 8, 15, 23, 27, 34],
-                            backgroundColor: [
-                                'rgba(0, 0, 0, 0)',
-                            ],
-                            borderColor: [
-                                'rgba(200, 99, 132, .7)',
-                            ],
-                            borderWidth: 2
-                        },
-                        {
-                            label: "Clinic B",
-                            data: [1, 3, 5, 10, 14, 22, 26],
-                            backgroundColor: [
-                                'rgba(0, 0, 0, 0)',
-                            ],
-                            borderColor: [
-                                'rgba(86, 0, 198, 0.6)',
-                            ],
-                            borderWidth: 2
-                        },
-                        {
-                            label: "Clinic C",
-                            data: [0, 2, 3, 5, 9, 12, 15],
-                            backgroundColor: [
-                                'rgba(0, 0, 0, 0)',
-                            ],
-                            borderColor: [
-                                'rgba(255, 216, 41, .7)',
-                            ],
-                            borderWidth: 2
-                        },
-                        {
-                            label: "Clinic D",
-                            data: [3, 8, 14, 23, 29, 32, 41],
-                            backgroundColor: [
-                                'rgba(0, 0, 0, 0)',
-                            ],
-                            borderColor: [
-                                'rgba(99, 216, 41, .7)',
-                            ],
-                            borderWidth: 2
-                        }
-                        ]
-                    },
-
-                });
-            </script>
-
-            <div class="jumbotron">
-                <h1 class="display-4">User information</h1>
-                <p class="lead">Below table lists detailed mobile app related user information.</p>
-            </div>
-
-            <div class="row text-center">
-                <br />
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">App Version</th>
-                            <th scope="col">Phone ID</th>
-                            <th scope="col">Location</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            foreach (var item in Model.LogViewModel.LogList)
-                            {
-                                <tr>
-                                    <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                    <td>@item.AppVersion</td>
-                                    <td>@item.PhoneID</td>
-                                    <td>@item.Location</td>
-
-                                </tr>
-                            }
-                        }
-                    </tbody>
-                </table>
-                <img src="~/Content/Img/PieChart1.PNG" height="300" class="ChartBox mx-auto" />
-            </div>
-        </div>
-    </div>
-</div>
