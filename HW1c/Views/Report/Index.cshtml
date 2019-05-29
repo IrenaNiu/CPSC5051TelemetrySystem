@@ -9,7 +9,7 @@
 <br />
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
     <style>
         body {
             font-family: "Lato", sans-serif;
@@ -203,10 +203,33 @@
                     </script>
                 </div>
                 <div class="col-4">
-                    <p>Pie chart</p>
-                    <img src="~/Content/Img/PieChart1.PNG" height="300" class="ChartBox mx-auto" />
+                    <p class="text-center">Pie chart</p>
+                    <!--Doughnut Chart-->
+                    <div style="height: 300px">
+                        <canvas id="myChart"></canvas>
+                    </div>                   
+                    <script>
+                        var ctx = document.getElementById("myChart").getContext('2d');
+                        ctx.height = 400;
+                        var myChart = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ["Clinic A", "Clinic B", "Clinic C", "Clinic D"],
+                                datasets: [{
+                                    data: [113, 81, 46, 150],    
+                                    backgroundColor: ['#2196f38c', '#f443368c', '#3f51b570', '#00968896'],                              
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false
+                            }
+                        });
+                    </script>
                 </div>
             </div>
+
+
 
             <!--Row 3-->
             <div class="row">
