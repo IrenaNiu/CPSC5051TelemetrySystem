@@ -25,6 +25,9 @@ namespace HW1c.Models
         // App Version string
         public string AppVersion { get; set; }
 
+        // the Name of the picture for the photo
+        public string PhotoFile { get; set; }
+
         public PhotoModel()
         {
             Initialize();
