@@ -182,40 +182,6 @@
 
     </div>
 
-    <div class="jumbotron">
-        <h1 class="display-4">Clinic accuracy information</h1>
-        <p class="lead">Below chart lists detailed clinic accuracy information.</p>
-    </div>
-
-    <div id="c1"></div>
-    <script>
-        var data = [
-            { "province": "Clinic A", "population": 0.91 },
-            { "province": "Clinic B", "population": 0.96 },
-            { "province": "Clinic C", "population": 0.78 },
-            { "province": "Clinic D", "population": 0.85 },
-
-
-        ];
-        var Stat = G2.Stat;
-        var Frame = G2.Frame;
-        var frame = new Frame(data);
-        frame = Frame.sort(frame, 'population');
-        var chart = new G2.Chart({
-            id: 'c1',
-            forceFit: true,
-            height: 450,
-            plotCfg: {
-                margin: [20, 60, 20, 120]
-            }
-        });
-        chart.source(frame);
-        chart.axis('province', {
-            title: null
-        });
-        chart.coord('rect').transpose();
-        chart.interval().position('province*population');
-        chart.render();
-    </script>
+    
 
 </div>
