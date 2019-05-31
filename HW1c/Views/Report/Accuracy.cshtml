@@ -33,6 +33,44 @@
 
         </div>
         <br />
+        <div class="row">
+
+
+
+            <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+            <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="~/Scripts/bootstrap-datetimepicker.min.css" />
+
+            <input size="16" type="text" id="datetimeStart" readonly class="form_datetime">
+            
+            <input size="16" type="text" id="datetimeEnd" readonly class="form_datetime">
+
+            <script type="text/javascript">
+                $("#datetimeStart").datetimepicker({
+                    format: 'yyyy-mm-dd',
+                    minView: 'month',
+                    
+                    autoclose: true,
+                    startDate: new Date()
+                }).on("click", function () {
+                    $("#datetimeStart").datetimepicker("setEndDate", $("#datetimeEnd").val())
+                });
+                $("#datetimeEnd").datetimepicker({
+                    format: 'yyyy-mm-dd',
+                    minView: 'month',
+                    
+                    autoclose: true,
+                    startDate: new Date()
+                }).on("click", function () {
+                    $("#datetimeEnd").datetimepicker("setStartDate", $("#datetimeStart".val()))
+                });
+            </script>
+
+
+
+
+        </div>
 
         <!--Row 2-->
         <div class="row">
