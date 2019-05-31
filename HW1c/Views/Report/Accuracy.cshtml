@@ -6,180 +6,171 @@
 }
 <br />
 <br />
-
-<!--Main Content Area-->
-<div class="text-center">
-    <h2>Test Accuracy Report</h2>
-    <br />
-    <div class="jumbotron">
-        <h1 class="display-4">Test Accuracy</h1>
-        <h1 class="display-4">@Model.Accuracy</h1>
+<div class="row">
+    <!--Main Content Area-->
+    <div class="main">
+        <h2>Test Accuracy Report</h2>
         <br />
-        <h4 class="display-5">Number of Tests Compared: @Model.NumberOfTests</h4>
-        <p class="lead">Below line chart shows the change in accuracy over time.</p>
-    </div>
+        
 
 
-<!--Row 2-->
-            <div class="row">
-                <div class="col-8">
-                    <p class="text-center">Accuracy over time</p>
-                    <!-- Line Chart-->
-                    <canvas id="AccuracyLineChart" width="400" height="200"></canvas>
-                    <script>
-                        var ctx = document.getElementById('AccuracyLineChart');
-                        var myLineChart = new Chart(ctx, {
-                            type: 'line',
-                            data: {
-                                labels: ["June 1", "June 2", "June 3", "June 4", "June 5", "June 6", "June 7"],
-                                datasets: [{
-                                    label: "TOTAL",
-                                    data: [0.8, 0.76, 0.83, 0.89, 0.84, 0.93, 0.96],
-                                    backgroundColor: [
-                                        'rgba(51, 153, 255, 0.2)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(0, 10, 130, .7)',
-                                    ],
-                                    borderWidth: 2
-                                },
-                                {
-                                    label: "Clinic A",
-                                    data: [0.7, 0.74, 0.72, 0.71, 0.77, 0.78, 0.81],
-                                    backgroundColor: [
-                                        'rgba(0, 0, 0, 0)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(200, 99, 132, .7)',
-                                    ],
-                                    borderWidth: 2
-                                },
-                                {
-                                    label: "Clinic B",
-                                    data: [0.87, 0.84, 0.86, 0.91, 0.87, 0.95, 0.98],
-                                    backgroundColor: [
-                                        'rgba(0, 0, 0, 0)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(86, 0, 198, 0.6)',
-                                    ],
-                                    borderWidth: 2
-                                },
-                                {
-                                    label: "Clinic C",
-                                    data: [0.76, 0.74, 0.71, 0.78, 0.80, 0.89, 0.91],
-                                    backgroundColor: [
-                                        'rgba(0, 0, 0, 0)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(255, 216, 41, .7)',
-                                    ],
-                                    borderWidth: 2
-                                },
-                                {
-                                    label: "Clinic D",
-                                    data: [0.86, 0.9, 0.92, 0.97, 0.92, 0.98, 0.99],
-                                    backgroundColor: [
-                                        'rgba(0, 0, 0, 0)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(99, 216, 41, .7)',
-                                    ],
-                                    borderWidth: 2
-                                }
-                                ]
+        <!--Row 2-->
+        <div class="row">
+            <div class="col-8">
+                <p class="text-center">Accuracy over time</p>
+                <!-- Line Chart-->
+                <canvas id="AccuracyLineChart" width="400" height="200"></canvas>
+                <script>
+                    var ctx = document.getElementById('AccuracyLineChart');
+                    var myLineChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ["June 1", "June 2", "June 3", "June 4", "June 5", "June 6", "June 7"],
+                            datasets: [{
+                                label: "TOTAL",
+                                data: [0.8, 0.76, 0.83, 0.89, 0.84, 0.93, 0.96],
+                                backgroundColor: [
+                                    'rgba(51, 153, 255, 0.2)',
+                                ],
+                                borderColor: [
+                                    'rgba(0, 10, 130, .7)',
+                                ],
+                                borderWidth: 2
                             },
-
-                        });
-                    </script>
-                </div>
-
-
-
-    
-
-
-<div class="col-4">
-                    <p class="text-center">Monthly Accuracy Rate </p>
-                    <!--Doughnut Chart-->
-                    <div>
-                        <canvas id="mybarChart"></canvas>
-                    </div>
-                    <script>
-                        var ctx = document.getElementById("mybarChart").getContext('2d');
-                        
-                        var data = [0.78, 0.90, 0.80, 0.95];
-                        var labels = ["Clinic A", "Clinic B", "Clinic C", "Clinic D"];
-                        ctx.canvas.width = 400;
-                        ctx.canvas.height = 350;
-                        var myBarChart = new Chart(ctx, {
-                            type: 'horizontalBar',
-                            data: {
-                                labels: labels,
-                                datasets: [{
-                                    label: "Accuracy Rate",
-                                    data: data,
-                                    backgroundColor: [
-                                        'rgba(255, 99, 132, 0.2)',
-                                        'rgba(54, 162, 235, 0.2)',
-                                        'rgba(255, 206, 86, 0.2)',
-                                        'rgba(75, 192, 192, 0.2)',
-                                        'rgba(153, 102, 255, 0.2)'
-                                    ],
-                                    borderColor: [
-                                        'rgba(255,99,132,1)',
-                                        'rgba(54, 162, 235, 1)',
-                                        'rgba(255, 206, 86, 1)',
-                                        'rgba(75, 192, 192, 1)',
-                                        'rgba(153, 102, 255, 1)'
-                                    ],
-                                    borderWidth: 2
-                                }]
+                            {
+                                label: "Clinic A",
+                                data: [0.7, 0.74, 0.72, 0.71, 0.77, 0.78, 0.81],
+                                backgroundColor: [
+                                    'rgba(0, 0, 0, 0)',
+                                ],
+                                borderColor: [
+                                    'rgba(200, 99, 132, .7)',
+                                ],
+                                borderWidth: 2
                             },
-                            options: {
-                                responsive: false, // Instruct chart js to respond nicely.
-                                maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+                            {
+                                label: "Clinic B",
+                                data: [0.87, 0.84, 0.86, 0.91, 0.87, 0.95, 0.98],
+                                backgroundColor: [
+                                    'rgba(0, 0, 0, 0)',
+                                ],
+                                borderColor: [
+                                    'rgba(86, 0, 198, 0.6)',
+                                ],
+                                borderWidth: 2
+                            },
+                            {
+                                label: "Clinic C",
+                                data: [0.76, 0.74, 0.71, 0.78, 0.80, 0.89, 0.91],
+                                backgroundColor: [
+                                    'rgba(0, 0, 0, 0)',
+                                ],
+                                borderColor: [
+                                    'rgba(255, 216, 41, .7)',
+                                ],
+                                borderWidth: 2
+                            },
+                            {
+                                label: "Clinic D",
+                                data: [0.86, 0.9, 0.92, 0.97, 0.92, 0.98, 0.99],
+                                backgroundColor: [
+                                    'rgba(0, 0, 0, 0)',
+                                ],
+                                borderColor: [
+                                    'rgba(99, 216, 41, .7)',
+                                ],
+                                borderWidth: 2
                             }
-                        });
-                    </script>
+                            ]
+                        },
+
+                    });
+                </script>
+            </div>
+
+
+
+
+
+
+            <div class="col-4">
+                <p class="text-center">Monthly Accuracy Rate </p>
+                <!--Doughnut Chart-->
+                <div>
+                    <canvas id="mybarChart"></canvas>
                 </div>
+                <script>
+                    var ctx = document.getElementById("mybarChart").getContext('2d');
 
-    <div class="jumbotron">
-        <h1 class="display-4">User information</h1>
-        <p class="lead">Below table lists detailed mobile app related user information.</p>
-    </div>
+                    var data = [0.78, 0.90, 0.80, 0.95];
+                    var labels = ["Clinic A", "Clinic B", "Clinic C", "Clinic D"];
+                    ctx.canvas.width = 400;
+                    ctx.canvas.height = 350;
+                    var myBarChart = new Chart(ctx, {
+                        type: 'horizontalBar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: "Accuracy Rate",
+                                data: data,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: false, // Instruct chart js to respond nicely.
+                            maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+                        }
+                    });
+                </script>
+            </div>
 
-    <div class="row text-center">
-        <br />
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Date</th>
-                    <th scope="col">TestValue</th>
-                    <th scope="col">LabValue</th>
-                    <th scope="col">Accuracy</th>
-                    <th scope="col">DeviationRate</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{
-                    foreach (var item in Model.LogViewModel.LogList)
-                    {
+            
+
+            <div class="row text-center">
+                <br />
+                <table class="table table-hover">
+                    <thead>
                         <tr>
-                            <td>@item.RecordedDateTime.ToShortDateString()</td>
-                            <td>@item.TestValue</td>
-                            <td>@item.LabValue</td>
-                            <td>@item.Accuracy</td>
-                            <td>@item.DeviationRate</td>
-
+                            <th scope="col">Date</th>
+                            <th scope="col">TestValue</th>
+                            <th scope="col">LabValue</th>
+                            <th scope="col">Accuracy</th>
+                            <th scope="col">DeviationRate</th>
                         </tr>
-                    }
-                }
-            </tbody>
-        </table>
+                    </thead>
+                    <tbody>
+                        @{
+                            foreach (var item in Model.LogViewModel.LogList)
+                            {
+                                <tr>
+                                    <td>@item.RecordedDateTime.ToShortDateString()</td>
+                                    <td>@item.TestValue</td>
+                                    <td>@item.LabValue</td>
+                                    <td>@item.Accuracy</td>
+                                    <td>@item.DeviationRate</td>
 
-    </div>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
 
-    
+            </div>
 
-</div>
+
+
+        </div>
