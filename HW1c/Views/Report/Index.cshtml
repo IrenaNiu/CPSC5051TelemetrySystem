@@ -33,7 +33,7 @@
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3 ">
                 <div class="card card-block">
                     <div class="clearfix">
-                        <i class="fa fa-user-o float-right icon-grey-big"></i>
+                        <i class="fa fa-camera float-right icon-grey-big"></i>
                     </div>
                     <p class="card-text text-center text-success">Photos</p>
                     <p class="card-title font-weight-normal text-success text-center">1874</p>
@@ -48,7 +48,7 @@
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3">
                 <div class="card card-block">
                     <div class="clearfix">
-                        <i class="fa fa-shopping-cart float-right icon-grey-big"></i>
+                        <i class="fa fa-hospital-o float-right icon-grey-big"></i>
                     </div>
                     <p class="card-text text-center text-info">Clinics</p>
                     <p class="card-title font-weight-normal text-info text-center">4</p>
@@ -61,7 +61,7 @@
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3">
                 <div class="card card-block">
                     <div class="clearfix">
-                        <i class="fa fa-bar-chart float-right icon-grey-big"></i>
+                        <i class="fa fa-download float-right icon-grey-big"></i>
                     </div>
                     <p class="card-text text-center text-danger">Installations</p>
                     <p class="card-title font-weight-normal text-danger text-center">382</p>
@@ -76,75 +76,63 @@
         <!--Row 2-->
         <div class="row">
             <div class="col-8">
+
                 <p class="text-center">Numbers over time</p>
                 <!-- Line Chart-->
                 <canvas id="usageLineChart" width="400" height="200"></canvas>
                 <script>
-                    var ctx = document.getElementById('usageLineChart');
-                    var myLineChart = new Chart(ctx, {
+                    var chart_labels = ['week 1', 'week 2', 'week 3', 'week 4', 'week 5', 'week 6', 'week 7'];
+                    var data_total = [6, 17, 30, 53, 75, 93, 116];
+                    var data_A = [2, 4, 8, 15, 23, 27, 34];
+                    var data_B = [1, 3, 5, 10, 14, 22, 26];
+                    var data_C = [0, 2, 3, 5, 9, 12, 15];
+                    var data_D = [3, 8, 14, 23, 29, 32, 41];
+                    var ctx = $('#usageLineChart'); // var ctx = document.getElementById('usageLineChart');
+                    var config = {
                         type: 'line',
                         data: {
-                            labels: ["June 1", "June 2", "June 3", "June 4", "June 5", "June 6", "June 7"],
+                            labels: chart_labels,
                             datasets: [{
                                 label: "TOTAL",
-                                data: [6, 17, 30, 53, 75, 93, 116],
-                                backgroundColor: [
-                                    'rgba(51, 153, 255, 0.2)',
-                                ],
-                                borderColor: [
-                                    'rgba(0, 10, 130, .7)',
-                                ],
+                                data: data_total,
+                                backgroundColor: ['rgba(51, 153, 255, 0.2)',],
+                                borderColor: ['rgba(0, 10, 130, .7)',],
                                 borderWidth: 2
                             },
                             {
                                 label: "Clinic A",
-                                data: [2, 4, 8, 15, 23, 27, 34],
-                                backgroundColor: [
-                                    'rgba(0, 0, 0, 0)',
-                                ],
-                                borderColor: [
-                                    'rgba(200, 99, 132, .7)',
-                                ],
+                                data: data_A,
+                                backgroundColor: ['rgba(0, 0, 0, 0)',],
+                                borderColor: ['rgba(200, 99, 132, .7)',],
                                 borderWidth: 2
                             },
                             {
                                 label: "Clinic B",
-                                data: [1, 3, 5, 10, 14, 22, 26],
-                                backgroundColor: [
-                                    'rgba(0, 0, 0, 0)',
-                                ],
-                                borderColor: [
-                                    'rgba(86, 0, 198, 0.6)',
-                                ],
+                                data: data_B,
+                                backgroundColor: ['rgba(0, 0, 0, 0)',],
+                                borderColor: ['rgba(86, 0, 198, 0.6)',],
                                 borderWidth: 2
                             },
                             {
                                 label: "Clinic C",
-                                data: [0, 2, 3, 5, 9, 12, 15],
-                                backgroundColor: [
-                                    'rgba(0, 0, 0, 0)',
-                                ],
-                                borderColor: [
-                                    'rgba(255, 216, 41, .7)',
-                                ],
+                                data: data_C,
+                                backgroundColor: ['rgba(0, 0, 0, 0)',],
+                                borderColor: ['rgba(255, 216, 41, .7)',],
                                 borderWidth: 2
                             },
                             {
                                 label: "Clinic D",
-                                data: [3, 8, 14, 23, 29, 32, 41],
-                                backgroundColor: [
-                                    'rgba(0, 0, 0, 0)',
-                                ],
-                                borderColor: [
-                                    'rgba(99, 216, 41, .7)',
-                                ],
+                                data: data_D,
+                                backgroundColor: ['rgba(0, 0, 0, 0)',],
+                                borderColor: ['rgba(99, 216, 41, .7)',],
                                 borderWidth: 2
-                            }
-                            ]
-                        },
+                            }]
+                        }
+                    };    
+                    var myLineChart = new Chart(ctx, config);
 
-                    });
                 </script>
+
             </div>
             <div class="col-4">
                 <p class="text-center">Clinic comparison</p>
