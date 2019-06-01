@@ -73,24 +73,10 @@
         </div>
         <br />
 
-        <div class="row">
-            <!-- JQuery doesn't call popper automatically -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                User
-            </button>
-            <div class="dropdown-menu" >
-                <a class="dropdown-item" href="#">Users</a>
-                <a class="dropdown-item" href="#">Photos</a>
-            </div>
-            <h4 class="text-center" id="title1">User Numbers Over Time</h4>
-        </div>
-
         <!--Row 2-->
         <div class="row">
             <div class="col-8">
-
+                <h4 class="text-center" id="title1">User Numbers Over Time</h4>
                 <!-- Line Chart-->
                 <canvas id="usageLineChart" width="400" height="200"></canvas>
                 <script>
