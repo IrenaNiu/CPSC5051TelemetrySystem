@@ -31,7 +31,7 @@
             </div>
             <!-- Photos# card -->
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 mb-3 ">
-                <div class="card card-block">
+                <div class="card card-block" id="photos">
                     <div class="clearfix">
                         <i class="fa fa-camera float-right icon-grey-big"></i>
                     </div>
@@ -77,15 +77,14 @@
             <!-- JQuery doesn't call popper automatically -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                User
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-menu" >
+                <a class="dropdown-item" href="#">Users</a>
+                <a class="dropdown-item" href="#">Photos</a>
             </div>
-            <p class="text-center">Numbers over time</p>
+            <h4 class="text-center" id="title1">User Numbers Over Time</h4>
         </div>
 
         <!--Row 2-->
@@ -145,9 +144,15 @@
                     };
                     var myLineChart = new Chart(ctx, config);
 
+                    function clickTitle1() {
+                        $('#title1').html('photos');
+
+                    }
+                    $('#photos').click(clickTitle1);
                 </script>
 
             </div>
+
             <div class="col-4">
                 <p class="text-center">Clinic comparison</p>
                 <!--Doughnut Chart-->
