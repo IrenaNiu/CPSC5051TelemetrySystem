@@ -5,40 +5,53 @@
     ViewBag.Title = "Library";
 }
 
-<br/>
+
+<br />
 <br />
 <h1>Photo library</h1>
 <p> Table below lists photo info recorded by mobile app. Select a photo ID to view details.</p>
 
+<script>
+    function myFunction(photoFile) {
+
+        document.getElementById("showPhoto").innerHTML = "<img src= " + photoFile + " width = 300 height = 350/>";
+    }
+</script>
+
 <div class="row text-center">
     <br />
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">PhotoID</th>
-                <th scope="col">Location</th>
-                <th scope="col">Date</th>
-                <th scope="col">Phone ID</th>
-                <th scope="col">App Version</th>
-                <th scope="col">Photo</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                foreach (var item in Model.PhotoViewModel.PhotoList)
-                {
-                    <tr>
-                        <td>@Html.ActionLink(item.PhotoID, "Read", new { id = item.PhotoID }, new { @class = "small" })</td>
-                        <td>@item.Location</td>
-                        <td>@item.RecordedDateTime.ToShortDateString()</td>
-                        <td>@item.PhoneID</td>
-                        <td>@item.AppVersion</td>
-                        <td><img src="~/Content/Img/@item.PhotoFile" width="20" height="20"></img></td>
+    <div id="showPhoto" class="col-3">
+        
+    </div>
 
-                    </tr>
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">PhotoID</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Phone ID</th>
+                    <th scope="col">App Version</th>
+                    <th scope="col">Photo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var item in Model.PhotoViewModel.PhotoList)
+                    {
+                        <tr>                        
+                            <td onclick = "myFunction('/Content/Img/' + '@item.PhotoFile')" class="btn-link">@item.PhotoID</td>
+                            <td>@item.Location</td>
+                            <td>@item.RecordedDateTime.ToShortDateString()</td>
+                            <td>@item.PhoneID</td>
+                            <td>@item.AppVersion</td>
+                            <td><img src="~/Content/Img/@item.PhotoFile" width="20" height="20"></img></td>
+
+                        </tr>
+                    }
                 }
-            }
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
-
