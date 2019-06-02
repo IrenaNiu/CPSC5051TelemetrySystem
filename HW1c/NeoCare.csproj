@@ -143,6 +143,7 @@
     <Content Include="Content\Img\LineChart.PNG" />
     <Content Include="Content\Img\LineChartAccuracy.PNG" />
     <Content Include="Content\Img\Logo.png" />
+    <Content Include="Content\Img\map.PNG" />
     <Content Include="Content\Img\MD_chart1.png" />
     <Content Include="Content\Img\MD_chart2.png" />
     <Content Include="Content\Img\MD_chart3.png" />
