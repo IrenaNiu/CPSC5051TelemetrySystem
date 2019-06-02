@@ -15,6 +15,7 @@
     function myFunction(photoFile) {
 
         document.getElementById("showPhoto").innerHTML = "<img src= " + photoFile + " width = 300 height = 350/>";
+        $('#maglass').show();
     }
 </script>
 
@@ -22,7 +23,7 @@
     <br />
     <div id="showPhoto" class="col-3"></div>
     <div>
-        <button class="btn btn-primary btn-lg" height="20" onclick='magnify("myimage", 3)'><i class="fa fa-search"></i></button>
+        <button class="btn btn-primary btn-lg" id="maglass" style="display:none" onclick='magnify("myimage", 3)'><i class="fa fa-search"></i></button>
     </div>
     <div class="col">
         <table class="table table-striped">
