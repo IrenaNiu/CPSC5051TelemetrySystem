@@ -207,36 +207,35 @@
                 <p></p>
                 <!--Doughnut Chart-->
                 <div>
-                    <canvas id="myChart"></canvas>
+                    <canvas id="usagePieChart"></canvas>
                 </div>
                 <script>
-                    var ctx = document.getElementById("myChart").getContext('2d');
-                    ctx.canvas.width = 310;
-                    ctx.canvas.height = 310;
-                    var myChart = new Chart(ctx, {
-                        type: 'doughnut',
-                        data: {
-                            labels: [
-                                @{
+                    var ctx = document.getElementById("usagePieChart").getContext('2d');
+                    var pie_labels = [@{
                                     var ClinicString = "";
                                     foreach (var clinic in Model.UserCategoryList)
                                     {
                                         ClinicString = ClinicString + "'"+clinic.Clinic +"'"+ ",";
                                     }
                                     @Html.Raw(ClinicString)
-                                }
-                            ],
-                            datasets: [{
-                                data: [
-                                @{
-                                    var ClinicNumber = "";
+                                }];
+                    var pie_data =[@{
+                         var ClinicNumber = "";
                                     foreach (var clinicNumber in Model.UserCategoryList)
                                     {
                                         ClinicNumber = ClinicNumber + clinicNumber.UserNumber + ",";
                                     }
                                     @ClinicNumber
-                                }
-                                ],
+                                }];
+                    ctx.canvas.width = 310;
+                    ctx.canvas.height = 310;
+
+                    var config = {
+                        type: 'doughnut',
+                        data: {
+                            labels: pie_labels,
+                            datasets: [{
+                                data: pie_data,
                                 backgroundColor: ['rgba(255,99,132,.7)', 'rgba(54, 162, 235, .7)', 'rgba(255, 206, 86, .7)', 'rgba(75, 192, 192, .7)'],
                             }]
                         },
@@ -244,7 +243,8 @@
                             responsive: true,
                             maintainAspectRatio: false
                         }
-                    });
+                    };
+                    var myChart = new Chart(ctx, config);
                 </script>
             </div>
         </div>
