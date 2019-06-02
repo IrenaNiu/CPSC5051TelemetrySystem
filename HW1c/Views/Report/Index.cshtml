@@ -133,11 +133,27 @@
                     };
                     var myLineChart = new Chart(ctx, config);
 
-                    function clickTitle1() {
-                        $('#title1').html('photos');
+                    function clickUser() {
+                        $('#title1').html('Number of App Users Over Time');
 
                     }
-                    $('#photos').click(clickTitle1);
+                    function clickPhoto() {
+                        $('#title1').html('Number of Uploaded Photos Over Time');
+
+                    }
+                    function clickClinic() {
+                        $('#title1').html('Locations of Active Community Clinics');
+
+                    }
+                    function clickInstall() {
+                        $('#title1').html('Number of App Installations Over Time');
+
+                    }
+                    $('#users').click(clickUser);
+                    $('#photos').click(clickPhoto);
+                    $('#clinics').click(clickClinic);
+                    $('#installs').click(clickInstall);
+
                 </script>
 
             </div>
