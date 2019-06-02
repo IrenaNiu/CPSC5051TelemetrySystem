@@ -89,7 +89,7 @@
                     var data_B = [1, 3, 5, 10, 14, 22, 26];
                     var data_C = [0, 2, 3, 5, 9, 12, 15];
                     var data_D = [3, 8, 14, 23, 29, 32, 41];
-                    var ctx = $('#usageLineChart'); // var ctx = document.getElementById('usageLineChart');
+                    var ctx = $('#usageLineChart'); // var ctx = document.getElementById("usageLineChart").getContext('2d');                   
                     var config = {
                         type: 'line',
                         data: {
@@ -135,10 +135,31 @@
 
                     function clickUser() {
                         $('#title1').html('Number of App Users Over Time');
+                        var data = myLineChart.config.data;
+                        data.datasets[0].data = data_total;
+                        data.datasets[1].data = data_A;
+                        data.datasets[2].data = data_B;
+                        data.datasets[3].data = data_C;
+                        data.datasets[4].data = data_D;
+                        data.labels = chart_labels;
+                        myLineChart.update();
 
                     }
                     function clickPhoto() {
                         $('#title1').html('Number of Uploaded Photos Over Time');
+                        var data_total = [11, 11, 11, 11, 11, 11, 11];
+                        var data_A = [2, 2, 2, 2, 2, 2, 2];
+                        var data_B = [1, 3, 5, 10, 14, 22, 26];
+                        var data_C = [0, 2, 3, 5, 9, 12, 15];
+                        var data_D = [3, 8, 14, 23, 29, 32, 41];
+                        var data = myLineChart.config.data;
+                        data.datasets[0].data = data_total;
+                        data.datasets[1].data = data_A;
+                        data.datasets[2].data = data_B;
+                        data.datasets[3].data = data_C;
+                        data.datasets[4].data = data_D;
+                        data.labels = chart_labels;
+                        myLineChart.update();
 
                     }
                     function clickClinic() {
@@ -147,8 +168,21 @@
                     }
                     function clickInstall() {
                         $('#title1').html('Number of App Installations Over Time');
-
+                        var data_total = [11, 11, 11, 11, 11, 11, 11];
+                        var data_A = [20, 20, 20, 20, 20, 20, 20];
+                        var data_B = [1, 3, 5, 10, 14, 22, 26];
+                        var data_C = [0, 2, 3, 5, 9, 12, 15];
+                        var data_D = [3, 8, 14, 23, 29, 32, 41];
+                        var data = myLineChart.config.data;
+                        data.datasets[0].data = data_total;
+                        data.datasets[1].data = data_A;
+                        data.datasets[2].data = data_B;
+                        data.datasets[3].data = data_C;
+                        data.datasets[4].data = data_D;
+                        data.labels = chart_labels;
+                        myLineChart.update();
                     }
+
                     $('#users').click(clickUser);
                     $('#photos').click(clickPhoto);
                     $('#clinics').click(clickClinic);
