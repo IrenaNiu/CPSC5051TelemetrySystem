@@ -20,10 +20,10 @@
 
 <div class="row text-center">
     <br />
-    <div id="showPhoto" class="col-3">
-        
+    <div id="showPhoto" class="col-3"></div>
+    <div>
+        <button class="btn btn-primary btn-lg" height="20" onclick='magnify("myimage", 3)'><i class="fa fa-search"></i></button>
     </div>
-
     <div class="col">
         <table class="table table-striped">
             <thead>
@@ -40,8 +40,8 @@
                 @{
                     foreach (var item in Model.PhotoViewModel.PhotoList)
                     {
-                        <tr>                        
-                            <td onclick = "myFunction('/Content/Img/' + '@item.PhotoFile')" class="btn-link">@item.PhotoID</td>
+                        <tr>
+                            <td onclick="myFunction('/Content/Img/' + '@item.PhotoFile')" class="btn-link">@item.PhotoID</td>
                             <td>@item.Location</td>
                             <td>@item.RecordedDateTime.ToShortDateString()</td>
                             <td>@item.PhoneID</td>
