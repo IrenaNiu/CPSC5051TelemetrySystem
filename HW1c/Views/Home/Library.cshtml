@@ -75,23 +75,27 @@
 </script>
 
 <style type="text/css">
-.imgThumbnail {
-    cursor: pointer;
-}
+    .imgThumbnail {
+        cursor: pointer;
+    }
 
-.imgThumbnail:hover {
-    -moz-box-shadow: 0 0 10px #ccc;
-    -webkit-box-shadow: 0 0 10px #ccc;
-    box-shadow: 0 0 10px #ccc;
-}
+        .imgThumbnail:hover {
+            -moz-box-shadow: 0 0 10px #ccc;
+            -webkit-box-shadow: 0 0 10px #ccc;
+            box-shadow: 0 0 10px #ccc;
+        }
 </style>
 
 <div class="row text-center">
     <br />
-    <div id="showPhoto" class="col-3"></div>
-    <div>
+    <div class="col-3">
+        <div id="showPhoto" class="row text-center">
+        </div>
+
         <button class="btn btn-primary btn-lg" id="maglass" style="display:none" onclick='magnify("myimage", 3)'><i class="fa fa-search"></i></button>
+
     </div>
+
     <div class="col">
         <table class="table table-striped">
             <thead>
@@ -110,8 +114,8 @@
                     {
                         <tr>
                             <td>@Html.ActionLink(item.PhotoID, "Read", new { id = item.PhotoID }, new { @class = "small" })</td>
-                            <td onclick="myFunction('/Content/Img/' + '@item.PhotoFile')" class="imgThumbnail">
-                                <img src="~/Content/Img/@item.PhotoFile" width="30" height="30">
+                            <td onclick="myFunction('/Content/Img/' + '@item.PhotoFile')">
+                                <img src="~/Content/Img/@item.PhotoFile" width="30" height="30" class="imgThumbnail">
                             </td>
                             <td>@item.Value</td>
                             <td>@item.Location</td>
