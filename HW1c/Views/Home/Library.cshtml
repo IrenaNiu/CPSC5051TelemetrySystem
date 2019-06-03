@@ -17,8 +17,9 @@
     <div class="col-1 text-left">
         <button onclick="photoStatus()" class="photoDropBtn">Filter</button>
         <div id="dropdown1" class="dropdown-content1">
-            <a href="#" onclick="filter('pass')">Pass</a>
-            <a href="#" onclick="filter('fail')">Fail</a>
+            <a href="#" onclick="location.href='@Url.Action("PhotoPass","Home")'">Pass</a>
+            <a href="#" onclick="location.href='@Url.Action("PhotoFail","Home")'">Fail</a>
+            <a href="#" onclick="location.href='@Url.Action("Library","Home")'">All</a>
         </div>
     </div>
 </div>
@@ -42,10 +43,6 @@
                 }
             }
         }
-    }
-
-    function filter(status) {
-
     }
 
     function photoPreview(photoFile) {
@@ -174,7 +171,7 @@
 <div class="row text-center">
     <br />
     <div class="col-7 text-left">
-        <table class="table table-striped">
+        <table id="photoTable" class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">PhotoID</th>
