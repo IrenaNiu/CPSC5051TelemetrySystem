@@ -43,14 +43,14 @@
             <link rel="stylesheet" type="text/css" href="~/Scripts/bootstrap-datetimepicker.min.css" />
 
             <input size="16" type="text" id="datetimeStart" readonly class="form_datetime">
-            
+
             <input size="16" type="text" id="datetimeEnd" readonly class="form_datetime">
 
             <script type="text/javascript">
                 $("#datetimeStart").datetimepicker({
                     format: 'yyyy-mm-dd',
                     minView: 'month',
-                    
+
                     autoclose: true,
                     startDate: new Date()
                 }).on("click", function () {
@@ -59,7 +59,7 @@
                 $("#datetimeEnd").datetimepicker({
                     format: 'yyyy-mm-dd',
                     minView: 'month',
-                    
+
                     autoclose: true,
                     startDate: new Date()
                 }).on("click", function () {
@@ -67,7 +67,7 @@
                 });
             </script>
 
-
+            <button type="button" class="btn btn-primary btn-lg"data-toggle="button" aria-pressed="false" autocomplete="off">Apply Date</button>
 
 
         </div>
