@@ -60,6 +60,42 @@
     }
 </script>
 
+<style>
+/* Green Back button */
+.back {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 6px 33px;
+    font-size: 12px;
+    cursor: pointer;
+    border-color: #4CAF50;
+    color: forestgreen;
+    border-radius: 5px;
+}
+
+.back:hover {
+    background-color: #4CAF50;
+    color:white;
+}
+
+/* Download button */
+.download {
+    background-color:dodgerblue;
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+/* Darker background on mouse-over */
+.download:hover {
+    background-color:royalblue;
+}
+</style>
+
 <div class="row text-center">
     <div class="col-4">
         <div class="img-magnifier-container">
@@ -75,8 +111,6 @@
         <br />
         <br />
         <br />
-
-
         <div class="row text-md-center">
             <div class="col-5 text-center">
                 <p>Photo Detailed Info</p>
@@ -133,6 +167,20 @@
             </div>
             <div class="col text-left">
                 @Html.DisplayFor(m => m.AppVersion)
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row text-md-center">
+            <div class="col-3 text-right">
+                <button type ="button" class="back" onclick="location.href='@Url.Action("Library", "Home")'">Go back</button>
+            </div>
+            <div class="col-3 text-left">
+                <!-- Add icon library -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                <!-- Auto width -->
+                <button class="download"><i class="fa fa-download"></i> Download</button>
             </div>
         </div>
     </div>
