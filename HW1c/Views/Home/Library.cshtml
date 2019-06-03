@@ -9,11 +9,11 @@
 <br />
 <br />
 <h1>Photo library</h1>
-<p> Table below lists photo info recorded by mobile app. Select a photo ID to view details.</p>
+<p> Table below lists photo info recorded by mobile app. Select a photo ID to view details. (Click the button to use the magnifying glass when it shows up.)</p>
 
 <script>
     function myFunction(photoFile) {
-        $("#showPhoto").attr("src", photoFile);
+        document.getElementById("showPhoto").innerHTML = "<img id='myimage' src= " + photoFile + " width = 300 height = 350/>";
         $('#maglass').show();
     }
 
@@ -75,35 +75,37 @@
 
 <div class="row text-center">
     <br />
-    <img id="showPhoto" src="" width=300 height=350 />
-    <div>
-        <button class="btn btn-primary btn-lg" id="maglass" style="display:none" onclick='magnify("showPhoto", 3)'><i class="fa fa-search"></i></button>
+    <div id="showPhoto" class="col-3"></div>
+    <div>        
+        <button class="btn btn-primary btn-lg" id="maglass" style="display:none" onclick='magnify("myimage", 3)'><i class="fa fa-search"></i></button>
     </div>
     <div class="col">
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">PhotoID</th>
+                    <th scope="col">Value</th>
+                    <th scope="col">Photo Thumbnail</th>
                     <th scope="col">Location</th>
                     <th scope="col">Date</th>
                     <th scope="col">Phone ID</th>
                     <th scope="col">App Version</th>
-                    <th scope="col">Photo</th>
                 </tr>
             </thead>
             <tbody>
                 @{
                     foreach (var item in Model.PhotoViewModel.PhotoList)
                     {
-                        <tr>
-                            <td onclick="myFunction('/Content/Img/' + '@item.PhotoFile')" class="btn-link">@item.PhotoID</td>
-                            <td>@item.Location</td>
-                            <td>@item.RecordedDateTime.ToShortDateString()</td>
-                            <td>@item.PhoneID</td>
-                            <td>@item.AppVersion</td>
-                            <td><img src="~/Content/Img/@item.PhotoFile" width="20" height="20"></img></td>
+                <tr>
+                    <td onclick="myFunction('/Content/Img/' + '@item.PhotoFile')" class="btn-link">@item.PhotoID</td>
+                    <td>@item.Value</td>
+                    <td><img src="~/Content/Img/@item.PhotoFile" width="20" height="20"></img></td>
+                    <td>@item.Location</td>
+                    <td>@item.RecordedDateTime.ToShortDateString()</td>
+                    <td>@item.PhoneID</td>
+                    <td>@item.AppVersion</td>
 
-                        </tr>
+                </tr>
                     }
                 }
             </tbody>
