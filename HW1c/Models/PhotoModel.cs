@@ -31,9 +31,6 @@ namespace HW1c.Models
         // Name of the picture for the photo
         public string PhotoFile { get; set; }
 
-        // Photo status of pass or failed to pass
-        public string PhotoStatus { get; set; }
-
         public PhotoModel()
         {
             Initialize();
