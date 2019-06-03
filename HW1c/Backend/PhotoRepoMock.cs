@@ -49,12 +49,19 @@ namespace HW1c.Backend
         /// </summary>
         public void Initialize()
         {
-            dataset.Add(new PhotoModel { Value = "13", Location = "A", RecordedDateTime = DateTime.Parse("04/23/2019"), PhoneID = "ABC", AppVersion = "1.0", PhotoFile="testBad1.png"});
-            dataset.Add(new PhotoModel { Value = "25", Location = "A", RecordedDateTime = DateTime.Parse("04/23/2019"), PhoneID = "MNO", AppVersion = "2.0", PhotoFile="testBad2.png" });
-            dataset.Add(new PhotoModel { Value = "11", Location = "B", RecordedDateTime = DateTime.Parse("04/25/2019"), PhoneID = "XYZ", AppVersion = "1.0", PhotoFile="testBad3.png" });
-            dataset.Add(new PhotoModel { Value = "28", Location = "B", RecordedDateTime = DateTime.Parse("04/25/2019"), PhoneID = "CDV", AppVersion = "2.0", PhotoFile="testGood1.png" });
-            dataset.Add(new PhotoModel { Value = "15", Location = "C", RecordedDateTime = DateTime.Parse("04/26/2019"), PhoneID = "BMF", AppVersion = "2.0", PhotoFile="testGood2.png" });
-            dataset.Add(new PhotoModel { Value = "27", Location = "C", RecordedDateTime = DateTime.Parse("04/26/2019"), PhoneID = "JJW", AppVersion = "2.0", PhotoFile="testGood3.png" });
+            dataset.Add(new PhotoModel { Value = "13", Location = "A", RecordedDateTime = DateTime.Parse("04/23/2019"), UserID = "1", PhoneID = "AA12CW776", AppVersion = "1.0", PhotoFile="testGood1.png"});
+            dataset.Add(new PhotoModel { Value = "25", Location = "A", RecordedDateTime = DateTime.Parse("04/23/2019"), UserID = "1", PhoneID = "AA13RF854", AppVersion = "2.0", PhotoFile= "testGood2.png"});
+            dataset.Add(new PhotoModel { Value = "11", Location = "B", RecordedDateTime = DateTime.Parse("04/25/2019"), UserID = "2", PhoneID = "AA16TG096", AppVersion = "3.0", PhotoFile= "testGood3.png"});
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "B", RecordedDateTime = DateTime.Parse("04/25/2019"), UserID = "2", PhoneID = "AA15TK076", AppVersion = "3.3", PhotoFile= "testBad1.png"});
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "C", RecordedDateTime = DateTime.Parse("04/26/2019"), UserID = "3", PhoneID = "AA16EG025", AppVersion = "2.0", PhotoFile= "testBad2.png"});
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "C", RecordedDateTime = DateTime.Parse("04/26/2019"), UserID = "4", PhoneID = "AA03TB093", AppVersion = "2.3", PhotoFile= "testBad3.png"});
+            dataset.Add(new PhotoModel { Value = "28", Location = "B", RecordedDateTime = DateTime.Parse("04/27/2019"), UserID = "4", PhoneID = "AA56RU937", AppVersion = "3.0", PhotoFile = "testGood1.png"});
+            dataset.Add(new PhotoModel { Value = "15", Location = "C", RecordedDateTime = DateTime.Parse("04/27/2019"), UserID = "5", PhoneID = "AA76BM405", AppVersion = "3.3", PhotoFile = "testGood2.png"});
+            dataset.Add(new PhotoModel { Value = "27", Location = "C", RecordedDateTime = DateTime.Parse("04/28/2019"), UserID = "5", PhoneID = "AA36TD842", AppVersion = "3.0", PhotoFile = "testGood3.png"});
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "A", RecordedDateTime = DateTime.Parse("04/28/2019"), UserID = "6", PhoneID = "AA39FH782", AppVersion = "2.3", PhotoFile = "testBad1.png"});
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "A", RecordedDateTime = DateTime.Parse("04/29/2019"), UserID = "6", PhoneID = "AA41KL853", AppVersion = "2.0", PhotoFile = "testBad2.png"});
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "B", RecordedDateTime = DateTime.Parse("04/29/2019"), UserID = "6", PhoneID = "AA89ES378", AppVersion = "1.0", PhotoFile = "testBad3.png"});
+            
 
         }
     }
