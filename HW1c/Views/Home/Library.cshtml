@@ -9,11 +9,46 @@
 <br />
 <br />
 <h1>Photo library</h1>
-<p> Table below lists photo info recorded by mobile app. Select a photo ID to view details. Select photo thumbnail to view photo. </p>
-<p> (Click the button to use the magnifying glass when it shows up.) </p>
+<div class="row">
+    <div class="col-10 text-left">
+        <p> Table below lists photo info recorded by mobile app. Select a photo ID to view details. Select photo thumbnail to view photo. </p>
+        <p> (Click the button to use the magnifying glass when it shows up.) </p>
+    </div>
+    <div class="col text-left">
+        <button onclick="photoStatus()" class="photoDropBtn">Filter Option</button>
+        <div id="dropdown1" class="dropdown-content1">
+            <a href="#" onclick="filter('pass')">Pass</a>
+            <a href="#" onclick="filter('fail')">Fail</a>
+        </div>
+    </div>
+</div>
 
 <script>
-    function myFunction(photoFile) {
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function photoStatus() {
+        document.getElementById("dropdown1").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.photoDropBtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content1");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    function filter(status) {
+
+    }
+
+    function photoPreview(photoFile) {
         document.getElementById("showPhoto").innerHTML = "<img id='myimage' src= " + photoFile + " width = 300 height = 350/>";
         $('#maglass').show();
     }
@@ -85,6 +120,56 @@
             box-shadow: 0 0 10px #ccc;
         }
 </style>
+<style>
+    /* Dropdown Button */
+    .photoDropBtn {
+        background-color: #3498DB;
+        color: white;
+        padding: 12px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+    }
+
+        /* Dropdown button on hover & focus */
+        .photoDropBtn:hover, .dropbtn:focus {
+            background-color: #2980B9;
+        }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown1 {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content1 {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+        /* Links inside the dropdown */
+        .dropdown-content1 a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+            /* Change color of dropdown links on hover */
+            .dropdown-content1 a:hover {
+                background-color: #ddd
+            }
+
+    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+    .show {
+        display: block;
+    }
+</style>
 
 <div class="row text-center">
     <br />
@@ -114,7 +199,7 @@
                     {
                         <tr>
                             <td>@Html.ActionLink(item.PhotoID, "Read", new { id = item.PhotoID }, new { @class = "small" })</td>
-                            <td onclick="myFunction('/Content/Img/' + '@item.PhotoFile')">
+                            <td onclick="photoPreview('/Content/Img/' + '@item.PhotoFile')">
                                 <img src="~/Content/Img/@item.PhotoFile" width="30" height="30" class="imgThumbnail">
                             </td>
                             <td>@item.Value</td>
