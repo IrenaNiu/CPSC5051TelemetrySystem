@@ -2,7 +2,7 @@
 @model LibViewModel
 
 @{
-    ViewBag.Title = "Library";
+    ViewBag.Title = "PhotoPass";
 }
 
 
@@ -187,7 +187,7 @@
                     foreach (var item in Model.PhotoViewModel.PhotoList)
                     {
                         <tr>
-                            <td>@Html.ActionLink(item.PhotoID, "Read", new { id = item.PhotoID }, new { @class = "small" })</td>
+                            <td>@Html.ActionLink(item.PhotoID, "ReadPass", new { id = item.PhotoID }, new { @class = "small" })</td>
                             <td onclick="photoPreview('/Content/Img/' + '@item.PhotoFile')">
                                 <img src="~/Content/Img/@item.PhotoFile" width="30" height="30" class="imgThumbnail">
                             </td>

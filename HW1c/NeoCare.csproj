@@ -241,6 +241,10 @@
     <Content Include="Views\Home\Library.cshtml" />
     <Content Include="Views\Report\MoreDetail.cshtml" />
     <Content Include="Views\Home\Read.cshtml" />
+    <Content Include="Views\Home\PhotoPass.cshtml" />
+    <Content Include="Views\Home\PhotoFail.cshtml" />
+    <Content Include="Views\Home\ReadFail.cshtml" />
+    <Content Include="Views\Home\ReadPass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

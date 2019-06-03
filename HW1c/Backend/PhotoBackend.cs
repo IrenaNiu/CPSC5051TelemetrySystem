@@ -45,8 +45,20 @@ namespace HW1c.Backend
             return myData;
         }
 
+        public PhotoModel ReadPass(string id)
+        {
+            var myData = repository.ReadPass(id);
+            return myData;
+        }
+
+        public PhotoModel ReadFail(string id)
+        {
+            var myData = repository.ReadFail(id);
+            return myData;
+        }
+
         /// <summary>
-        ///  Returns the List of Logs
+        ///  Returns the List of Photo Logs
         /// </summary>
         /// <returns></returns>
         public PhotoViewModel Index()
@@ -56,6 +68,23 @@ namespace HW1c.Backend
 
             return myData;
         }
+
+        public PhotoViewModel Pass()
+        {
+            var myData = new PhotoViewModel();
+            myData.PhotoList = repository.Pass();
+
+            return myData;
+        }
+
+        public PhotoViewModel Fail()
+        {
+            var myData = new PhotoViewModel();
+            myData.PhotoList = repository.Fail();
+
+            return myData;
+        }
+
 
     }
 }
