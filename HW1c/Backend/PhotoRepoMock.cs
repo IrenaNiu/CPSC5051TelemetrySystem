@@ -13,6 +13,8 @@ namespace HW1c.Backend
     public class PhotoRepoMock : IPhotoRepo
     {
         public List<PhotoModel> dataset = new List<PhotoModel>();
+        public List<PhotoModel> dataPass = new List<PhotoModel>();
+        public List<PhotoModel> dataFail = new List<PhotoModel>();
 
         /// <summary>
         /// Constructor for Log Repository
@@ -35,6 +37,21 @@ namespace HW1c.Backend
             var myData = dataset.First(m => m.PhotoID == id);
             return myData;
         }
+
+        public PhotoModel ReadPass(String id)
+        {
+            // Get the first instance of the record
+            var myData = dataPass.First(m => m.PhotoID == id);
+            return myData;
+        }
+
+        public PhotoModel ReadFail(String id)
+        {
+            // Get the first instance of the record
+            var myData = dataFail.First(m => m.PhotoID == id);
+            return myData;
+        }
+
         /// <summary>
         /// Return all items in the data store
         /// </summary>
@@ -42,6 +59,16 @@ namespace HW1c.Backend
         public List<PhotoModel> Index()
         {
             return dataset;
+        }
+
+        public List<PhotoModel> Pass()
+        {
+            return dataPass;
+        }
+
+        public List<PhotoModel> Fail()
+        {
+            return dataFail;
         }
 
         /// <summary>
@@ -61,7 +88,20 @@ namespace HW1c.Backend
             dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic A", RecordedDateTime = DateTime.Parse("04/28/2019"), UserID = "6", PhoneID = "AA39FH782", AppVersion = "2.3", PhotoFile = "testBad1.png"});
             dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic A", RecordedDateTime = DateTime.Parse("04/29/2019"), UserID = "6", PhoneID = "AA41KL853", AppVersion = "2.0", PhotoFile = "testBad2.png"});
             dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic B", RecordedDateTime = DateTime.Parse("04/29/2019"), UserID = "6", PhoneID = "AA89ES378", AppVersion = "1.0", PhotoFile = "testBad3.png"});
-            
+
+            dataPass.Add(dataset[0]);
+            dataPass.Add(dataset[1]);
+            dataPass.Add(dataset[2]);
+            dataPass.Add(dataset[6]);
+            dataPass.Add(dataset[7]);
+            dataPass.Add(dataset[8]);
+
+            dataFail.Add(dataset[3]);
+            dataFail.Add(dataset[4]);
+            dataFail.Add(dataset[5]);
+            dataFail.Add(dataset[9]);
+            dataFail.Add(dataset[10]);
+            dataFail.Add(dataset[11]);
 
         }
     }
