@@ -25,7 +25,6 @@ namespace HW1c.Controllers
 
         public ActionResult Library()
         {
-            ViewBag.LeftNavType = "Photo";
             var myViewModel = new LibViewModel();
 
             myViewModel.PhotoViewModel = PhotoBackend.Instance.Index();
@@ -33,12 +32,57 @@ namespace HW1c.Controllers
             return View(myViewModel);
         }
 
+        public ActionResult PhotoPass()
+        {
+            var myViewModel = new LibViewModel();
+
+            myViewModel.PhotoViewModel = PhotoBackend.Instance.Pass();
+
+            return View(myViewModel);
+        }
+
+        public ActionResult PhotoFail()
+        {
+            var myViewModel = new LibViewModel();
+
+            myViewModel.PhotoViewModel = PhotoBackend.Instance.Fail();
+
+            return View(myViewModel);
+        }
+
+
         /// <summary>
         /// Look up the record passed in
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public ActionResult Read(string id = null)
+        {
+            ViewBag.LeftNavType = "Home";
+            // If no ID passed in, jump to the Index page
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var myData = PhotoBackend.Instance.Read(id);
+            return View(myData);
+        }
+
+        public ActionResult ReadPass(string id = null)
+        {
+            ViewBag.LeftNavType = "Home";
+            // If no ID passed in, jump to the Index page
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var myData = PhotoBackend.Instance.Read(id);
+            return View(myData);
+        }
+
+        public ActionResult ReadFail(string id = null)
         {
             ViewBag.LeftNavType = "Home";
             // If no ID passed in, jump to the Index page
