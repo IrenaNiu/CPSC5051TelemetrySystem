@@ -19,6 +19,9 @@ namespace HW1c.Models
         // Recorded Date Time at the Server
         public DateTime RecordedDateTime { get; set; } = new DateTime();
 
+        // User ID of photo taken
+        public string UserID { get; set; }
+
         // ID of the Phone as a quid
         public string PhoneID { get; set; }
 
