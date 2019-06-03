@@ -41,9 +41,9 @@
 
             <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
             <link rel="stylesheet" type="text/css" href="~/Scripts/bootstrap-datetimepicker.min.css" />
-
+            <h2>From:</h2>
             <input size="16" type="text" id="datetimeStart" readonly class="form_datetime">
-
+            <h2>To:</h2>
             <input size="16" type="text" id="datetimeEnd" readonly class="form_datetime">
 
             <script type="text/javascript">
@@ -67,7 +67,7 @@
                 });
             </script>
 
-            <button type="button" class="btn btn-primary btn-lg"data-toggle="button" aria-pressed="false" autocomplete="off">Apply Date</button>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off" id="Apply">Apply Date</button>
 
 
         </div>
@@ -78,15 +78,25 @@
                 <p class="text-center">Accuracy over time</p>
                 <!-- Line Chart-->
                 <canvas id="AccuracyLineChart" width="400" height="200"></canvas>
+
+
+
+
                 <script>
                     var ctx = document.getElementById('AccuracyLineChart');
+                    var data_total = [0.8, 0.76, 0.83, 0.89, 0.84, 0.93, 0.96];
+                    var data_A = [0.7, 0.74, 0.72, 0.71, 0.77, 0.78, 0.81];
+                    var data_B = [0.87, 0.84, 0.86, 0.91, 0.87, 0.95, 0.98];
+                    var data_C = [0.76, 0.74, 0.71, 0.78, 0.80, 0.89, 0.91];
+                    var data_D = [0.86, 0.9, 0.92, 0.97, 0.92, 0.98, 0.99];
                     var myLineChart = new Chart(ctx, {
                         type: 'line',
+                       
                         data: {
-                            labels: ["June 1", "June 2", "June 3", "June 4", "June 5", "June 6", "June 7"],
+                            labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
                             datasets: [{
                                 label: "TOTAL",
-                                data: [0.8, 0.76, 0.83, 0.89, 0.84, 0.93, 0.96],
+                                data: data_total,
                                 backgroundColor: [
                                     'rgba(51, 153, 255, 0.2)',
                                 ],
@@ -97,7 +107,7 @@
                             },
                             {
                                 label: "Clinic A",
-                                data: [0.7, 0.74, 0.72, 0.71, 0.77, 0.78, 0.81],
+                                data: data_A,
                                 backgroundColor: [
                                     'rgba(0, 0, 0, 0)',
                                 ],
@@ -108,7 +118,7 @@
                             },
                             {
                                 label: "Clinic B",
-                                data: [0.87, 0.84, 0.86, 0.91, 0.87, 0.95, 0.98],
+                                data: data_B,
                                 backgroundColor: [
                                     'rgba(0, 0, 0, 0)',
                                 ],
@@ -119,7 +129,7 @@
                             },
                             {
                                 label: "Clinic C",
-                                data: [0.76, 0.74, 0.71, 0.78, 0.80, 0.89, 0.91],
+                                data: data_C,
                                 backgroundColor: [
                                     'rgba(0, 0, 0, 0)',
                                 ],
@@ -130,7 +140,7 @@
                             },
                             {
                                 label: "Clinic D",
-                                data: [0.86, 0.9, 0.92, 0.97, 0.92, 0.98, 0.99],
+                                data: data_D,
                                 backgroundColor: [
                                     'rgba(0, 0, 0, 0)',
                                 ],
@@ -143,6 +153,44 @@
                         },
 
                     });
+
+
+
+
+                    //var AccuracyLineChart = new Chart(ctx, config);
+                    //var myPieChart = new Chart(pctx, pconfig);
+
+                    
+                    function clickApply() {
+                        //$('#title1').html('Number of Uploaded Photos Over Time');
+                        $('#usageLineChart').show();
+                        //$('#usageMap').hide();
+                        var data_total = [0.85, 0.81, 0.89, 0.95, 0.99, 0.96, 0.98];
+                        var data_A = [0.73, 0.77, 0.73, 0.72, 0.80, 0.82, 0.86];
+                        var data_B = [0.91, 0.88, 0.92, 0.96, 0.93, 0.98, 0.99];
+                        var data_C = [0.78, 0.76, 0.77, 0.83, 0.83, 0.93, 0.95];
+                        var data_D = [0.92, 0.94, 0.95, 0.98, 0.95, 0.99, 1];
+
+                        myLineChart.data.datasets[0].data = data_total;
+                        myLineChart.data.datasets[1].data = data_A;
+                        myLineChart.data.datasets[2].data = data_B;
+                        myLineChart.data.datasets[3].data = data_C;
+                        myLineChart.data.datasets[4].data = data_D;
+                        // myLineChart.data.labels = chart_labels;
+                        myLineChart.update();
+
+                        //var newpdata = [10, 10, 10, 10];
+                        // myPieChart.data.labels = pie_labels;
+                        //myPieChart.data.datasets[0].data = newpdata;
+                       // myPieChart.update();
+                    }
+
+                    $('#Apply').click(clickApply);
+                   
+
+
+
+                    
                 </script>
             </div>
             <div class="col-4">
