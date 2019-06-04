@@ -75,6 +75,59 @@
 
         <!--Row 2-->
         <div class="row">
+            
+            <div class="col-4">
+                <p class="text-center">Clinic comparison</p>
+                <!--bar Chart-->
+                <div>
+                    <canvas id="mybarChart"></canvas>
+                </div>
+                <script>
+                    var ctx = document.getElementById("mybarChart").getContext('2d');
+
+                    var data = [0.78, 0.90, 0.80, 0.95];
+                    var labels = ["Clinic A", "Clinic B", "Clinic C", "Clinic D"];
+                    ctx.canvas.width = 310;
+                    ctx.canvas.height = 310;
+                    var myBarChart = new Chart(ctx, {
+                        type: 'horizontalBar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: "Clinic",
+                                data: data,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: false, // Instruct chart js to respond nicely.
+                            maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <br />
+
+        <!--Row 3-->
+        <div class="row">
+
+
+
             <div class="col-8">
                 <p class="text-center">Accuracy over time</p>
                 <!-- Line Chart-->
@@ -92,7 +145,7 @@
                     var data_D = [0.86, 0.9, 0.92, 0.97, 0.92, 0.98, 0.99];
                     var myLineChart = new Chart(ctx, {
                         type: 'line',
-                       
+
                         data: {
                             labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
                             datasets: [{
@@ -161,7 +214,7 @@
                     //var AccuracyLineChart = new Chart(ctx, config);
                     //var myPieChart = new Chart(pctx, pconfig);
 
-                    
+
                     function clickApply() {
                         //$('#title1').html('Number of Uploaded Photos Over Time');
                         $('#usageLineChart').show();
@@ -183,97 +236,18 @@
                         //var newpdata = [10, 10, 10, 10];
                         // myPieChart.data.labels = pie_labels;
                         //myPieChart.data.datasets[0].data = newpdata;
-                       // myPieChart.update();
+                        // myPieChart.update();
                     }
 
                     $('#Apply').click(clickApply);
-                   
 
 
 
-                    
+
+
                 </script>
             </div>
-            <div class="col-4">
-                <p class="text-center">Clinic comparison</p>
-                <!--bar Chart-->
-                <div>
-                    <canvas id="mybarChart"></canvas>
-                </div>
-                <script>
-                    var ctx = document.getElementById("mybarChart").getContext('2d');
 
-                    var data = [0.78, 0.90, 0.80, 0.95];
-                    var labels = ["Clinic A", "Clinic B", "Clinic C", "Clinic D"];
-                    ctx.canvas.width = 310;
-                    ctx.canvas.height = 310;
-                    var myBarChart = new Chart(ctx, {
-                        type: 'horizontalBar',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: "Clinic",
-                                data: data,
-                                backgroundColor: [
-                                    'rgba(255, 99, 132, 0.2)',
-                                    'rgba(54, 162, 235, 0.2)',
-                                    'rgba(255, 206, 86, 0.2)',
-                                    'rgba(75, 192, 192, 0.2)',
-                                    'rgba(153, 102, 255, 0.2)'
-                                ],
-                                borderColor: [
-                                    'rgba(255,99,132,1)',
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(75, 192, 192, 1)',
-                                    'rgba(153, 102, 255, 1)'
-                                ],
-                                borderWidth: 2
-                            }]
-                        },
-                        options: {
-                            responsive: false, // Instruct chart js to respond nicely.
-                            maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
-                        }
-                    });
-                </script>
-            </div>
-        </div>
-        <br />
-
-        <!--Row 3-->
-        <div class="row">
-            <div class="col-8">
-                <p class="text-center">Table of details</p>
-                <font size="3">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Date</th>
-                                <th scope="col">TestValue</th>
-                                <th scope="col">LabValue</th>
-                                <th scope="col">Accuracy</th>
-                                <th scope="col">DeviationRate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @{
-                                foreach (var item in Model.LogViewModel.LogList)
-                                {
-                                    <tr>
-                                        <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                        <td>@item.TestValue</td>
-                                        <td>@item.LabValue</td>
-                                        <td>@item.Accuracy</td>
-                                        <td>@item.DeviationRate</td>
-
-                                    </tr>
-                                }
-                            }
-                        </tbody>
-                    </table>
-                </font>
-            </div>
 
 
             <div class="col-4">
