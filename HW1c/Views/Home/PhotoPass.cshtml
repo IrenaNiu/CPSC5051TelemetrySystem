@@ -17,8 +17,7 @@
         <br />
         <div class="row">
             <div class="col-4 text-left">
-                Select a photo ID to view details.
-                <br /> Click photo thumbnail to preview photo.
+                Select a photo ID to view details. Click photo thumbnail to preview photo.
             </div>
             <div class="col-2 text-right">
                 <div class="dropdown1">
@@ -31,11 +30,18 @@
                 </div>
             </div>
             <div class="col-2 text-right">
-                <button class="downloadTable"><i class="fa fa-download"></i> Download</button>
+                <button class="downloadTable" onclick="dlLib()"><i class="fa fa-download"></i> Download</button>
             </div>
         </div>
 
         <script>
+            function dlLib() {
+                var addr = "/Content/report/repolib2.xlsx";
+                var link = document.createElement("a");
+                link.download = "LibraryReportPassPhoto.xlsx";
+                link.href = addr;
+                link.click();
+            }
             function photoPreview(photoFile) {
                 document.getElementById("showPhoto").innerHTML = "<img id='myimage' src= " + photoFile + " width = 300 height = 350/>";
                 $('#maglass').show();
