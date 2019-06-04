@@ -6,6 +6,8 @@
 }
 <br />
 <br />
+<br />
+<br />
 <div class="row">
 
     <!--Main Content Area-->
@@ -52,8 +54,8 @@
                     minView: 'month',
 
                     autoclose: true,
-                    startDate: new Date().setMonth(1,1),
-                   
+                    startDate: new Date().setMonth(1, 1),
+
                 }).on("click", function () {
                     $("#datetimeStart").datetimepicker("setEndDate", $("#datetimeEnd").val())
                 });
@@ -92,7 +94,7 @@
                     var data_D = [0.86, 0.9, 0.92, 0.97, 0.92, 0.98, 0.99];
                     var myLineChart = new Chart(ctx, {
                         type: 'line',
-                       
+
                         data: {
                             labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
                             datasets: [{
@@ -161,7 +163,7 @@
                     //var AccuracyLineChart = new Chart(ctx, config);
                     //var myPieChart = new Chart(pctx, pconfig);
 
-                    
+
                     function clickApply() {
                         //$('#title1').html('Number of Uploaded Photos Over Time');
                         $('#usageLineChart').show();
@@ -183,15 +185,15 @@
                         //var newpdata = [10, 10, 10, 10];
                         // myPieChart.data.labels = pie_labels;
                         //myPieChart.data.datasets[0].data = newpdata;
-                       // myPieChart.update();
+                        // myPieChart.update();
                     }
 
                     $('#Apply').click(clickApply);
-                   
 
 
 
-                    
+
+
                 </script>
             </div>
             <div class="col-4">
