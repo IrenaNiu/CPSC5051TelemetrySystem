@@ -80,7 +80,7 @@
 }
 
 /* Download button */
-.download {
+.downloadPhoto {
     background-color:dodgerblue;
     border: none;
     color: white;
@@ -89,11 +89,46 @@
     font-size: 12px;
     border-radius: 5px;
 }
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown2 {
+        position: relative;
+        display: inline-block;
+    }
 
-/* Darker background on mouse-over */
-.download:hover {
-    background-color:royalblue;
-}
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content2 {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+        .dropdown-content2 a {
+            color: black;
+            padding: 8px 12px;
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content2 a:hover {
+            background-color: #f1f1f1
+        }
+
+    /* Show the dropdown menu on hover */
+    .dropdown2:hover .dropdown-content2 {
+        display: block;
+    }
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown2:hover .downloadPhoto {
+        background-color: royalblue;
+    }
+
 </style>
 
 <div class="row text-center">
@@ -171,6 +206,15 @@
         </div>
         <br />
         <br />
+        <script>
+            function convertJPG(photoFile) {
+                var convert = "/Content/Img/" + photoFile.substring(0, photoFile.length - 3) + "jpg";
+                var link = document.createElement("a");
+                link.download = photoFile.substring(0, photoFile.length - 3) + "jpg";
+                link.href = convert;
+                link.click();
+            }
+        </script>
         <div class="row text-md-center">
             <div class="col-3 text-right">
                 <button type ="button" class="back" onclick="location.href='@Url.Action("Library", "Home")'">Go back</button>
@@ -180,7 +224,13 @@
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
                 <!-- Auto width -->
-                <button class="download"><i class="fa fa-download"></i> Download</button>
+                <div class="dropdown2">
+                    <button class="downloadPhoto"><i class="fa fa-download"></i> Download</button>
+                    <div class="dropdown-content2">
+                        <a href="~/Content/Img/@Model.PhotoFile" download><img scr="/Content/Img/@Model.PhotoFile">As PNG</a>
+                        <a onclick= "convertJPG('@Model.PhotoFile')">As JPG</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
