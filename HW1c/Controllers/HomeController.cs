@@ -36,6 +36,7 @@ namespace HW1c.Controllers
         public ActionResult PhotoPass()
         {
             var myViewModel = new LibViewModel();
+            ViewBag.TopNavType = "Default";
 
             myViewModel.PhotoViewModel = PhotoBackend.Instance.Pass();
 
@@ -45,6 +46,7 @@ namespace HW1c.Controllers
         public ActionResult PhotoFail()
         {
             var myViewModel = new LibViewModel();
+            ViewBag.TopNavType = "Default";
 
             myViewModel.PhotoViewModel = PhotoBackend.Instance.Fail();
 
