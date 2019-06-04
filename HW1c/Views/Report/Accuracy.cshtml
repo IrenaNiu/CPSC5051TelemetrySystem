@@ -17,78 +17,17 @@
         <!--Row 1-->
         
         <div class="row">
-
-
-
-            <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
-
-            <script type="text/javascript" src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
-            <link rel="stylesheet" type="text/css" href="~/Scripts/bootstrap-datetimepicker.min.css" />
-            <h2>From:</h2>
-            <input size="16" type="text" id="datetimeStart" readonly class="form_datetime">
-            <h2>To:</h2>
-            <input size="16" type="text" id="datetimeEnd" readonly class="form_datetime">
-
-            <script type="text/javascript">
-                $("#datetimeStart").datetimepicker({
-                    format: 'yyyy-mm-dd',
-                    minView: 'month',
-
-                    autoclose: true,
-                    startDate: new Date().setMonth(1, 1),
-
-                }).on("click", function () {
-                    $("#datetimeStart").datetimepicker("setEndDate", $("#datetimeEnd").val())
-                });
-                $("#datetimeEnd").datetimepicker({
-                    format: 'yyyy-mm-dd',
-                    minView: 'month',
-
-                    autoclose: true,
-                    startDate: new Date().setMonth(1, 1),
-                }).on("click", function () {
-                    $("#datetimeEnd").datetimepicker("setStartDate", $("#datetimeStart".val()))
-                });
-            </script>
-
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off" id="Apply">Apply Date</button>
-
-
-        </div>
-        <br />
-
-        <div class="row">
-            <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
-            <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
-            <script type="text/javascript" src="~/Scripts/daterangepicker.js"></script>
-            <link rel="stylesheet" type="text/css" href="~/Scripts/daterangepicker.css" />
-            <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.css" />
-
-            <input size="120" type="text" class="daterange" />
-
-
-            <script type="text/javascript">
-
-                $('.daterange').daterangepicker();
-
-            </script>
-
-
+            <input style="max-width: 400px; text-align: center; margin-left: 20px; margin-bottom: 40px;" type="text" class="daterange" />
         </div>
 
       
         
         <!--Row 2-->
         <div class="row">
-
-
             <div class="col-8">
                 <p class="text-center">Accuracy over time</p>
                 <!-- Line Chart-->
                 <canvas id="AccuracyLineChart" width="400" height="200"></canvas>
-
-
-
 
                 <script>
                     var ctx = document.getElementById('AccuracyLineChart');
@@ -195,6 +134,8 @@
 
                     $('#Apply').click(clickApply);
 
+                    $('.daterange').daterangepicker({}, clickApply);
+
 
 
 
@@ -209,9 +150,8 @@
                 <br />
                 
                 <span class="min-chart" id="minChart" data-percent="92"><span class="percent"></span></span>
-                <script src="~/Scripts/easypiechart.js"></script>
-                <script src="~/Scripts/easypiechart.min.js"></script>
-                <link rel="stylesheet" href="~/Scripts/style.css" />
+                
+                <!--<link rel="stylesheet" href="~/Scripts/style.css" />-->
 
                 <script>
                     var element = document.querySelector('.min-chart');
@@ -250,9 +190,6 @@
 
         <!--Row 3-->
         <div class="row">
-
-
-
             <div class="col-6">
                 <p class="text-center">Clinic comparison</p>
                 <!--bar Chart-->
