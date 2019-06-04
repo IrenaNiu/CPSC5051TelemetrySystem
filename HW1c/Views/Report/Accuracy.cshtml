@@ -6,6 +6,8 @@
 }
 <br />
 <br />
+<br />
+<br />
 <div class="row">
 
     <!--Main Content Area-->
@@ -13,36 +15,7 @@
         <h2>Test Accuracy Report</h2>
         <br />
         <!--Row 1-->
-        <div class="row">
-            <!-- Accuracy Rate card -->
-
-            
-            <span class="min-chart" id="minChart" data-percent="92"><span class="percent"></span></span>
-            <script src="~/Scripts/easypiechart.js"></script>
-            <script src="~/Scripts/easypiechart.min.js"></script>
-            <link rel="stylesheet" href="~/Scripts/style.css" />
-
-            <script>
-                var element = document.querySelector('.min-chart');
-                new EasyPieChart(element, {
-                    size: 220,
-                    barColor: function (percent) {
-                        var ctx = this.renderer.getCtx();
-                        var canvas = this.renderer.getCanvas();
-                        var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-                        gradient.addColorStop(0, "#ffe57e");
-                        gradient.addColorStop(1, "#de5900");
-                        return gradient;
-                    },
-                    onStep: function (from, to, percent) {
-                        this.el.children[0].innerHTML = Math.round(percent);
-                    }
-                });
-                
-            </script>
-
-        </div>
-        <br />
+        
         <div class="row">
 
 
@@ -62,8 +35,8 @@
                     minView: 'month',
 
                     autoclose: true,
-                    startDate: new Date().setMonth(1,1),
-                   
+                    startDate: new Date().setMonth(1, 1),
+
                 }).on("click", function () {
                     $("#datetimeStart").datetimepicker("setEndDate", $("#datetimeEnd").val())
                 });
@@ -82,74 +55,10 @@
 
 
         </div>
-
+        <br />
+        
         <!--Row 2-->
         <div class="row">
-
-
-            
-
-            
-                
-                
-               
-                
-
-
-           
-
-
-
-            <div class="col-4">
-                <p class="text-center">Clinic comparison</p>
-                <!--bar Chart-->
-                <div>
-                    <canvas id="mybarChart"></canvas>
-                </div>
-                <script>
-                    var ctx = document.getElementById("mybarChart").getContext('2d');
-
-                    var data = [0.78, 0.90, 0.80, 0.95];
-                    var labels = ["Clinic A", "Clinic B", "Clinic C", "Clinic D"];
-                    ctx.canvas.width = 310;
-                    ctx.canvas.height = 310;
-                    var myBarChart = new Chart(ctx, {
-                        type: 'horizontalBar',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: "Clinic",
-                                data: data,
-                                backgroundColor: [
-                                    'rgba(255, 99, 132, 0.2)',
-                                    'rgba(54, 162, 235, 0.2)',
-                                    'rgba(255, 206, 86, 0.2)',
-                                    'rgba(75, 192, 192, 0.2)',
-                                    'rgba(153, 102, 255, 0.2)'
-                                ],
-                                borderColor: [
-                                    'rgba(255,99,132,1)',
-                                    'rgba(54, 162, 235, 1)',
-                                    'rgba(255, 206, 86, 1)',
-                                    'rgba(75, 192, 192, 1)',
-                                    'rgba(153, 102, 255, 1)'
-                                ],
-                                borderWidth: 2
-                            }]
-                        },
-                        options: {
-                            responsive: false, // Instruct chart js to respond nicely.
-                            maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
-                        }
-                    });
-                </script>
-            </div>
-        </div>
-        <br />
-
-        <!--Row 3-->
-        <div class="row">
-
 
 
             <div class="col-8">
@@ -275,7 +184,102 @@
 
 
             <div class="col-4">
+                <p class="text-center">Accuracy Rate Of This Month </p>
                 <br />
+                
+                <span class="min-chart" id="minChart" data-percent="92"><span class="percent"></span></span>
+                <script src="~/Scripts/easypiechart.js"></script>
+                <script src="~/Scripts/easypiechart.min.js"></script>
+                <link rel="stylesheet" href="~/Scripts/style.css" />
+
+                <script>
+                    var element = document.querySelector('.min-chart');
+                    new EasyPieChart(element, {
+                        size: 220,
+                        barColor: function (percent) {
+                            var ctx = this.renderer.getCtx();
+                            var canvas = this.renderer.getCanvas();
+                            var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                            gradient.addColorStop(0, "#ffe57e");
+                            gradient.addColorStop(1, "#de5900");
+                            return gradient;
+                        },
+                        onStep: function (from, to, percent) {
+                            this.el.children[0].innerHTML = Math.round(percent);
+                        }
+                    });
+
+                </script>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <br />
+
+        <!--Row 3-->
+        <div class="row">
+
+
+
+            <div class="col-6">
+                <p class="text-center">Clinic comparison</p>
+                <!--bar Chart-->
+                <div>
+                    <canvas id="mybarChart"></canvas>
+                </div>
+                <script>
+                    var ctx = document.getElementById("mybarChart").getContext('2d');
+
+                    var data = [0.95, 0.90, 0.86, 0.81];
+                    var labels = ["Clinic D", "Clinic B", "Clinic C", "Clinic A"];
+                    ctx.canvas.width = 500;
+                    ctx.canvas.height = 450;
+                    var myBarChart = new Chart(ctx, {
+                        type: 'horizontalBar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: "Clinic",
+                                data: data,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: false, // Instruct chart js to respond nicely.
+                            maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+                        }
+                    });
+                </script>
+            </div>
+
+
+            <div class="col-6">
+               
                 <p class="text-center">App Version comparison</p>
                 <canvas id="VersionBarChart"></canvas>
             </div>
@@ -283,7 +287,7 @@
                 var ctx = document.getElementById("VersionBarChart").getContext('2d');
                 var data = [0.98, 0.93, 0.89, 0.87, 0.81];
                 var labels = ["3.3", "3.0", "2.3", "2.0", "1.0"];
-                ctx.canvas.width = 400;
+                ctx.canvas.width = 500;
                 ctx.canvas.height = 450;
                 var myBarChart = new Chart(ctx, {
                     type: 'horizontalBar',
