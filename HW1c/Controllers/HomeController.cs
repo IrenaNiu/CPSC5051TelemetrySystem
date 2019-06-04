@@ -12,7 +12,6 @@ namespace HW1c.Controllers
     {
         public ActionResult Index()
         {
-           // ViewBag.LeftNavType = "Home";
             ViewBag.TopNavType = "Home";
             return View();
         }
@@ -20,7 +19,6 @@ namespace HW1c.Controllers
         [HttpPost]
         public ActionResult Index(string id)
         {
-            //ViewBag.LeftNavType = "Doctor";
             ViewBag.TopNavType = "Doctor";
             return View();
         }
@@ -28,6 +26,7 @@ namespace HW1c.Controllers
         public ActionResult Library()
         {
             var myViewModel = new LibViewModel();
+            ViewBag.TopNavType = "Default";
 
             myViewModel.PhotoViewModel = PhotoBackend.Instance.Index();
 
@@ -60,7 +59,7 @@ namespace HW1c.Controllers
         /// <returns></returns>
         public ActionResult Read(string id = null)
         {
-            ViewBag.LeftNavType = "Home";
+            ViewBag.TopNavType = "Default";
             // If no ID passed in, jump to the Index page
             if (id == null)
             {
@@ -73,7 +72,7 @@ namespace HW1c.Controllers
 
         public ActionResult ReadPass(string id = null)
         {
-            ViewBag.LeftNavType = "Home";
+            ViewBag.TopNavType = "Default";
             // If no ID passed in, jump to the Index page
             if (id == null)
             {
@@ -86,7 +85,7 @@ namespace HW1c.Controllers
 
         public ActionResult ReadFail(string id = null)
         {
-            ViewBag.LeftNavType = "Home";
+            ViewBag.TopNavType = "Default";
             // If no ID passed in, jump to the Index page
             if (id == null)
             {

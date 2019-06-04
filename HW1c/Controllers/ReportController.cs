@@ -13,7 +13,7 @@ namespace HW1c.Controllers
         // GET: Index
         public ActionResult Index()
         {
-            ViewBag.TopNavType = "Report";
+            ViewBag.TopNavType = "Default";
             var myViewModel = new ReportViewModel();
 
             myViewModel.LogViewModel = new LogBackend().Index();
@@ -33,7 +33,7 @@ namespace HW1c.Controllers
         // GET: Test Accuracy Report
         public ActionResult Accuracy()
         {
-            ViewBag.TopNavType = "Report";
+            ViewBag.TopNavType = "Default";
             var myViewModel = new ReportViewModel();
 
             myViewModel.LogViewModel = new LogBackend().Index();
@@ -46,19 +46,13 @@ namespace HW1c.Controllers
         // GET: More Detail Report
         public ActionResult MoreDetail()
         {
-            ViewBag.TopNavType = "Report";
+            ViewBag.TopNavType = "Default";
             var myViewModel = new ReportViewModel();
 
             myViewModel.LogViewModel = new LogBackend().Index();
             myViewModel.NumberOfUsers = 3;
 
             return View(myViewModel);
-        }
-
-        public ActionResult ViewTry()
-        {
-            ViewBag.TopNavType = "Report";
-            return View();
         }
     }
 }
