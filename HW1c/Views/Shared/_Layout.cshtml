@@ -16,13 +16,13 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow p-4 mb-4" style="background-image: linear-gradient(15deg, #fdfdcd 0%, #a1d3b8 80%);">
         <!-- Logo -->
-        <img src="~/Content/Img/logo2.png" height="40" class="d-inline-block align-top" alt="">
+        <img src="~/Content/Img/logo2.png" height="50" class="d-inline-block align-top" alt="">
         <!-- Links -->
         <ul class="navbar-nav">
-            <li class="nav-item h4">
+            <li class="nav-item h4 px-md-5" style="margin:0; padding: 0px 0px; display:inline-block;">
                 @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
             </li>
-            <li class="nav-item dropdown h4">
+            <li class="nav-item dropdown h4 px-md-5" style="margin:0; padding:  0px 0px; display:inline-block;">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                         Report
                     </a>
@@ -32,7 +32,7 @@
                         <a class="dropdown-item" href="#">@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</a>
                     </span>
             </li>
-            <li class="nav-item h4">
+            <li class="nav-item h4 px-md-5" style="margin:0; padding:  0px 0px; display:inline-block;">
                 @Html.ActionLink("Photo", "Library", "Home", null, new { @class = "nav-link" })
             </li>
         </ul>
