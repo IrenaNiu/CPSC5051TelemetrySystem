@@ -14,63 +14,68 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-image: linear-gradient(15deg, #fdfdcd 0%, #a1d3b8 80%);">
-        @Html.ActionLink("NeoCare", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto nav-link">
-                <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Report
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</a>
-                        <a class="dropdown-item" href="#">@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</a>
-                        <a class="dropdown-item" href="#">@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</a>
-                    </div>
-                </li>
-                <li class="nav-item">@Html.ActionLink("Photo", "Library", "Home", null, new { @class = "nav-link" })</li>
-            </ul>
-        </div>
-    </nav>
-
-    <br />
-    <br />
-    <br />
-
     <div class="body-content">
         <div class="row">
-
             @{
-                switch (ViewBag.LeftNavType)
+                switch (ViewBag.TopNavType)
                 {
                     case null:
                         <div></div>
                         break;
 
                     case "Doctor":
-                        <div class="col-1">
-                            <!--Left Side Bar-->
-                            <div class="sidenav2">
-                                <a>@Html.ActionLink("Report", "Index", "Report", null, new { @class = "btn btn-link" })</a>
-                                <a>@Html.ActionLink("Photo", "Library", "Home", null, new { @class = "btn btn-link" })</a>
-                            </div>
-                        </div>
+                       <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow p-3 mb-3" style="background-image: linear-gradient(15deg, #fdfdcd 0%, #a1d3b8 80%);">
+                            <!-- Logo -->
+                            <img src="~/Content/Img/logo2.png" height="50" class="d-inline-block align-top px-md-5" alt="">
+                            <!-- Links -->
+                            <ul class="navbar-nav">
+                                <li class="nav-item h2 px-md-5" style="margin:0; padding: 0px 0px; display:inline-block;">
+                                    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                                </li>
+                                <li class="nav-item dropdown h2 px-md-5" style="margin:0; padding:  0px 0px; display:inline-block;">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                        <i class="fa fa-bar-chart-o icon-grey-big"></i>
+                                        Report
+                                    </a>
+                                    <span class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</a>
+                                        <a class="dropdown-item" href="#">@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</a>
+                                        <a class="dropdown-item" href="#">@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</a>
+                                    </span>
+
+                                </li>
+                                <li class="nav-item h2 px-md-5" style="margin:0; padding:  0px 0px; display:inline-block;">
+                                    @Html.ActionLink("Photo Library", "Library", "Home", null, new { @class = "nav-link" })
+                                </li>
+                            </ul>
+                            </nav>
                         break;
 
-                    case "Report":
-                        <div class="col-1">
-                            <!--Left Side Bar-->
-                            <div class="sidenav2">
-                                <a>@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "btn btn-link" })</a>
-                                <a>@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "btn btn-link" })</a>
-                                <a>@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "btn btn-link" })</a>
-                            </div>
-                        </div>
+                    case "Default":
+                        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow p-3 mb-3" style="background-image: linear-gradient(15deg, #fdfdcd 0%, #a1d3b8 80%);">
+                            <!-- Logo -->
+                            <img src="~/Content/Img/logo2.png" height="50" class="d-inline-block align-top px-md-5" alt="">
+                            <!-- Links -->
+                            <ul class="navbar-nav">
+                                <li class="nav-item h2 px-md-5" style="margin:0; padding: 0px 0px; display:inline-block;">
+                                    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                                </li>
+                                <li class="nav-item dropdown h2 px-md-5" style="margin:0; padding:  0px 0px; display:inline-block;">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                        <i class="fa fa-bar-chart-o icon-grey-big"></i>
+                                        Report
+                                    </a>
+                                    <span class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</a>
+                                        <a class="dropdown-item" href="#">@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</a>
+                                        <a class="dropdown-item" href="#">@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</a>
+                                    </span>
+                                </li>
+                                <li class="nav-item h2 px-md-5" style="margin:0; padding:  0px 0px; display:inline-block;">
+                                    @Html.ActionLink("Photo Library", "Library", "Home", null, new { @class = "nav-link" })
+                                </li>
+                            </ul>
+                        </nav>
                         break;
 
                 }
