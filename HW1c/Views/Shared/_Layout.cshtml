@@ -23,17 +23,19 @@
                 @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
             </li>
             <li class="nav-item dropdown h4 px-md-5" style="margin:0; padding:  0px 0px; display:inline-block;">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Report
-                    </a>
-                    <span class="dropdown-menu">
-                        <a class="dropdown-item" href="#">@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</a>
-                        <a class="dropdown-item" href="#">@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</a>
-                        <a class="dropdown-item" href="#">@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</a>
-                    </span>
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    <i class="fa fa-bar-chart-o icon-grey-big"></i>
+                    Report
+                </a>
+                <span class="dropdown-menu">
+                    <a class="dropdown-item" href="#">@Html.ActionLink("App Usage", "Index", "Report", null, new { @class = "nav-link" })</a>
+                    <a class="dropdown-item" href="#">@Html.ActionLink("Test Accuracy", "Accuracy", "Report", null, new { @class = "nav-link" })</a>
+                    <a class="dropdown-item" href="#">@Html.ActionLink("More Detail", "MoreDetail", "Report", null, new { @class = "nav-link" })</a>
+                </span>
+
             </li>
             <li class="nav-item h4 px-md-5" style="margin:0; padding:  0px 0px; display:inline-block;">
-                @Html.ActionLink("Photo", "Library", "Home", null, new { @class = "nav-link" })
+                @Html.ActionLink("Photo Library", "Library", "Home", null, new { @class = "nav-link" })
             </li>
         </ul>
     </nav>
