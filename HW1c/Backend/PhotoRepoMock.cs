@@ -88,6 +88,18 @@ namespace HW1c.Backend
             dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic A", RecordedDateTime = DateTime.Parse("04/28/2019"), UserID = "6", PhoneID = "AA39FH782", AppVersion = "2.3", PhotoFile = "testBad1.png"});
             dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic A", RecordedDateTime = DateTime.Parse("04/29/2019"), UserID = "6", PhoneID = "AA41KL853", AppVersion = "2.0", PhotoFile = "testBad2.png"});
             dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic B", RecordedDateTime = DateTime.Parse("04/29/2019"), UserID = "6", PhoneID = "AA89ES378", AppVersion = "1.0", PhotoFile = "testBad3.png"});
+            dataset.Add(new PhotoModel { Value = "13", Location = "Clinic A", RecordedDateTime = DateTime.Parse("04/23/2019"), UserID = "1", PhoneID = "AA12CW776", AppVersion = "1.0", PhotoFile = "testGood1.png" });
+            dataset.Add(new PhotoModel { Value = "25", Location = "Clinic A", RecordedDateTime = DateTime.Parse("04/23/2019"), UserID = "1", PhoneID = "AA13RF854", AppVersion = "2.0", PhotoFile = "testGood2.png" });
+            dataset.Add(new PhotoModel { Value = "11", Location = "Clinic B", RecordedDateTime = DateTime.Parse("04/25/2019"), UserID = "2", PhoneID = "AA16TG096", AppVersion = "3.0", PhotoFile = "testGood3.png" });
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic B", RecordedDateTime = DateTime.Parse("04/25/2019"), UserID = "2", PhoneID = "AA15TK076", AppVersion = "3.3", PhotoFile = "testBad1.png" });
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic C", RecordedDateTime = DateTime.Parse("04/26/2019"), UserID = "3", PhoneID = "AA16EG025", AppVersion = "2.0", PhotoFile = "testBad2.png" });
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic C", RecordedDateTime = DateTime.Parse("04/26/2019"), UserID = "4", PhoneID = "AA03TB093", AppVersion = "2.3", PhotoFile = "testBad3.png" });
+            dataset.Add(new PhotoModel { Value = "28", Location = "Clinic B", RecordedDateTime = DateTime.Parse("04/27/2019"), UserID = "4", PhoneID = "AA56RU937", AppVersion = "3.0", PhotoFile = "testGood1.png" });
+            dataset.Add(new PhotoModel { Value = "15", Location = "Clinic C", RecordedDateTime = DateTime.Parse("04/27/2019"), UserID = "5", PhoneID = "AA76BM405", AppVersion = "3.3", PhotoFile = "testGood2.png" });
+            dataset.Add(new PhotoModel { Value = "27", Location = "Clinic C", RecordedDateTime = DateTime.Parse("04/28/2019"), UserID = "5", PhoneID = "AA36TD842", AppVersion = "3.0", PhotoFile = "testGood3.png" });
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic A", RecordedDateTime = DateTime.Parse("04/28/2019"), UserID = "6", PhoneID = "AA39FH782", AppVersion = "2.3", PhotoFile = "testBad1.png" });
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic A", RecordedDateTime = DateTime.Parse("04/29/2019"), UserID = "6", PhoneID = "AA41KL853", AppVersion = "2.0", PhotoFile = "testBad2.png" });
+            dataset.Add(new PhotoModel { Value = "N/A", Location = "Clinic B", RecordedDateTime = DateTime.Parse("04/29/2019"), UserID = "6", PhoneID = "AA89ES378", AppVersion = "1.0", PhotoFile = "testBad3.png" });
 
             dataPass.Add(dataset[0]);
             dataPass.Add(dataset[1]);
@@ -95,6 +107,12 @@ namespace HW1c.Backend
             dataPass.Add(dataset[6]);
             dataPass.Add(dataset[7]);
             dataPass.Add(dataset[8]);
+            dataPass.Add(dataset[12]);
+            dataPass.Add(dataset[13]);
+            dataPass.Add(dataset[14]);
+            dataPass.Add(dataset[18]);
+            dataPass.Add(dataset[19]);
+            dataPass.Add(dataset[20]);
 
             dataFail.Add(dataset[3]);
             dataFail.Add(dataset[4]);
@@ -102,6 +120,12 @@ namespace HW1c.Backend
             dataFail.Add(dataset[9]);
             dataFail.Add(dataset[10]);
             dataFail.Add(dataset[11]);
+            dataFail.Add(dataset[15]);
+            dataFail.Add(dataset[16]);
+            dataFail.Add(dataset[17]);
+            dataFail.Add(dataset[21]);
+            dataFail.Add(dataset[22]);
+            dataFail.Add(dataset[23]);
 
         }
     }
