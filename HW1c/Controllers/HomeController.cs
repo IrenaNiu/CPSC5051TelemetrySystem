@@ -12,14 +12,16 @@ namespace HW1c.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.LeftNavType = "Home";
+           // ViewBag.LeftNavType = "Home";
+            ViewBag.TopNavType = "Home";
             return View();
         }
 
         [HttpPost]
         public ActionResult Index(string id)
         {
-            ViewBag.LeftNavType = "Doctor";
+            //ViewBag.LeftNavType = "Doctor";
+            ViewBag.TopNavType = "Doctor";
             return View();
         }
 
