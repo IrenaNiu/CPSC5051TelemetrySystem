@@ -120,12 +120,12 @@ namespace HW1c.Backend
             dataFail.Add(dataset[9]);
             dataFail.Add(dataset[10]);
             dataFail.Add(dataset[11]);
-            dataPass.Add(dataset[15]);
-            dataPass.Add(dataset[16]);
-            dataPass.Add(dataset[17]);
-            dataPass.Add(dataset[21]);
-            dataPass.Add(dataset[22]);
-            dataPass.Add(dataset[23]);
+            dataFail.Add(dataset[15]);
+            dataFail.Add(dataset[16]);
+            dataFail.Add(dataset[17]);
+            dataFail.Add(dataset[21]);
+            dataFail.Add(dataset[22]);
+            dataFail.Add(dataset[23]);
 
         }
     }
