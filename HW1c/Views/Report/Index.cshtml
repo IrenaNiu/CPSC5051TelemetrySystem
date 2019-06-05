@@ -101,20 +101,22 @@
 
 
         <script>
-        var chart_labels = ['July 1', 'July 2', 'July 3', 'July 4', 'July 5', 'July 6', 'July 7'];
-        var chart_labels2 = ['August 1', 'August 2', 'August 3', 'August 4', 'August 5', 'August 6', 'August 7'];
+        var chart_labels = ['June 1', 'June 2', 'June 3', 'June 4', 'June 5', 'June 6', 'June 7'];
+        var chart_labels2 = ['July 1', 'July 2', 'July 3', 'July 4', 'July 5', 'July 6', 'July 7'];   
         var chart_labelsM = ['July 1 - July 7', 'July 8 - July 14', 'July 15 - July 21', 'July 22 - July 28', 'July 29 - Aug. 4', 'Aug. 5 - Aug. 11', 'Aug. 12 - Aug. 18'];
         var chart_labelsY = ['June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
 
         var ctx = $('#usageLineChart');
         var pctx = document.getElementById("usagePieChart").getContext('2d');
         pctx.canvas.width = 310;
-        pctx.canvas.height = 310;
-        var data_total = [6, 15, 21, 27, 31, 29, 31];
-        var data_A = [2, 4, 4, 5, 7, 7, 8];
-        var data_B = [1, 3, 4, 7, 8, 7, 6];
-        var data_C = [0, 2, 3, 5, 5, 5, 5];
-        var data_D = [3, 8, 10, 10, 11, 10, 12];
+            pctx.canvas.height = 310;
+
+
+        var data_total = [6, 15, 19, 26, 27, 34, 37];
+        var data_A = [2, 2, 3, 5, 5, 7, 7];
+        var data_B = [1, 3, 5, 10, 10, 12, 15];
+        var data_C = [0, 2, 3, 3, 3, 3, 3];
+        var data_D = [3, 8, 8, 8, 9, 12, 12];
         var pie_labels = [@{
                         var ClinicString = "";
                         foreach (var clinic in Model.UserCategoryList)
@@ -287,7 +289,6 @@
         <button type="button" class="btn btn-info btn-outline-default" style="padding:5px 24px;" id="month">Month</button>
         <button type="button" class="btn btn-secondary btn-outline-default" style="padding:5px 24px;" id="week">Week</button>
         <input style="width: 250px; text-align: center;  margin-right: 40px" type="text" class="daterange" id="DateRangeSelector" />
-
     </div>
     <div class="dropdown3">
         <button class="downloadAccurary btn btn-primary"><i class="fa fa-download"></i> Download</button>
@@ -303,14 +304,17 @@
     // Daterange
     $('#DateRangeSelector').daterangepicker();
     $('#year').click(clickYear);
+    $('#month').click(clickMonth);
+    $('#week').click(clickWeek);
+
     function clickYear() {
         $('#usageLineChart').show();
         $('#usageMap').hide();
-        var data_total = [11, 11, 11, 11, 11, 11, 11];
-        var data_A = [2, 2, 2, 2, 2, 2, 2];
-        var data_B = [1, 3, 5, 10, 14, 22, 26];
-        var data_C = [0, 2, 3, 5, 9, 12, 15];
-        var data_D = [3, 8, 14, 23, 29, 32, 41];
+        var data_total = [60, 170, 300, 530, 750, 930, 1160];
+        var data_A = [20, 40, 80, 150, 230, 270, 340];
+        var data_B = [10, 30, 50, 100, 140, 220, 260];
+        var data_C = [0, 20, 30, 50, 90, 120, 150];
+        var data_D = [30, 80, 140, 230, 290, 320, 410];
 
         myLineChart.data.datasets[0].data = data_total;
         myLineChart.data.datasets[1].data = data_A;
@@ -320,7 +324,46 @@
         myLineChart.data.labels = chart_labelsY;
         myLineChart.update();
 
-        var newpdata = [50,80, 60, 40];
+        var newpdata = [340, 260, 150, 410];
+        myPieChart.data.datasets[0].data = newpdata;
+        myPieChart.update();
+    }
+
+    function clickMonth() {
+        $('#usageLineChart').show();
+        $('#usageMap').hide();
+
+        myLineChart.data.datasets[0].data = data_total;
+        myLineChart.data.datasets[1].data = data_A;
+        myLineChart.data.datasets[2].data = data_B;
+        myLineChart.data.datasets[3].data = data_C;
+        myLineChart.data.datasets[4].data = data_D;
+        myLineChart.data.labels = chart_labelsY;
+        myLineChart.update();
+
+        var newpdata = [340, 260, 150, 410];
+        myPieChart.data.datasets[0].data = newpdata;
+        myPieChart.update();
+    }
+
+    function clickWeek() {
+        $('#usageLineChart').show();
+        $('#usageMap').hide();
+        var data_total = [6, 15, 19, 26, 27, 34, 37];
+        var data_A = [2, 2, 3, 5, 5, 7, 7];
+        var data_B = [1, 3, 5, 10, 10, 12, 15];
+        var data_C = [0, 2, 3, 3, 3, 3, 3];
+        var data_D = [3, 8, 8, 8, 9, 12, 12];
+
+        myLineChart.data.datasets[0].data = data_total;
+        myLineChart.data.datasets[1].data = data_A;
+        myLineChart.data.datasets[2].data = data_B;
+        myLineChart.data.datasets[3].data = data_C;
+        myLineChart.data.datasets[4].data = data_D;
+        myLineChart.data.labels = chart_labels;
+        myLineChart.update();
+
+        var newpdata = [7, 15, 3, 12];
         myPieChart.data.datasets[0].data = newpdata;
         myPieChart.update();
     }
