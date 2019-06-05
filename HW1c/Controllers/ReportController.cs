@@ -13,7 +13,7 @@ namespace HW1c.Controllers
         // GET: Index
         public ActionResult Index()
         {
-            ViewBag.TopNavType = "Default";
+            ViewBag.TopNavType = "Admin";
             var myViewModel = new ReportViewModel();
 
             myViewModel.LogViewModel = LogBackend.Instance.Index();
@@ -31,7 +31,7 @@ namespace HW1c.Controllers
 
         public ActionResult ReadPhone(string id = null)
         {
-            ViewBag.TopNavType = "Default";
+            ViewBag.TopNavType = "Admin";
             // If no ID passed in, jump to the Index page
             if (id == null)
             {
@@ -45,7 +45,7 @@ namespace HW1c.Controllers
         // GET: Test Accuracy Report
         public ActionResult Accuracy()
         {
-            ViewBag.TopNavType = "Default";
+            ViewBag.TopNavType = "Admin";
             var myViewModel = new ReportViewModel();
 
             myViewModel.LogViewModel = LogBackend.Instance.Index();
@@ -56,7 +56,7 @@ namespace HW1c.Controllers
         // GET: More Detail Report
         public ActionResult MoreDetail()
         {
-            ViewBag.TopNavType = "Default";
+            ViewBag.TopNavType = "Admin";
             var myViewModel = new ReportViewModel();
 
             return View(myViewModel);
