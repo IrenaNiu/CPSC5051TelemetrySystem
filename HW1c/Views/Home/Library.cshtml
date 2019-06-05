@@ -10,7 +10,8 @@
 <br />
 <div class="row">
     <div class="col-4 text-left">
-        Select a photo ID to view details. <br />
+        Select a photo ID to view details.
+        <br />
         Click photo thumbnail to preview photo.
     </div>
     <div class="col-2 text-right">
@@ -232,13 +233,13 @@
             </table>
         </div>
     </div>
-    <div class="col-4">
-        <br/>
-        <h5>Photo Preview</h5>
-        <div id="showPhoto" class="row text-center">
+    <figure class="col-4">
+        <br />
+        <div id="showPhoto">
             <img id='myimage' src="~/Content/Img/testGood1.jpg" width="300" height="350">
+            <figcaption>Photo Preview</figcaption>
         </div>
         <button class="btn btn-primary btn-lg" id="maglass" style="display:none" onclick='magnify("myimage", 3)'><i class="fa fa-search"></i></button>
-    </div>
+    </figure>
 </div>
-<br/>
+<br />
