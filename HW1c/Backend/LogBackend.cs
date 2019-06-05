@@ -7,7 +7,43 @@ namespace HW1c.Backend
 {
     public class LogBackend
     {
+        #region SingletonPattern
+        private static volatile LogBackend instance;
+        private static object syncRoot = new object();
 
+        private LogBackend() { }
+
+        public static LogBackend Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (instance == null)
+                            instance = new LogBackend();
+                    }
+                }
+
+                return instance;
+            }
+        }
+        #endregion SingletonPattern
+
+        // Hook up the Repositry
+        private IPhoneRepo repository = new LogRepoMock();
+
+        /// <summary>
+        /// Read
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public LogModel Read(string id)
+        {
+            var myData = repository.Read(id);
+            return myData;
+        }
         /// <summary>
         ///  Returns the List of Logs
         /// </summary>
@@ -15,17 +51,7 @@ namespace HW1c.Backend
         public LogViewModel Index()
         {
             var myData = new LogViewModel();
-
-            // TODO:  Populate some Log Data here...
-            myData.LogList.Add(new LogModel { AppVersion = "1.0",PhoneID = "AA12CW776",RecordedDateTime = DateTime.Now,Location = "Clinic A" ,TestValue = "15",LabValue = "20",Accuracy="Y", DeviationRate ="5%"});
-            myData.LogList.Add(new LogModel { AppVersion = "2.0", PhoneID = "AA13RF854", RecordedDateTime = DateTime.Parse("06/02/2019"),Location = "Clinic B", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%" });
-            myData.LogList.Add(new LogModel { AppVersion = "3.0", PhoneID = "AA16TG096", RecordedDateTime = DateTime.Now.AddDays(-2), Location = "Clinic B", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%" });
-            myData.LogList.Add(new LogModel { AppVersion = "3.3", PhoneID = "AA15TK076", RecordedDateTime = DateTime.Now.AddDays(-5), Location = "Clinic D", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%" });
-            myData.LogList.Add(new LogModel { AppVersion = "2.0", PhoneID = "AA16EG025", RecordedDateTime = DateTime.Now.AddDays(-5), Location = "Clinic C", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%" });
-            myData.LogList.Add(new LogModel { AppVersion = "2.3", PhoneID = "AA03TB093", RecordedDateTime = DateTime.Parse("05/28/2019"), Location = "Clinic B", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%" });
-            myData.LogList.Add(new LogModel { AppVersion = "3.0", PhoneID = "AA56RU937", RecordedDateTime = DateTime.Now.AddDays(-7), Location = "Clinic C", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%" });
-            myData.LogList.Add(new LogModel { AppVersion = "3.3", PhoneID = "AA76BM405", RecordedDateTime = DateTime.Now.AddDays(-7), Location = "Clinic D", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%" });
-            myData.LogList.Add(new LogModel { AppVersion = "3.3", PhoneID = "AA36TD842", RecordedDateTime = DateTime.Now.AddDays(-8), Location = "Clinic D", TestValue =  "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%" });
+            myData.LogList = repository.Index();
 
             return myData;
         }
