@@ -112,7 +112,7 @@
                         //$('#title1').html('Number of Uploaded Photos Over Time');
                         $('#usageLineChart').show();
                         //$('#usageMap').hide();
-                        var data_total = [0.85, 0.81, 0.89, 0.95, 0.96, 0.96, 0.98];
+                        var data_total = [0.85, 0.81, 0.89, 0.95, 0.93, 0.96, 0.98];
                         var data_A = [0.73, 0.77, 0.73, 0.72, 0.80, 0.82, 0.86];
                         var data_B = [0.91, 0.88, 0.92, 0.96, 0.95, 0.98, 0.99];
                         var data_C = [0.78, 0.76, 0.77, 0.83, 0.83, 0.93, 0.95];
@@ -146,11 +146,14 @@
 
 
             <div class="col-4">
-                <p class="text-center">Accuracy Rate Of This Month </p>
+                <p class="text-center">Accuracy Of This Month </p>
                 <br />
-                
-                <span class="min-chart" id="minChart" data-percent="92"><span class="percent"></span></span>
-                
+
+                <div align="center">
+                    <span class="min-chart text-center" id="minChart" data-percent="92"></span>
+                    <span>92%</span>
+                </div>
+
                 <!--<link rel="stylesheet" href="~/Scripts/style.css" />-->
 
                 <script>
@@ -190,7 +193,7 @@
 
         <!--Row 3-->
         <div class="row">
-            <div class="col-6">
+            <div class="col-6" align="left">
                 <p class="text-center">Clinic comparison</p>
                 <!--bar Chart-->
                 <div>
@@ -236,7 +239,7 @@
             </div>
 
 
-            <div class="col-6">
+            <div class="col-6" align="right">
                
                 <p class="text-center">App Version comparison</p>
                 <canvas id="VersionBarChart"></canvas>
