@@ -296,7 +296,7 @@
                                 {
                                     <tr>
                                         <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                        <td>@item.PhoneID</td>
+                                        <td>@Html.ActionLink(item.PhoneID, "ReadPhone", new { id = item.PhoneID }, new { @class = "small" })</td>
                                         <td>@item.AppVersion</td>
                                         <td>@item.Location</td>
 
