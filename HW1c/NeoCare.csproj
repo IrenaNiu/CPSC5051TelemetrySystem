@@ -114,9 +114,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Backend\IPhoneRepo.cs" />
     <Compile Include="Backend\IPhotoRepo.cs" />
     <Compile Include="Backend\LogBackend.cs" />
     <Compile Include="Backend\PhotoBackend.cs" />
+    <Compile Include="Backend\LogRepoMock.cs" />
     <Compile Include="Backend\PhotoRepoMock.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
@@ -264,6 +266,7 @@
     <Content Include="Views\Home\PhotoFail.cshtml" />
     <Content Include="Views\Home\ReadFail.cshtml" />
     <Content Include="Views\Home\ReadPass.cshtml" />
+    <Content Include="Views\Report\ReadPhone.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
