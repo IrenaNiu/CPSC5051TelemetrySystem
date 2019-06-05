@@ -22,16 +22,17 @@
 </head>
 <body>
     <div class="body-content">
+        <!--Top Nav Bar-->
         <div class="row">
             @{
                 switch (ViewBag.TopNavType)
                 {
-                    case null:
-                        <div></div>
+                    case "Visitor":
+                        <div class="navbar fixed-top shadow p-3" style="height: 70px; background-image: linear-gradient(15deg, #fdfdcd 0%, #a1d3b8 80%);"></div>
                         break;
 
                     case "Doctor":
-                       <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow p-3 mb-3" style="background-image: linear-gradient(15deg, #fdfdcd 0%, #a1d3b8 80%);">
+                        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow p-3 mb-3" style="background-image: linear-gradient(15deg, #fdfdcd 0%, #a1d3b8 80%);">
                             <!-- Logo -->
                             <img src="~/Content/Img/logo2.png" height="50" class="d-inline-block align-top px-md-5" alt="">
                             <!-- Links -->
@@ -55,7 +56,7 @@
                                     @Html.ActionLink("Photo Library", "Library", "Home", null, new { @class = "nav-link" })
                                 </li>
                             </ul>
-                            </nav>
+                        </nav>
                         break;
 
                     case "Default":
@@ -87,12 +88,15 @@
 
                 }
             }
-
-            <div class="col">
-                @RenderBody()
-            </div>
         </div>
 
+        <!--Various Content-->
+        <div class="col">
+            @RenderBody()
+        </div>
+
+
+        <!--Footer-->
         <div class="row">
             <div class="col">
                 <hr />
