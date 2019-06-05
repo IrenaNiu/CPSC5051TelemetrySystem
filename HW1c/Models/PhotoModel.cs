@@ -11,7 +11,13 @@ namespace HW1c.Models
         public string PhotoID { get; set; } = Guid.NewGuid().ToString();
 
         // The Value Sent by the Phone, as a string
-        public string Value { get; set; }
+        public string TestValue { get; set; }
+
+        // The Value provided by the lab
+        public string LabValue { get; set; }
+
+        // The accuracy rate
+        public string Accuracy { get; set; }
 
         // Location
         public string Location { get; set; }
