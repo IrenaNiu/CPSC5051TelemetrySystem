@@ -148,13 +148,6 @@
     <Content Include="Content\Img\Logo.png" />
     <Content Include="Content\Img\logo2.png" />
     <Content Include="Content\Img\map.PNG" />
-    <Content Include="Content\Img\MD_chart1.png" />
-    <Content Include="Content\Img\MD_chart2.png" />
-    <Content Include="Content\Img\MD_chart3.png" />
-    <Content Include="Content\Img\MD_chart4.png" />
-    <Content Include="Content\Img\MD_chart5.png" />
-    <Content Include="Content\Img\MD_chart6.png" />
-    <Content Include="Content\Img\MD_chart7.png" />
     <Content Include="Content\Img\nigerian-baby.jpg" />
     <Content Include="Content\Img\NigerianBaby2.jpg" />
     <Content Include="Content\Img\PieChart1.PNG" />
