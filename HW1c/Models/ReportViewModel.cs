@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace HW1c.Models
 {
@@ -11,15 +12,7 @@ namespace HW1c.Models
         public LogViewModel LogViewModel { get; set; }
 
         public List<UserCategoryCountModel> UserCategoryList { get; set; }
-        
-        // The Number of Users
-        public int NumberOfUsers { get; set; }
-
-        // The Number of Compared Tests
-        public int NumberOfTests { get; set; }
-
-        // The Accuracy
-        public double Accuracy { get; set; }
+              
 
     }
 }

@@ -7,9 +7,8 @@ namespace HW1c.Models
 {
     public class LogModel
     {
-        // The Event Type
-        // Todo, change to an Enum
-        public int EventType { get; set; }
+        // The user id
+        public string UserID { get; set; }
 
         // The Value Sent by the Phone, as a string
         public string Value { get; set; }
@@ -30,6 +29,9 @@ namespace HW1c.Models
         public string LabValue { get; set; }
         public string Accuracy { get; set; }
         public string DeviationRate { get; set; }
+
+        // Name of the picture for the phone type
+        public string PhoneFile { get; set; }
 
         /// <summary>
         /// Constructor for Log Model

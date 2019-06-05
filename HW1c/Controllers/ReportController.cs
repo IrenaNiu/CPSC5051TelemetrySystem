@@ -16,8 +16,7 @@ namespace HW1c.Controllers
             ViewBag.TopNavType = "Default";
             var myViewModel = new ReportViewModel();
 
-            myViewModel.LogViewModel = new LogBackend().Index();
-            myViewModel.NumberOfUsers = 3;
+            myViewModel.LogViewModel = LogBackend.Instance.Index();
 
 
             myViewModel.UserCategoryList = new List<UserCategoryCountModel>();
@@ -30,15 +29,26 @@ namespace HW1c.Controllers
             return View(myViewModel);
         }
 
+        public ActionResult ReadPhone(string id = null)
+        {
+            ViewBag.TopNavType = "Default";
+            // If no ID passed in, jump to the Index page
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var myData = LogBackend.Instance.Read(id);
+            return View(myData);
+        }
+
         // GET: Test Accuracy Report
         public ActionResult Accuracy()
         {
             ViewBag.TopNavType = "Default";
             var myViewModel = new ReportViewModel();
 
-            myViewModel.LogViewModel = new LogBackend().Index();
-            myViewModel.NumberOfTests = 30;
-            myViewModel.Accuracy = 0.85;
+            myViewModel.LogViewModel = LogBackend.Instance.Index();
 
             return View(myViewModel);
         }
@@ -48,9 +58,6 @@ namespace HW1c.Controllers
         {
             ViewBag.TopNavType = "Default";
             var myViewModel = new ReportViewModel();
-
-            myViewModel.LogViewModel = new LogBackend().Index();
-            myViewModel.NumberOfUsers = 3;
 
             return View(myViewModel);
         }
