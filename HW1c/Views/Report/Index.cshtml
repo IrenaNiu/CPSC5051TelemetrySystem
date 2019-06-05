@@ -332,6 +332,11 @@
     function clickMonth() {
         $('#usageLineChart').show();
         $('#usageMap').hide();
+        var data_total = [20, 38, 64, 82, 101, 131, 151];
+        var data_A = [2, 5, 5, 11, 14, 21, 26];
+        var data_B = [10, 19, 30, 37, 45, 55, 60];
+        var data_C = [5, 8, 15, 18, 21, 23, 26];
+        var data_D = [3, 6, 14, 23, 29, 32, 41];
 
         myLineChart.data.datasets[0].data = data_total;
         myLineChart.data.datasets[1].data = data_A;
@@ -341,7 +346,7 @@
         myLineChart.data.labels = chart_labelsY;
         myLineChart.update();
 
-        var newpdata = [340, 260, 150, 410];
+        var newpdata = [26, 60, 26, 41];
         myPieChart.data.datasets[0].data = newpdata;
         myPieChart.update();
     }
