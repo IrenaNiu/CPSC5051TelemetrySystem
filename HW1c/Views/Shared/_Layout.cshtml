@@ -63,20 +63,21 @@
 
         <!--Various Content-->
         <div class="row">
-            <div class="col-1 bg-light">
+            <div class="col-sm-1 bg-light">
             </div>
             <div class="col">
                 @RenderBody()
-            </div>
+            </div>        
+            <br />
+            <br />
             <div class="col-1 bg-light">
             </div>
         </div>
 
 
         <!--Footer-->
-        <div class="row">
+        <div class="row fixed-bottom p-3" style="height: 50px; background-image: linear-gradient(15deg, #fdfdcd 0%, #a1d3b8 80%);">
             <div class="col">
-                <hr />
                 <footer>
                     <p>&copy; @DateTime.Now.Year - Team Dynamic</p>
                 </footer>
