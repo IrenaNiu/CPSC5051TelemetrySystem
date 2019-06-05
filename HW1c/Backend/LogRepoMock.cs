@@ -50,15 +50,15 @@ namespace HW1c.Backend
         /// </summary>
         public void Initialize()
         {
-            dataset.Add(new LogModel { AppVersion = "1.0", PhoneID = "AA12CW776", RecordedDateTime = DateTime.Now, Location = "Clinic A", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile="tecno1" });
-            dataset.Add(new LogModel { AppVersion = "2.0", PhoneID = "AA13RF854", RecordedDateTime = DateTime.Parse("06/02/2019"), Location = "Clinic B", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "tecno2" });
-            dataset.Add(new LogModel { AppVersion = "3.0", PhoneID = "AA16TG096", RecordedDateTime = DateTime.Now.AddDays(-2), Location = "Clinic B", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "iphone" });
-            dataset.Add(new LogModel { AppVersion = "3.3", PhoneID = "AA15TK076", RecordedDateTime = DateTime.Now.AddDays(-5), Location = "Clinic D", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "samsung" });
-            dataset.Add(new LogModel { AppVersion = "2.0", PhoneID = "AA16EG025", RecordedDateTime = DateTime.Now.AddDays(-5), Location = "Clinic C", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "tecno1" });
-            dataset.Add(new LogModel { AppVersion = "2.3", PhoneID = "AA03TB093", RecordedDateTime = DateTime.Parse("05/28/2019"), Location = "Clinic B", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "tecno2" });
-            dataset.Add(new LogModel { AppVersion = "3.0", PhoneID = "AA56RU937", RecordedDateTime = DateTime.Now.AddDays(-7), Location = "Clinic C", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "samsung" });
-            dataset.Add(new LogModel { AppVersion = "3.3", PhoneID = "AA76BM405", RecordedDateTime = DateTime.Now.AddDays(-7), Location = "Clinic D", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "iphone" });
-            dataset.Add(new LogModel { AppVersion = "3.3", PhoneID = "AA36TD842", RecordedDateTime = DateTime.Now.AddDays(-8), Location = "Clinic D", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "tecno1" });
+            dataset.Add(new LogModel { AppVersion = "1.0", PhoneID = "AA12CW776", RecordedDateTime = DateTime.Now, Location = "Clinic A", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile="tecno1", UserID = "1" });
+            dataset.Add(new LogModel { AppVersion = "2.0", PhoneID = "AA13RF854", RecordedDateTime = DateTime.Parse("06/02/2019"), Location = "Clinic B", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "tecno2", UserID = "2" });
+            dataset.Add(new LogModel { AppVersion = "3.0", PhoneID = "AA16TG096", RecordedDateTime = DateTime.Now.AddDays(-2), Location = "Clinic B", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "iphone", UserID = "3" });
+            dataset.Add(new LogModel { AppVersion = "3.3", PhoneID = "AA15TK076", RecordedDateTime = DateTime.Now.AddDays(-5), Location = "Clinic D", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "samsung", UserID = "4" });
+            dataset.Add(new LogModel { AppVersion = "2.0", PhoneID = "AA16EG025", RecordedDateTime = DateTime.Now.AddDays(-5), Location = "Clinic C", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "tecno1", UserID = "5" });
+            dataset.Add(new LogModel { AppVersion = "2.3", PhoneID = "AA03TB093", RecordedDateTime = DateTime.Parse("05/28/2019"), Location = "Clinic B", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "tecno2", UserID = "6" });
+            dataset.Add(new LogModel { AppVersion = "3.0", PhoneID = "AA56RU937", RecordedDateTime = DateTime.Now.AddDays(-7), Location = "Clinic C", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "samsung", UserID = "7" });
+            dataset.Add(new LogModel { AppVersion = "3.3", PhoneID = "AA76BM405", RecordedDateTime = DateTime.Now.AddDays(-7), Location = "Clinic D", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "iphone", UserID = "8" });
+            dataset.Add(new LogModel { AppVersion = "3.3", PhoneID = "AA36TD842", RecordedDateTime = DateTime.Now.AddDays(-8), Location = "Clinic D", TestValue = "15", LabValue = "20", Accuracy = "Y", DeviationRate = "5%", PhoneFile = "tecno1", UserID = "9" });
            
         }
     }
