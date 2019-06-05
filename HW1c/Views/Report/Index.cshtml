@@ -80,7 +80,7 @@
 <!--Row 2-->
 <div class="row">
     <div class="col-8">
-        <h4 class="text-center" id="title1">Number of Users Over Time</h4>
+        <h4 class="text-center" id="title1">Number of App Users Over Time</h4>
         <p></p>
         <!-- Line Chart-->
         <canvas id="usageLineChart" width="400" height="200"></canvas>
@@ -92,7 +92,7 @@
     </div>
 
     <div class="col-4">
-        <h4 class="text-center" id="title2">Clinic Comparison</h4>
+        <h4 class="text-center" id="title2">Total Users</h4>
         <p></p>
         <!--Doughnut Chart-->
         <div>
@@ -201,6 +201,7 @@
             $('#usageMap').hide();
             var data = myLineChart.config.data;
             data.datasets[0].data = data_total;
+            myLineChart.data.datasets[0].label = 'Total';
             data.datasets[1].data = data_A;
             data.datasets[2].data = data_B;
             data.datasets[3].data = data_C;
@@ -208,7 +209,7 @@
             data.labels = chart_labels;
             myLineChart.update();
 
-            $('#title2').html('Users per Clinic');
+            $('#title2').html('Total Users');
             // myPieChart.data.labels = pie_labels;
             myPieChart.data.datasets[0].data = pie_data;
             myPieChart.update()
@@ -261,6 +262,7 @@
             var data_D = [3, 5, 5, 6, 10, 10, 12];
             var data = myLineChart.config.data;
             data.datasets[0].data = data_total;
+            myLineChart.data.datasets[0].label = 'Total';
             data.datasets[1].data = data_A;
             data.datasets[2].data = data_B;
             data.datasets[3].data = data_C;
@@ -268,7 +270,7 @@
             data.labels = chart_labels;
             myLineChart.update();
 
-            $('#title2').html('Clinic Comparison');
+            $('#title2').html('Total Installations');
             var newpdata = [14, 16, 17, 12];
             // myPieChart.data.labels = pie_labels;
             myPieChart.data.datasets[0].data = newpdata;
@@ -279,6 +281,7 @@
         $('#photos').click(clickPhoto);
         $('#clinics').click(clickClinic);
         $('#installs').click(clickInstall);
+        
 
 
 
@@ -308,10 +311,32 @@
 <br />
 <script>
     // Daterange
-    $('#DateRangeSelector').daterangepicker();
+    $('#DateRangeSelector').daterangepicker({}, clickApply);
     $('#year').click(clickYear);
     $('#month').click(clickMonth);
     $('#week').click(clickWeek);
+
+    function clickApply() {
+        $('#usageLineChart').show();
+        $('#usageMap').hide();
+        var data_total = [37, 40, 49, 56, 62, 64, 71];
+        var data_A = [7, 7, 8, 12, 15, 17, 17];
+        var data_B = [15, 16, 16, 17, 19, 19, 25];
+        var data_C = [3, 5, 7, 7, 7, 8, 8];
+        var data_D = [12, 12, 18, 18, 19, 20, 21];
+
+        myLineChart.data.datasets[0].data = data_total;
+        myLineChart.data.datasets[1].data = data_A;
+        myLineChart.data.datasets[2].data = data_B;
+        myLineChart.data.datasets[3].data = data_C;
+        myLineChart.data.datasets[4].data = data_D;
+        myLineChart.data.labels = chart_labels2;
+        myLineChart.update();
+
+        var newpdata = [ 17, 25, 8,21];
+        myPieChart.data.datasets[0].data = newpdata;
+        myPieChart.update();
+    }
 
     function clickYear() {
         $('#usageLineChart').show();
@@ -413,23 +438,35 @@
             </table>
         </font>
     </div>
-    <div class="col">
+    <div class="col-5 text-center">
         <h4 class="text-center" id="title4">Feature Comparison</h4>
-        <canvas id="myBarChart"></canvas>
+        <p></p>
+
+        <div class="dropdown1">
+            <button class="photoDropBtn"><i class="fa fa-folder-open-o"></i>Features</button>
+            <div class="dropdown-content1">
+                <a href="#" id="version">AppVersion</a>
+                <a href="#" id="phone">PhoneType</a>
+            </div>
+        </div>
+        <p></p>
+        <canvas id="myBarChart" width="500" height="700"></canvas>
     </div>
     <script>
         var ctx = document.getElementById("myBarChart").getContext('2d');
-        var data = [67, 23, 10, 15, 8];
-        var labels = ["3.3", "3.0", "2.3", "2.0", "1.0"];
+        var vdata = [67, 23, 10, 15, 8];
+        var vlabels = ["3.3", "3.0", "2.3", "2.0", "1.0"];
+        var pdata = [267, 167, 90, 17, 7];
+        var plabels = ["tecno1", "iphone", "samsung", "tecno2", "unknown"];
         ctx.canvas.width = 400;
         ctx.canvas.height = 450;
-        var myBarChart = new Chart(ctx, {
+        var myFeatureChart = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
-                labels: labels,
+                labels: vlabels,
                 datasets: [{
                     label: "App version",
-                    data: data,
+                    data: vdata,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -446,58 +483,121 @@
                     ],
                     borderWidth: 1
                 }]
-            },
-            options: {
-                responsive: false, // Instruct chart js to respond nicely.
-                maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
             }
         });
-</script>
-<style>
-    /* Download button */
-    .downloadAccurary {
-    }
-    /* The container <div>
-        - needed to position the dropdown content */
-    .dropdown3 {
-        position: relative;
-        display: inline-block;
-    }
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content3 {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 100px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
 
-        /* Links inside the dropdown */
-        .dropdown-content3 a {
-            color: black;
-            padding: 8px 12px;
-            text-align: left;
-            text-decoration: none;
-            cursor: pointer;
+
+        function clickVersion() {
+            myFeatureChart.data.datasets[0].data = vdata;
+            myFeatureChart.data.labels = vlabels;
+            myFeatureChart.data.datasets[0].label = "App version";
+            myFeatureChart.update();
+        }
+        function clickPhone() {
+            myFeatureChart.data.datasets[0].data = pdata;
+            myFeatureChart.data.labels = plabels;
+            myFeatureChart.data.datasets[0].label = "Phone type";
+            myFeatureChart.update();
+        }
+        $('#version').click(clickVersion);
+        $('#phone').click(clickPhone);
+</script>
+    <style>
+        /* Download button */
+
+        /* The container <div>
+        - needed to position the dropdown content */
+        .dropdown3 {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content3 {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            /* Links inside the dropdown */
+            .dropdown-content3 a {
+                color: black;
+                padding: 8px 12px;
+                text-align: left;
+                text-decoration: none;
+                cursor: pointer;
+                display: block;
+            }
+
+                /* Change color of dropdown links on hover */
+                .dropdown-content3 a:hover {
+                    background-color: #f1f1f1
+                }
+
+        /* Show the dropdown menu on hover */
+        .dropdown3:hover .dropdown-content3 {
             display: block;
         }
 
-            /* Change color of dropdown links on hover */
-            .dropdown-content3 a:hover {
-                background-color: #f1f1f1
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown3:hover .downloadAccurary {
+            background-color: mediumblue;
+        }
+
+        /* Style The Dropdown Button */
+        .photoDropBtn {
+            border: 2px solid black;
+            background-color: white;
+            color: darkseagreen;
+            padding: 6px 33px;
+            font-size: 14px;
+            border-color: darkseagreen;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown1 {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content1 {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            /* Links inside the dropdown */
+            .dropdown-content1 a {
+                color: black;
+                padding: 6px 33px;
+                text-decoration: none;
+                display: block;
             }
 
-    /* Show the dropdown menu on hover */
-    .dropdown3:hover .dropdown-content3 {
-        display: block;
-    }
+                /* Change color of dropdown links on hover */
+                .dropdown-content1 a:hover {
+                    background-color: #f1f1f1
+                }
 
-    /* Change the background color of the dropdown button when the dropdown content is shown */
-    .dropdown3:hover .downloadAccurary {
-        background-color: mediumblue;
-    }
-</style>
+        /* Show the dropdown menu on hover */
+        .dropdown1:hover .dropdown-content1 {
+            display: block;
+        }
 
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown1:hover .photoDropBtn {
+            color: white;
+            background-color: seagreen;
+        }
+    </style>
 
-        </div >
+</div >
