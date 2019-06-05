@@ -31,6 +31,9 @@ namespace HW1c.Models
         public string Accuracy { get; set; }
         public string DeviationRate { get; set; }
 
+        // Name of the picture for the phone type
+        public string PhoneFile { get; set; }
+
         /// <summary>
         /// Constructor for Log Model
         /// Calls to Initialize to set initial settings
