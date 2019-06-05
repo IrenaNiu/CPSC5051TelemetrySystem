@@ -1,4 +1,4 @@
-﻿ @{
+﻿@{
     ViewBag.Title = "Home Page";
 }
 <br />
@@ -11,35 +11,37 @@
         <img src="~/Content/Img/Logo.png" height="100" />
         <br />
         <br />
-        <h3><em>Baby's brighter future starts here!</em></h3>
+        <h3>
+            <em>Baby's brighter future starts here!</em>
+        </h3>
     </div>
     <div class="col bg-light rounded-left">
-        <br/>
-        <h4>Log in to view reports</h4>
+        <br />
         @{
-            if (ViewBag.TopNavType != "Default")
+            if (ViewBag.TopNavType != "Admin")
             {
 
                 using (Html.BeginForm("Index", "Home", FormMethod.Post))
                 {
-                @Html.Hidden("id", "login")
-                <form>
-                    <div class="form-group">
-                        <select class="custom-select my-1 mr-sm-1" id="inlineFormCustomSelectPref">
-                            <option selected>Log in as</option>
-                            <option value="1">Doctor</option>
-                            <option value="2">Project Manager</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword2" class="sr-only">Password</label>
-                        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-                    </div>
+                    @Html.Hidden("id", "login")
+                    <form>
+                        <h4>Log in to view reports</h4>
+                        <div class="form-group">
+                            <select class="custom-select my-1 mr-sm-1" id="inlineFormCustomSelectPref">
+                                <option selected>Log in as</option>
+                                <option value="1">Doctor</option>
+                                <option value="2">Project Manager</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword2" class="sr-only">Password</label>
+                            <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                        </div>
 
-                    <div class="form-group">
-                        <input id="Submit" type="submit" value="Login" class="btn btn-info " />
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <input id="Submit" type="submit" value="Login" class="btn btn-info " />
+                        </div>
+                    </form>
                 }
             }
         }
