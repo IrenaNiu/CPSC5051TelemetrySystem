@@ -210,6 +210,8 @@
     <Content Include="Content\report\repolib1.xlsx" />
     <Content Include="Content\report\repolib2.xlsx" />
     <Content Include="Content\report\repolib3.xlsx" />
+    <Content Include="Content\report\accuracy.pdf" />
+    <Content Include="Content\report\accuracy.xlsx" />
     <None Include="Properties\PublishProfiles\NeoCare - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
