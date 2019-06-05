@@ -85,7 +85,7 @@
         <!-- Line Chart-->
         <canvas id="usageLineChart" width="400" height="200"></canvas>
         <div class="text-center" id="usageMap" width="400" height="200" style="display:none">
-            <img width="90%" height="90%" src="~/Content/Img/map.PNG" />
+            <img width="90%" height="90%" src="~/Content/Img/map2.PNG" />
         </div>
 
 
@@ -98,11 +98,13 @@
         <div>
             <canvas id="usagePieChart"></canvas>
         </div>
-
+        <div class="text-center" id="cinfo" width="400" height="200" style="display:none">
+            <img width="90%" height="90%" src="~/Content/Img/clinicinfo.PNG" />
+        </div>
 
         <script>
         var chart_labels = ['June 1', 'June 2', 'June 3', 'June 4', 'June 5', 'June 6', 'June 7'];
-        var chart_labels2 = ['July 1', 'July 2', 'July 3', 'July 4', 'July 5', 'July 6', 'July 7'];   
+        var chart_labels2 = ['July 1', 'July 2', 'July 3', 'July 4', 'July 5', 'July 6', 'July 7'];
         var chart_labelsM = ['July 1 - July 7', 'July 8 - July 14', 'July 15 - July 21', 'July 22 - July 28', 'July 29 - Aug. 4', 'Aug. 5 - Aug. 11', 'Aug. 12 - Aug. 18'];
         var chart_labelsY = ['June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
 
@@ -198,7 +200,10 @@
         function clickUser() {
             $('#title1').html('Number of App Users Over Time');
             $('#usageLineChart').show();
+            $('#usageLineChart').show();
+
             $('#usageMap').hide();
+            $('#cinfo').hide();
             var data = myLineChart.config.data;
             data.datasets[0].data = data_total;
             myLineChart.data.datasets[0].label = 'Total';
@@ -218,7 +223,7 @@
             $('#title1').html('Successful Photo Uploading Rate');
             $('#usageLineChart').show();
             $('#usageMap').hide();
-            
+            $('#cinfo').hide();
             var data_A = [65, 65, 70, 75, 80, 75, 75];
             var data_B = [75, 73, 75, 80, 84, 82, 82];
             var data_C = [90, 92, 93, 99, 95, 92, 95];
@@ -231,7 +236,7 @@
             myLineChart.data.datasets[2].data = data_B;
             myLineChart.data.datasets[3].data = data_C;
             myLineChart.data.datasets[4].data = data_D;
-     
+
             myLineChart.update();
 
             $('#title2').html('Total Photos');
@@ -245,16 +250,18 @@
             $('#title1').html('Locations of Active Community Clinics');
             $('#usageLineChart').hide();
             $('#usageMap').show();
-
+            $('#cinfo').show();
             var newpdata = [10, 15, 8, 29];
             // myPieChart.data.labels = pie_labels;
-            myPieChart.data.datasets[0].data = newpdata;
+            $('#title2').html('Goal Achievement');
+            myPieChart.data.datasets[0].data = [60, 50, 30, 80];
             myPieChart.update()
         }
         function clickInstall() {
             $('#title1').html('Number of App Installations Over Time');
             $('#usageLineChart').show();
             $('#usageMap').hide();
+            $('#cinfo').hide();
             var data_total = [20, 35, 37, 42, 55, 67, 73];
             var data_A = [6, 7, 7, 8, 12, 15, 18];
             var data_B = [1, 3, 5, 8, 10, 12, 16];
@@ -281,7 +288,7 @@
         $('#photos').click(clickPhoto);
         $('#clinics').click(clickClinic);
         $('#installs').click(clickInstall);
-        
+
 
 
 
@@ -319,6 +326,7 @@
     function clickApply() {
         $('#usageLineChart').show();
         $('#usageMap').hide();
+        $('#cinfo').hide();
         var data_total = [37, 40, 49, 56, 62, 64, 71];
         var data_A = [7, 7, 8, 12, 15, 17, 17];
         var data_B = [15, 16, 16, 17, 19, 19, 25];
@@ -341,6 +349,7 @@
     function clickYear() {
         $('#usageLineChart').show();
         $('#usageMap').hide();
+        $('#cinfo').hide();
         var data_total = [60, 170, 300, 530, 750, 930, 1160];
         var data_A = [20, 40, 80, 150, 230, 270, 340];
         var data_B = [10, 30, 50, 100, 140, 220, 260];
@@ -363,6 +372,7 @@
     function clickMonth() {
         $('#usageLineChart').show();
         $('#usageMap').hide();
+        $('#cinfo').hide();
         var data_total = [20, 38, 64, 82, 101, 131, 151];
         var data_A = [2, 5, 5, 11, 14, 21, 26];
         var data_B = [10, 19, 30, 37, 45, 55, 60];
@@ -385,6 +395,7 @@
     function clickWeek() {
         $('#usageLineChart').show();
         $('#usageMap').hide();
+        $('#cinfo').hide();
         var data_total = [6, 15, 19, 26, 27, 34, 37];
         var data_A = [2, 2, 3, 5, 5, 7, 7];
         var data_B = [1, 3, 5, 10, 10, 12, 15];

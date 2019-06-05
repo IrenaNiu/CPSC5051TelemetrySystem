@@ -141,13 +141,14 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Img\clinicinfo.PNG" />
     <Content Include="Content\Img\iphone.png" />
     <Content Include="Content\Img\JaundiceBaby.jpg" />
     <Content Include="Content\Img\LineChart.PNG" />
     <Content Include="Content\Img\LineChartAccuracy.PNG" />
     <Content Include="Content\Img\Logo.png" />
     <Content Include="Content\Img\logo2.png" />
-    <Content Include="Content\Img\map.PNG" />
+    <Content Include="Content\Img\map2.PNG" />
     <Content Include="Content\Img\MD1.png" />
     <Content Include="Content\Img\MD1_2.png" />
     <Content Include="Content\Img\MD2.png" />
