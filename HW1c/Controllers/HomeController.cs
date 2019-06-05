@@ -12,21 +12,21 @@ namespace HW1c.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.TopNavType = "Home";
+            ViewBag.TopNavType = "Visitor";
             return View();
         }
 
         [HttpPost]
         public ActionResult Index(string id)
         {
-            ViewBag.TopNavType = "Doctor";
+            ViewBag.TopNavType = "Admin";
             return View();
         }
 
         public ActionResult Library()
         {
             var myViewModel = new LibViewModel();
-            ViewBag.TopNavType = "Default";
+            ViewBag.TopNavType = "Admin";
 
             myViewModel.PhotoViewModel = PhotoBackend.Instance.Index();
 
@@ -36,7 +36,7 @@ namespace HW1c.Controllers
         public ActionResult PhotoPass()
         {
             var myViewModel = new LibViewModel();
-            ViewBag.TopNavType = "Default";
+            ViewBag.TopNavType = "Admin";
 
             myViewModel.PhotoViewModel = PhotoBackend.Instance.Pass();
 
@@ -46,7 +46,7 @@ namespace HW1c.Controllers
         public ActionResult PhotoFail()
         {
             var myViewModel = new LibViewModel();
-            ViewBag.TopNavType = "Default";
+            ViewBag.TopNavType = "Admin";
 
             myViewModel.PhotoViewModel = PhotoBackend.Instance.Fail();
 
@@ -61,7 +61,7 @@ namespace HW1c.Controllers
         /// <returns></returns>
         public ActionResult Read(string id = null)
         {
-            ViewBag.TopNavType = "Default";
+            ViewBag.TopNavType = "Admin";
             // If no ID passed in, jump to the Index page
             if (id == null)
             {
@@ -74,7 +74,7 @@ namespace HW1c.Controllers
 
         public ActionResult ReadPass(string id = null)
         {
-            ViewBag.TopNavType = "Default";
+            ViewBag.TopNavType = "Admin";
             // If no ID passed in, jump to the Index page
             if (id == null)
             {
@@ -87,7 +87,7 @@ namespace HW1c.Controllers
 
         public ActionResult ReadFail(string id = null)
         {
-            ViewBag.TopNavType = "Default";
+            ViewBag.TopNavType = "Admin";
             // If no ID passed in, jump to the Index page
             if (id == null)
             {
