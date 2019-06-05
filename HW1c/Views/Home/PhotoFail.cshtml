@@ -206,7 +206,8 @@
                             <tr>
                                 <th scope="col">PhotoID</th>
                                 <th scope="col">Photo Thumbnail</th>
-                                <th scope="col">Value</th>
+                                <th scope="col">Test Value</th>
+                                <th scope="col">Lab Value</th>
                                 <th scope="col">Location</th>
                                 <th scope="col">Date</th>
 
@@ -216,15 +217,16 @@
                             @{
                                 foreach (var item in Model.PhotoViewModel.PhotoList)
                                 {
-                                    <tr>
-                                        <td>@Html.ActionLink(item.PhotoID, "ReadFail", new { id = item.PhotoID }, new { @class = "small" })</td>
-                                        <td onclick="photoPreview('/Content/Img/' + '@item.PhotoFile')">
-                                            <img src="~/Content/Img/@item.PhotoFile" width="30" height="30" class="imgThumbnail">
-                                        </td>
-                                        <td>@item.Value</td>
-                                        <td>@item.Location</td>
-                                        <td>@item.RecordedDateTime.ToShortDateString()</td>
-                                    </tr>
+                            <tr>
+                                <td>@Html.ActionLink(item.PhotoID, "ReadFail", new { id = item.PhotoID }, new { @class = "small" })</td>
+                                <td onclick="photoPreview('/Content/Img/' + '@item.PhotoFile')">
+                                    <img src="~/Content/Img/@item.PhotoFile" width="30" height="30" class="imgThumbnail">
+                                </td>
+                                <td>@item.TestValue</td>
+                                <td>@item.LabValue</td>
+                                <td>@item.Location</td>
+                                <td>@item.RecordedDateTime.ToShortDateString()</td>
+                            </tr>
                                 }
                             }
                         </tbody>
