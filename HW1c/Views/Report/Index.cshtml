@@ -105,8 +105,9 @@
         <script>
         var chart_labels = ['June 1', 'June 2', 'June 3', 'June 4', 'June 5', 'June 6', 'June 7'];
         var chart_labels2 = ['July 1', 'July 2', 'July 3', 'July 4', 'July 5', 'July 6', 'July 7'];
-        var chart_labelsM = ['July 1 - July 7', 'July 8 - July 14', 'July 15 - July 21', 'July 22 - July 28', 'July 29 - Aug. 4', 'Aug. 5 - Aug. 11', 'Aug. 12 - Aug. 18'];
-        var chart_labelsY = ['June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+        var chart_labelsY = ['2019', '2020', '2021', '2022', '2023', '2024', '2025'];
+        var chart_labelsM = ['June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];  
+        var chart_labelsM2 = ['July 1 - July 7', 'July 8 - July 14', 'July 15 - July 21', 'July 22 - July 28', 'July 29 - Aug. 4', 'Aug. 5 - Aug. 11', 'Aug. 12 - Aug. 18'];
 
         var ctx = $('#usageLineChart');
         var pctx = document.getElementById("usagePieChart").getContext('2d');
@@ -384,7 +385,7 @@
         myLineChart.data.datasets[2].data = data_B;
         myLineChart.data.datasets[3].data = data_C;
         myLineChart.data.datasets[4].data = data_D;
-        myLineChart.data.labels = chart_labelsY;
+        myLineChart.data.labels = chart_labelsM;
         myLineChart.update();
 
         var newpdata = [26, 60, 26, 41];
